@@ -1,0 +1,252 @@
+%% 
+%% Copyright 2007-2020 Elsevier Ltd
+%% 
+%% This file is part of the 'Elsarticle Bundle'.
+%% ---------------------------------------------
+%% 
+%% It may be distributed under the conditions of the LaTeX Project Public
+%% License, either version 1.2 of this license or (at your option) any
+%% later version.  The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.2 or later is part of all distributions of LaTeX
+%% version 1999/12/01 or later.
+%% 
+%% The list of all files belonging to the 'Elsarticle Bundle' is
+%% given in the file `manifest.txt'.
+%% 
+%% Template article for Elsevier's document class `elsarticle'
+%% with harvard style bibliographic references
+
+%\documentclass[preprint,12pt,authoryear]{elsarticle}
+
+%% Use the option review to obtain double line spacing
+%% \documentclass[authoryear,preprint,review,12pt]{elsarticle}
+
+%% Use the options 1p,twocolumn; 3p; 3p,twocolumn; 5p; or 5p,twocolumn
+%% for a journal layout:
+%% \documentclass[final,1p,times,authoryear]{elsarticle}
+%% \documentclass[final,1p,times,twocolumn,authoryear]{elsarticle}
+%% \documentclass[final,3p,times,authoryear]{elsarticle}
+%% \documentclass[final,3p,times,twocolumn,authoryear]{elsarticle}
+%% \documentclass[final,5p,times,authoryear]{elsarticle}
+ \documentclass[final,5p,times,twocolumn,authoryear]{elsarticle}
+
+%% For including figures, graphicx.sty has been loaded in
+%% elsarticle.cls. If you prefer to use the old commands
+%% please give \usepackage{epsfig}
+
+%% The amssymb package provides various useful mathematical symbols
+\usepackage{amssymb}
+\usepackage{lipsum}
+%% The amsthm package provides extended theorem environments
+%% \usepackage{amsthm}
+
+%% The lineno packages adds line numbers. Start line numbering with
+%% \begin{linenumbers}, end it with \end{linenumbers}. Or switch it on
+%% for the whole article with \linenumbers.
+%% \usepackage{lineno}
+
+%% You might want to define your own abbreviated commands for common used terms, e.g.:
+\newcommand{\kms}{km\,s$^{-1}$}
+\newcommand{\msun}{$M_\odot}
+
+\journal{High Energy Astrophysics}
+
+
+\begin{document}
+
+\begin{frontmatter}
+
+%% Title, authors and addresses
+
+%% use the tnoteref command within \title for footnotes;
+%% use the tnotetext command for theassociated footnote;
+%% use the fnref command within \author or \affiliation for footnotes;
+%% use the fntext command for theassociated footnote;
+%% use the corref command within \author for corresponding author footnotes;
+%% use the cortext command for theassociated footnote;
+%% use the ead command for the email address,
+%% and the form \ead[url] for the home page:
+%% \title{Title\tnoteref{label1}}
+%% \tnotetext[label1]{}
+%% \author{Name\corref{cor1}\fnref{label2}}
+%% \ead{email address}
+%% \ead[url]{home page}
+%% \fntext[label2]{}
+%% \cortext[cor1]{}
+%% \affiliation{organization={},
+%%            addressline={}, 
+%%            city={},
+%%            postcode={}, 
+%%            state={},
+%%            country={}}
+%% \fntext[label3]{}
+
+\title{Machine Learning for the Cluster Reconstruction in the CALIFA Calorimeter at R$^3$B}
+
+%% use optional labels to link authors explicitly to addresses:
+%% \author[label1,label2]{}
+%% \affiliation[label1]{organization={},
+%%             addressline={},
+%%             city={},
+%%             postcode={},
+%%             state={},
+%%             country={}}
+%%
+%% \affiliation[label2]{organization={},
+%%             addressline={},
+%%             city={},
+%%             postcode={},
+%%             state={},
+%%             country={}}
+
+\author[first]{Author name}
+\address[first]{organization={University of the Moon},%Department and Organization
+            addressline={}, 
+            city={Earth},
+            postcode={}, 
+            state={},
+            country={}}
+
+\begin{abstract}
+%% Text of abstract
+ABSTRACT... work in progress ...
+\end{abstract}
+
+%%Graphical abstract
+%\begin{graphicalabstract}
+%\includegraphics{grabs}
+%\end{graphicalabstract}
+
+%%Research highlights
+%\begin{highlights}
+%\item Research highlight 1
+%\item Research highlight 2
+%\end{highlights}
+
+\begin{keyword}
+%% keywords here, in the form: keyword \sep keyword, up to a maximum of 6 keywords
+keyword 1 \sep keyword 2 \sep keyword 3 \sep keyword 4
+
+%% PACS codes here, in the form: \PACS code \sep code
+
+%% MSC codes here, in the form: \MSC code \sep code
+%% or \MSC[2008] code \sep code (2000 is the default)
+
+\end{keyword}
+
+
+\end{frontmatter}
+
+%\tableofcontents
+
+%% \linenumbers
+
+%% main text
+
+\section{Introduction}
+\label{sec:intro}
+With the advancements in facilities dedicated to the production of radioactive beams at relativistic energies, such as the Facility for Antiproton and Ion Research (FAIR) at GSI, significant progress has been made in the study of exotic nuclei far from stability. FAIR will provide high-intensity relativistic radioactive beams of rare isotopes with energies reaching up to 1 AGeV, enabling investigations in inverse kinematics with full kinematic reconstruction.
+A key experimental setup designed for this purpose is the Reactions with Relativistic Radioactive Beams (R$^3$B) Setup, which allows for high-resolution particle spectroscopy. This setup serves as a unique tool for unveiling the structure of nuclei and their reaction dynamics with unprecedented precision.\newline
+At the core of the R3B Setup is the CALIFA calorimeter (Calorimeter for the In-Flight Detection of Gamma Rays and Light Charged Particles), a highly segmented detection system composed of more than 2500 CsI(Tl) scintillator crystals that hermetically enclose the target area. This design enables the simultaneous measurement of gamma rays down to 100 keV and light charged particles, such as protons and deuterons, up to several hundred A MeV. To ensure optimal performance, extensive research has been conducted to refine the geometric design, minimize scattering and energy losses due to the holding structure, and develop a dead-time-free data acquisition system capable of handling high-rate experiments. Furthermore, a seamless integration within the R3BRoot framework has been achieved, enabling offline data analysis from the raw data level to the calibrated (cal) level and ultimately to the cluster level, where individual hits are recombined for the final energy reconstruction.\newline
+This study presents the results of applying machine learning-based graph networks to enhance the energy reconstruction of gamma rays in CALIFA. Using simulated Geant4 data, the performance of standard R3B clustering algorithms is compared to an agglomerative clustering model implemented with SciPy and a generic neural network (NN) architecture, demonstrating the potential of machine learning techniques in improving reconstruction accuracy.\newline
+
+\section{Methodology}
+\label{sec:metho}
+\subsection{Challenges in Relativistic Gamma Spectroscopy}\label{s_sec:gamma_spec}
+While the detection of light charged particles such as protons typically yields well-localized energy deposits in segmented detector arrays, the detection of gamma rays emitted from reaction products moving at relativistic velocities ($\beta \approx 0.8$) presents significant challenges. These difficulties primarily arise from the inherently sparse and spatially distributed energy deposits resulting from the interaction mechanisms of photons with the scintillator material (see Fig. X).\newline
+At photon energies below approximately $300$ keV, the photoelectric effect dominates the interaction cross-section. As the photon energy increases, Compton scattering becomes the predominant process. For photon energies exceeding the pair production threshold ($E_{\gamma} > 2m_{e}c^2 \approx 1.022 MeV$), electron-positron pair creation becomes possible and is the dominant interaction mechanism above $\backsim 6$ MeV.\newline
+Compton scattering broadens the clustering by the deflection of the incident gamma ray. According to the Klein–Nishina formula, the scattering is predominantly forward-focused for moderate to high photon energies, leading to clusters in neighboring crystals.\newline
+%($E_{\gamma} > 2m_{e}c^2 \approx 1.022 MeV$)
+In the case of pair production, which occurs above the $2m_ec^2$ threshold, the resulting annihilation of the positron yields two $511$ keV gamma photons. These secondary photons often escape the initial interaction site, leading to a significant fraction of the incident photon’s energy being deposited in multiple detector elements.\newline
+For gamma rays emitted by nuclei at rest, this behavior gives rise to well-defined single- and double-escape peaks in the recorded energy spectra -- corresponding to the escape of one or both $511\,\mathrm{keV}$ photons, respectively -- if these photons exit the cluster volume without interaction (see Fig. X).\newline
+In experiments involving relativistic ions, such as those conducted at $R^3B$, Doppler broadening significantly distorts spectral features, including single- and double-escape peaks. This effect hinders accurate reconstruction of the photon energy and complicates the extraction of absolute gamma-ray yields and reaction cross sections.
+
+\subsection{Data Structure and Standard R3B Clustering Algorithm}\label{s_sec:r3b_clustering}
+In the standard data acquisition (DAQ) configuration, all CALIFA detector hits occurring within a $\pm 4\,\mu\mathrm{s}$ time window are grouped into a single event. Each individual hit $i$ in CALIFA is represented by a data structure containing the following calibrated information:
+\begin{itemize}
+    \item Energy deposit $E_i$
+    \item Polar angle $\theta_i$
+    \item Azimuthal angle $\phi_i$
+    \item Time stamp $t_i$ (White Rabbit time)
+\end{itemize}
+In the standard R3B clustering approach, the time information $t_i$ is not utilized during the spatial reconstruction of clusters.\newline
+The initial stage of the clustering algorithm begins by sorting all hits in descending order of energy. A user-defined geometric condition, typically a conical cluster shape with a default aperture of $0.5\,\mathrm{rad}$, is applied. This value has been found to provide an optimal compromise between compact high-energy clusters and more diffuse gamma-ray showers.\newline
+The hit with the highest energy defines the seed or center of the first cluster. The algorithm then iterates through the remaining hits and includes each hit in the current cluster if it lies within the specified cone aperture relative to the seed direction. Once the list is fully processed for the current cluster, the next highest-energy unassigned hit becomes the seed of a new cluster. This procedure repeats until no unassigned hits remain.\newline
+\subsection{Data Simulation}\label{s_sec:data_sim}
+\subsection{Preformance Metrics}\label{s_sec:metrics}
+\subsection{Agglomerative Clustering}\label{s_sec:agglo}
+\subsection{Implementation of Edge Detection NN}\label{s_sec:edge}
+
+%\begin{figure}
+%	\centering 
+%	\includegraphics[width=0.4\textwidth, angle=-90]{JHEAP_cover_image.pdf}	
+%	\caption{High Energy Astrophysics journal cover} 
+%	\label{fig_mom0}%
+%\end{figure}
+
+%A random equation, the Toomre stability criterion:
+%
+%\begin{equation}
+%    Q = \frac{\sigma_v \times \kappa}{\pi \times G \times \Sigma}
+%\end{equation}
+
+\section{Results}\label{sec:results}
+
+
+%\begin{table}
+%\begin{tabular}{l c c c} 
+% \hline
+% Source & RA (J2000) & DEC (J2000) & $V_{\rm sys}$ \\ 
+%        & [h,m,s]    & [o,','']    & \kms          \\
+% \hline
+% NGC\,253 & 	00:47:33.120 & -25:17:17.59 & $235 \pm 1$ \\ 
+% M\,82 & 09:55:52.725, & +69:40:45.78 & $269 \pm 2$ 	 \\ 
+% \hline
+%\end{tabular}
+%\caption{Random table with galaxies coordinates and velocities, Number the tables consecutively in
+%accordance with their appearance in the text and place any table notes below the table body. Please avoid using vertical rules and shading in table cells.
+%}
+%\label{Table1}
+%\end{table}
+
+
+\section{Summary and Discussion}\label{sec:summary}
+
+\section*{Acknowledgements}
+Thanks to ...
+
+%% The Appendices part is started with the command \appendix;
+%% appendix sections are then done as normal sections
+\appendix
+
+\section{Appendix title 1}
+%% \label{}
+
+\section{Appendix title 2}
+%% \label{}
+
+%% If you have bibdatabase file and want bibtex to generate the
+%% bibitems, please use
+%%
+\bibliographystyle{elsarticle-harv} 
+\bibliography{example}
+
+%% else use the following coding to input the bibitems directly in the
+%% TeX file.
+
+%%\begin{thebibliography}{00}
+
+%% \bibitem[Author(year)]{label}
+%% For example:
+
+%% \bibitem[Aladro et al.(2015)]{Aladro15} Aladro, R., Martín, S., Riquelme, D., et al. 2015, \aas, 579, A101
+
+
+%%\end{thebibliography}
+
+\end{document}
+
+\endinput
+%%
+%% End of file `elsarticle-template-harv.tex'.
