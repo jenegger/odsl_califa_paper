@@ -173,8 +173,28 @@ In the standard data acquisition (DAQ) configuration, all CALIFA detector hits o
 In the standard R3B clustering approach, the time information $t_i$ is not utilized during the spatial reconstruction of clusters.\newline
 The initial stage of the clustering algorithm begins by sorting all hits in descending order of energy. A user-defined geometric condition, typically a conical cluster shape with a default aperture of $0.5\,\mathrm{rad}$, is applied. This value has been found to provide an optimal compromise between compact high-energy clusters and more diffuse gamma-ray showers.\newline
 The hit with the highest energy defines the seed or center of the first cluster. The algorithm then iterates through the remaining hits and includes each hit in the current cluster if it lies within the specified cone aperture relative to the seed direction. Once the list is fully processed for the current cluster, the next highest-energy unassigned hit becomes the seed of a new cluster. This procedure repeats until no unassigned hits remain.\newline
-\subsection{Data Simulation}\label{s_sec:data_sim}
+\subsection{Simulation Setup}\label{s_sec:data_sim}
+To evaluate and compare the clustering algorithms presented in this work, simulated data are required, as supervised machine learning approaches rely on access to ground truth labels. For this purpose, the R3BROOT framework with a Geant4-based Monte Carlo backend was employed.\newline
+The CALIFA detector geometry used in the simulation corresponds to the configuration implemented in early 2024. At that time, the iPhos region (polar angles $19^\circ$–$43^\circ$) was fully instrumented, while only the forward half of the Barrel region ($43^\circ$–$87^\circ$) was active. The forward-most CEPA region ($7^\circ$–$19^\circ$) was not yet equipped.\newline
+Gamma-ray energies were sampled from a uniform distribution between $0.3\,\mathrm{MeV}$ and $10\,\mathrm{MeV}$. The interaction of the primary gamma rays with the CsI(Tl) scintillation material was modeled using Geant4 transport physics.\newline
+To emulate realistic event topologies, three gamma rays were generated per event, resulting in multiple detector hits. Timing information was coarsely simulated by assigning each primary gamma a random emission time within the $\pm 4\,\mu\mathrm{s}$ event window. The corresponding hit times were then Gaussian-smeared with a standard deviation of $200\,\mathrm{ns}$ to reflect typical electronic channel timing variations.\newline
+The resulting dataset was split into training and test subsets, comprising 13{,}000 and 7{,}000 events, respectively.
+
+
 \subsection{Preformance Metrics}\label{s_sec:metrics}
+To quantitatively assess the performance of the clustering algorithms presented in this work, a set of four custom metrics was defined. Three of these are event-based, while an optional fourth metric evaluates clustering quality on a per-cluster basis:
+\begin{itemize}
+    \item \textbf{True Positive (TP)}: All hits in an event are correctly assigned to their respective clusters.
+    \item \textbf{False Positive (FP)}: At least one hit in an event is incorrectly merged into a cluster it does not belong to.
+    \item \textbf{False Negative (FN)}: At least one hit is not merged into its true cluster and instead forms a spurious cluster.
+    \item \textbf{False Mixed (FM)}: An event is classified as false mixed if it contains both FP and FN characteristics—i.e., at least one hit is wrongly assigned, and at least one true cluster is partially reconstructed.
+\end{itemize}
+In addition, a cluster-based metric is defined:
+\begin{itemize}
+    \item \textbf{Well Reconstructed (WR)}: The ratio of correctly reconstructed clusters to the total number of true clusters in the dataset.
+\end{itemize}
+These metrics allow a comprehensive evaluation of clustering accuracy, robustness, and failure modes.
+
 \subsection{Agglomerative Clustering}\label{s_sec:agglo}
 \subsection{Implementation of Edge Detection NN}\label{s_sec:edge}
 
