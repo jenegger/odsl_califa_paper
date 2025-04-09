@@ -1,0 +1,16 @@
+\begin{thebibliography}{1}
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+\expandafter\ifx\csname href\endcsname\relax
+  \def\href#1#2{#2} \def\path#1{#1}\fi
+
+\bibitem{kalantar2024experiments}
+{Experiments at the Interface of Nuclear, Atomic, and Hadron Physics with FRS
+  at GSI and Super-FRS at FAIR}.
+
+\bibitem{leifels2025status}
+Y.~Leifels, {Status and physics perspectives of FAIR}, IL NUOVO CIMENTO
+  100~(59) (2025) 48.
+
+\end{thebibliography}

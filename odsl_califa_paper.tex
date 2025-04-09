@@ -29,7 +29,10 @@
 %% \documentclass[final,3p,times,authoryear]{elsarticle}
 %% \documentclass[final,3p,times,twocolumn,authoryear]{elsarticle}
 %% \documentclass[final,5p,times,authoryear]{elsarticle}
- \documentclass[final,5p,times,twocolumn,authoryear]{elsarticle}
+
+
+% \documentclass[final,5p,times,twocolumn,authoryear]{elsarticle}
+ \documentclass[final,5p,times,twocolumn]{elsarticle}
 
 %% For including figures, graphicx.sty has been loaded in
 %% elsarticle.cls. If you prefer to use the old commands
@@ -50,7 +53,7 @@
 \newcommand{\kms}{km\,s$^{-1}$}
 \newcommand{\msun}{$M_\odot}
 
-\journal{High Energy Astrophysics}
+\journal{Nuclear Physics A}
 
 
 \begin{document}
@@ -146,7 +149,7 @@ keyword 1 \sep keyword 2 \sep keyword 3 \sep keyword 4
 
 \section{Introduction}
 \label{sec:intro}
-With the advancements in facilities dedicated to the production of radioactive beams at relativistic energies, such as the Facility for Antiproton and Ion Research (FAIR) at GSI, significant progress has been made in the study of exotic nuclei far from stability. FAIR will provide high-intensity relativistic radioactive beams of rare isotopes with energies reaching up to 1 AGeV, enabling investigations in inverse kinematics with full kinematic reconstruction.
+With the advancements in facilities dedicated to the production of radioactive beams at relativistic energies, such as the Facility for Antiproton and Ion Research (FAIR) at GSI, significant progress has been made in the study of exotic nuclei far from stability\cite{kalantar2024experiments}. FAIR will provide high-intensity relativistic radioactive beams of rare isotopes with energies reaching up to 1 AGeV, enabling investigations in inverse kinematics with full kinematic reconstruction\cite{leifels2025status}.
 A key experimental setup designed for this purpose is the Reactions with Relativistic Radioactive Beams (R$^3$B) Setup, which allows for high-resolution particle spectroscopy. This setup serves as a unique tool for unveiling the structure of nuclei and their reaction dynamics with unprecedented precision.\newline
 At the core of the R3B Setup is the CALIFA calorimeter (Calorimeter for the In-Flight Detection of Gamma Rays and Light Charged Particles), a highly segmented detection system composed of more than 2500 CsI(Tl) scintillator crystals that hermetically enclose the target area in the polar angular range of $7^\circ$ to $140^\circ$. This design enables the simultaneous measurement of gamma rays down to 100 keV and light charged particles, such as protons and deuterons, up to several hundred A MeV. To ensure optimal performance, extensive research has been conducted to refine the geometric design, minimize scattering and energy losses due to the holding structure, and develop a dead-time-free data acquisition system capable of handling high-rate experiments. Furthermore, a seamless integration within the R3BRoot framework has been achieved, enabling offline data analysis from the raw data level to the calibrated (cal) level and ultimately to the cluster level, where individual hits are recombined for the final energy reconstruction.\newline
 This study presents the results of applying machine learning-based graph networks to enhance the energy reconstruction of gamma rays in CALIFA. Using simulated Geant4 data, the performance of standard R3B clustering algorithms is compared to an agglomerative clustering model implemented with SciPy and a generic neural network (NN) architecture, demonstrating the potential of machine learning techniques in improving reconstruction accuracy.\newline
@@ -211,11 +214,17 @@ As shown in Fig. \ref{fig:r3b_agglo_metrics}, the agglomerative clustering algor
 \subsection{Implementation of the Edge Detection Neural Network}\label{s_sec:edge}
 To enhance the clustering performance, particularly at the boundaries of hit distributions, a generic neural network (NN) was developed to perform pairwise classification of detector hits. This model is applied either to individual raw hits or to hits pre-clustered via agglomerative clustering, on an event-by-event basis.
 
-The model takes 12 input features for each hit pair $(i, j)$: absolute values of energy $(E_i, E_j)$, polar angle $(\theta_i, \theta_j)$, azimuthal angle $(\phi_i, \phi_j)$, and time $(t_i, t_j)$. Additionally, four differential features are computed: $\Delta E = E_i - E_j$, $\Delta \theta = \theta_i - \theta_j$, $\Delta \phi = \phi_i - \phi_j$, and $\Delta t = t_i - t_j$. These differential inputs are essential for training stability and convergence. In particular, $\Delta \phi$ resolves the discontinuities caused by the periodicity of the azimuthal angle (e.g., distinguishing between $\phi = 355^\circ$ and $\phi = 5^\circ$), which would otherwise introduce large erroneous differences in angular comparisons.
+The model takes 12 input features for each hit pair $(i, j)$: absolute values of energy $(E_i, E_j)$, polar angle $(\theta_i, \theta_j)$, azimuthal angle $(\phi_i, \phi_j)$, and time $(t_i, t_j)$. Additionally, four differential features are computed: $\Delta E = |E_i - E_j|$, $\Delta \theta = |\theta_i - \theta_j|$, $\Delta \phi = |\phi_i - \phi_j|$, and $\Delta t = |t_i - t_j|$. These differential inputs are essential for training stability and convergence. In particular, $\Delta \phi$ resolves the discontinuities caused by the periodicity of the azimuthal angle (e.g., distinguishing between $\phi = 355^\circ$ and $\phi = 5^\circ$), which would otherwise introduce large erroneous differences in angular comparisons.
 
 Of the 12 features, only the hit time is normalized to the $[0, 1]$ interval; all other values are used in their native physical units.
 
-The architecture of the neural network is illustrated in Fig.\,X. The 12-dimensional input vector is passed through a fully connected feed-forward network with one hidden layer of $10^3$ nodes, followed by a ReLU activation. Two additional hidden layers, each with $10^2$ nodes, are applied sequentially. The output layer consists of a single node with a sigmoid activation, yielding a score in the interval $[0, 1]$, where values close to 1 indicate that the hits (or clusters) are likely to originate from the same event cluster.
+The architecture of the neural network is illustrated in Fig. \ref{fig:architecture}. The 12-dimensional input vector is passed through a fully connected feed-forward network with one hidden layer of $10^3$ nodes, followed by a ReLU activation. Two additional hidden layers, each with $10^2$ nodes, are applied sequentially. The output layer consists of a single node with a sigmoid activation, yielding a score in the interval $[0, 1]$, where values close to 1 indicate that the hits (or clusters) are likely to originate from the same event cluster.
+\begin{figure}[!htb]
+	\centering 
+	\includegraphics[width=0.4\textwidth]{architecture.png}	
+	\caption{Schematic architecture of the edge detection neural network. The model consists of three fully connected hidden layers. The final output layer comprises a single node with a sigmoid activation function, yielding a prediction score in the range $[0, 1]$. Values closer to 1 indicate that the input hit pair originates from the same physical cluster and should be merged, while values near 0 suggest they should remain separate.}
+	\label{fig:architecture}%
+\end{figure}
 
 Training is performed using the binary cross-entropy loss function and stochastic gradient descent (SGD) with a fixed learning rate of $5 \times 10^{-3}$. Given the moderate size of the training dataset, full-batch training is employed without mini-batching. The model is trained for $8 \times 10^5$ epochs. After training, a tunable threshold is applied to the prediction scores to classify hit pairs. Final clusters are then formed by grouping all connected hit pairs based on the predicted associations.
 
@@ -299,8 +308,8 @@ Thanks to ...
 %% If you have bibdatabase file and want bibtex to generate the
 %% bibitems, please use
 %%
-\bibliographystyle{elsarticle-harv} 
-\bibliography{example}
+\bibliographystyle{elsarticle-num} 
+\bibliography{example.bib}
 
 %% else use the following coding to input the bibitems directly in the
 %% TeX file.
