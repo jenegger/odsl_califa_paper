@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{\texttt{#1}}\fi
 \expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
@@ -12,5 +12,48 @@
 \bibitem{leifels2025status}
 Y.~Leifels, {Status and physics perspectives of FAIR}, IL NUOVO CIMENTO
   100~(59) (2025) 48.
+
+\bibitem{cortina2014califa}
+D.~Cortina-Gil, H.~Alvarez-Pol, T.~Aumann, V.~Avdeichikov, M.~Bendel,
+  J.~Benlliure, D.~Bertini, A.~Bezbakh, T.~Bloch, M.~B{\"o}hmer, et~al.,
+  {CALIFA, a Dedicated Calorimeter for the R3B/FAIR}, Nuclear Data Sheets 120
+  (2014) 99--101.
+
+\bibitem{alvarez2014performance}
+H.~Alvarez-Pol, N.~Ashwood, T.~Aumann, D.~Bertini, P.~Cabanelas, E.~Casarejos,
+  J.~Cederkall, D.~Cortina-Gil, P.~D. Fern{\'a}ndez, I.~Dur{\'a}n, et~al.,
+  {Performance analysis for the CALIFA Barrel calorimeter of the R3B
+  experiment}, Nuclear Instruments and Methods in Physics Research Section A:
+  Accelerators, Spectrometers, Detectors and Associated Equipment 767 (2014)
+  453--466.
+
+\bibitem{ledigital}
+T.~Le~Bleis, M.~Bendel, R.~Gernh{\"a}user, W.~Henning, P.~Klenze,
+  R.~Kr{\"u}cken, M.~Winkel, {A Digital Readout for CALIFA}.
+
+\bibitem{bertini2011r3broot}
+D.~Bertini, {R3BRoot, simulation and analysis framework for the R3B experiment
+  at FAIR}, in: Journal of Physics: Conference Series, Vol. 331, IOP
+  Publishing, 2011, p. 032036.
+
+\bibitem{virtanen2020scipy}
+P.~Virtanen, R.~Gommers, T.~E. Oliphant, M.~Haberland, T.~Reddy, D.~Cournapeau,
+  E.~Burovski, P.~Peterson, W.~Weckesser, J.~Bright, et~al., {SciPy 1.0:
+  fundamental algorithms for scientific computing in Python}, Nature methods
+  17~(3) (2020) 261--272.
+
+\bibitem{seltzer2010xcom}
+S.~Seltzer, {XCOM-Photon Cross Sections Database, NIST Standard Reference
+  Database 8}, \url{http://www.nist.gov/pml/data/xcom/index.cfm}, accessed:
+  2025-04-10 (2010).
+
+\bibitem{klenze2024gamma}
+P.~Klenze, Gamma detection with califa, Ph.D. thesis, Technische
+  Universit{\"a}t M{\"u}nchen (2024).
+
+\bibitem{klein1929streuung}
+O.~Klein, Y.~Nishina, {{\"U}ber die Streuung von Strahlung durch freie
+  Elektronen nach der neuen relativistischen Quantendynamik von Dirac},
+  Zeitschrift f{\"u}r Physik 52~(11) (1929) 853--868.
 
 \end{thebibliography}

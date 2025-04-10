@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2023.5.31)  9 APR 2025 17:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2023.5.31)  10 APR 2025 11:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -610,15 +610,15 @@ LaTeX Font Info:    Try loading font information for U+txsyc on input line 142.
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxsyc.fd
 File: utxsyc.fd 2000/12/15 v3.1
 )
-Underfull \hbox (badness 1360) in paragraph at lines 152--156
-\OT1/txr/m/n/10 com-posed of more than 2500 CsI(Tl) scin-til-la-tor crys-tals
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 152--156
 
  []
 
+<photon_absorbtion_csi.png, id=1, 999.735pt x 718.685pt>
+File: photon_absorbtion_csi.png Graphic file (type png)
+<use photon_absorbtion_csi.png>
+Package pdftex.def Info: photon_absorbtion_csi.png  used on input line 163.
+(pdftex.def)             Requested size: 208.79681pt x 150.09486pt.
 Missing character: There is no â in font txr!
 Missing character: There is no € in font txr!
 Missing character: There is no “ in font txr!
@@ -628,73 +628,88 @@ Missing character: There is no ™ in font txr!
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
-]
-LaTeX Font Info:    Try loading font information for OMS+txr on input line 171.
+ <./photon_absorbtion_csi.png>]
+LaTeX Font Info:    Try loading font information for OMS+txr on input line 176.
 
-
-(/usr/share/texlive/texmf-dist/tex/latex/txfonts/omstxr.fd
+ (/usr/share/texlive/texmf-dist/tex/latex/txfonts/omstxr.fd
 File: omstxr.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `OMS/txr/m/n' in size <10> not available
-(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 171.
+(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 176.
 
-Underfull \hbox (badness 10000) in paragraph at lines 176--179
+Underfull \hbox (badness 10000) in paragraph at lines 181--184
 
  []
 
 Missing character: There is no â in font txr!
 Missing character: There is no € in font txr!
-Missing character: There is no “ in font txr!
-Missing character: There is no â in font txr!
-Missing character: There is no € in font txr!
-Missing character: There is no “ in font txr!
-Missing character: There is no â in font txr!
-Missing character: There is no € in font txr!
-Missing character: There is no “ in font txr!
-Missing character: There is no â in font txr!
-Missing character: There is no € in font txr!
 Missing character: There is no ” in font txr!
-<r3b_vs_agglo_metrics.png, id=14, 570.933pt x 286.1892pt>
+<r3b_vs_agglo_metrics.png, id=17, 570.933pt x 286.1892pt>
 File: r3b_vs_agglo_metrics.png Graphic file (type png)
 <use r3b_vs_agglo_metrics.png>
-Package pdftex.def Info: r3b_vs_agglo_metrics.png  used on input line 207.
+Package pdftex.def Info: r3b_vs_agglo_metrics.png  used on input line 212.
 (pdftex.def)             Requested size: 208.79681pt x 104.66124pt.
 
-Underfull \hbox (badness 1297) in paragraph at lines 202--212
+Underfull \hbox (badness 1297) in paragraph at lines 207--217
 []\OT1/txr/m/n/10 To in-cor-po-rate tem-po-ral in-for-ma-tion into the clus-ter
 -ing
  []
 
 [2]
-<architecture.png, id=20, 583.17876pt x 432.61626pt>
+<architecture.png, id=22, 583.17876pt x 432.61626pt>
 File: architecture.png Graphic file (type png)
 <use architecture.png>
-Package pdftex.def Info: architecture.png  used on input line 224.
+Package pdftex.def Info: architecture.png  used on input line 229.
 (pdftex.def)             Requested size: 208.79681pt x 154.89018pt.
- (./odsl_califa_paper.bbl) [3 <./r3b_vs_agglo_metrics.png> <./architecture.png>
+ [3 <./r3b_vs_agglo_metrics.png> <./architecture.png>]
+(./odsl_califa_paper.bbl
+Underfull \hbox (badness 1454) in paragraph at lines 31--33
+[]\OT1/txr/m/n/8 T. Le Bleis, M. Ben-del, R. Gernh[]auser, W. Hen-ning, P. Klen
+ze,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 46--49
+[]\OT1/txr/m/n/8 S. Seltzer, XCOM-Photon Cross Sec-tions
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 46--49
+\OT1/txr/m/n/8 Database, NIST Stan-dard Ref-er-ence Database 8,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 46--49
+\OT1/cmtt/m/n/8 http://www.nist.gov/pml/data/xcom/index.cfm\OT1/txr/m/n/8 , ac-
+cessed:
+ []
+
+) [4
+
 ] (./odsl_califa_paper.aux) ) 
 Here is how much of TeX's memory you used:
- 3559 strings out of 492982
- 47121 string characters out of 6134896
- 214259 words of memory out of 5000000
- 7023 multiletter control sequences out of 15000+600000
- 37361 words of font info for 98 fonts, out of 8000000 for 9000
+ 3596 strings out of 492982
+ 47915 string characters out of 6134896
+ 215388 words of memory out of 5000000
+ 7058 multiletter control sequences out of 15000+600000
+ 37529 words of font info for 99 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,6n,30p,1075b,212s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,6n,30p,1188b,212s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/bas
 e/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/rtxb.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/txfonts/rtxi.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/txfonts/rtxr.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/txfonts/txsy.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb
-8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on odsl_califa_paper.pdf (3 pages, 216375 bytes).
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/txfonts/rtxb.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/txfonts/rtxi.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/txfonts/rtxmi.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/txfonts/rtxr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/tx
+fonts/txsy.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on odsl_califa_paper.pdf (4 pages, 267850 bytes).
 PDF statistics:
- 60 PDF objects out of 1000 (max. 8388607)
- 40 compressed objects within 1 object stream
+ 69 PDF objects out of 1000 (max. 8388607)
+ 45 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
