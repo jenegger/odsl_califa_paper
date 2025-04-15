@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.3.24)  15 APR 2025 12:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.3.24)  15 APR 2025 14:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -643,7 +643,7 @@ Underfull \hbox (badness 1454) in paragraph at lines 31--33
 ze,
  []
 
-
+[4]
 Underfull \hbox (badness 10000) in paragraph at lines 46--49
 []\OT1/txr/m/n/8 S. Seltzer, XCOM-Photon Cross Sec-tions
  []
@@ -659,31 +659,33 @@ Underfull \hbox (badness 10000) in paragraph at lines 46--49
 cessed:
  []
 
-) [4] (./odsl_califa_paper.aux) ) 
+) [5
+
+] (./odsl_califa_paper.aux) ) 
 Here is how much of TeX's memory you used:
  4822 strings out of 480121
- 74098 string characters out of 5892160
- 459762 words of memory out of 5000000
+ 74103 string characters out of 5892160
+ 463762 words of memory out of 5000000
  22704 multiletter control sequences out of 15000+600000
  503119 words of font info for 113 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 70i,8n,76p,1188b,232s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips
-/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt
-10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/rtcxr.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/txfonts/rtxb.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/txfonts/rtxi.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/txfonts/rtxmi.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/txfonts/rtxr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/t
-xsy.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/s
-hare/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on odsl_califa_paper.pdf (4 pages, 282360 bytes).
+ 70i,8n,76p,1188b,265s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/bas
+e/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/txfonts/rtcxr.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/txfonts/rtxb.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/txfonts/rtxi.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/txfonts/rtxmi.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/t
+xfonts/rtxr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsy.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on odsl_califa_paper.pdf (5 pages, 284850 bytes).
 PDF statistics:
- 85 PDF objects out of 1000 (max. 8388607)
- 48 compressed objects within 1 object stream
+ 88 PDF objects out of 1000 (max. 8388607)
+ 50 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
