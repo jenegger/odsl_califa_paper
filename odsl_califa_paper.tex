@@ -276,25 +276,43 @@ The edge detection NN was implemented and tested in three configurations:
 %\end{equation}
 
 \section{Results}\label{sec:results}
+\begin{table}[h!]
 \begin{center}
-\begin{tabular}{||c| c| c |c | c| c||} 
+\begin{tabular}{||c| c| c |c | c|| c|}
  \hline
  Clustering Model & TP & FP & FN & FM & WR \\ [0.5ex] 
  \hline\hline
- R3B Standard Clustering & 6 & 87 & 7 & 8 & 6 \\ 
+ R3B Standard Clustering & 60.6 & 5.3 & 25.2 & 8.9 & 80.4 \\ 
  \hline
- Agglomerative Clustering & 6 & 87 & 7 & 8 & 6 \\ 
+ Agglomerative Clustering & 62.8 & 3.3 & 32.0 & 1.9 & 84.1 \\ 
  \hline
- Edge Clustering (no time) & 6 & 87 & 7 & 8 & 6 \\ 
+ Edge Clustering (no time) & 63.4 & 7.2 & 24.8 & 4.6 & 82.4 \\ 
  \hline
- Edge Clustering (with time) & 6 & 87 & 7 & 8 & 6 \\ 
+ Edge Clustering (with time) & 74.7 & 3.4 & 20.5 & 1.4 & 89.2 \\ 
  \hline
- R3B + Edge (no time) & 6 & 87 & 7 & 8 & 6 \\ 
+ R3B + Edge (no time) & 67.4 & 8.5 & 16.0 & 8.0 & 82.2 \\ 
  \hline
- Agglo + Edge (with time) & 6 & 87 & 7 & 8 & 6 \\
+ Agglo + Edge (with time) & 81.3 & 5.1 & 12.2 & 1.5 & 91.0 \\
  \hline
 \end{tabular}
 \end{center}
+%\caption{Overview of the resulting performance metrics, as introduced in subsection \ref{s_sec:metrics}, for the various clustering models.The models \textit{R3B Standard Clustering},\textit{Edge Clustering (no time)},\textit{R3B + Edge (no time)} use the angular and energy hitwise information, the models \textit{Agglomerative Clustering},\textit{Edge Clustering (with time)} and \textit{Agglo + Edge (with time)} use in addition also the hit-time for cluster reconstruction.}
+\caption{Summary of performance metrics as defined in Subsection~\ref{s_sec:metrics}, evaluated for the different clustering algorithms. The models \textit{R3B Standard Clustering}, \textit{Edge Clustering (no time)}, and \textit{R3B + Edge (no time)} utilize angular and energy information on a per-hit basis for cluster reconstruction. In contrast, \textit{Agglomerative Clustering}, \textit{Edge Clustering (with time)}, and \textit{Agglo + Edge (with time)} additionally incorporate time-of-hit information into the clustering process.}
+\label{tab:results}
+\end{table}
+The results of this study are summarized in Table~\ref{tab:results}, where the ordering of the clustering models reflects the methodological workflow followed during the investigation. The initial comparison was conducted between the baseline \textit{R3B Standard Clustering} algorithm and a generic \textit{Agglomerative Clustering} model that incorporates time-of-hit information.\newline
+The agglomerative model shows improved performance over the R3B baseline in terms of both event-level true positives (TP) and cluster-level (WR) values. However, it exhibits inferior performance with respect to the false negative (FN) rate, indicating a tendency to miss relevant hits during reconstruction. This limitation motivated the development of an Edge Detection Neural Network, initially evaluated as a standalone clustering algorithm and subsequently integrated into the agglomerative framework, yielding the combined model denoted as \textit{Agglo + Edge}.\newline
+The \textit{Agglo + Edge} model demonstrates superior performance across all evaluated metrics, achieving an overall correct reconstruction rate of 81.3\%, significantly outperforming the \textit{R3B Standard Clustering} algorithm, which reaches 60.6\%.\newline
+To further explore the capabilities of neural network-based clustering approaches, two additional models were evaluated: a standalone \textit{Edge Detection Neural Network} and a hybrid approach combining \textit{R3B Standard Clustering} with edge-based postprocessing (\textit{R3B + Edge}). Notably, both of these models operate without incorporating time-of-hit information, similar to the R3B baseline. Nonetheless, both outperform the \textit{R3B Standard Clustering} in all reported metrics, underscoring the potential of edge-based neural network models for improving cluster reconstruction in high-granularity detector systems.
+
+
+%r3b,0,0.804,0.606,0.053,0.252,0.089
+%agglo,0,0.841,0.628,0.033,0.320,0.019
+%edge_no_time,0,0.824,0.634,0.072,0.248,0.046
+%edge_with_time,0,0.892,0.747,0.034,0.205,0.014
+%agglo_edge,0,0.910,0.813,0.051,0.122,0.015
+%r3b_edge,0,0.822,0.674,0.085,0.160,0.080
+
 
 %\begin{table}
 %\begin{tabular}{l c c c} 

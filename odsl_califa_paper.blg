@@ -1,47 +1,49 @@
-This is BibTeX, Version 0.99d (TeX Live 2017/Debian)
-Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+This is BibTeX, Version 0.99d (TeX Live 2022/dev/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: odsl_califa_paper.aux
 The style file: elsarticle-num.bst
-Database file #1: literature.bib.bib
-I was expecting a `,' or a `}'---line 3 of file literature.bib.bib
+Database file #1: literature.bib
+I was expecting a `,' or a `}'---line 3 of file literature.bib
  :   
  :   author={Kalantar-Nayestanaki, Nasser and Scheidenberger, Christoph},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
 Warning--empty author in kalantar2024experiments
 Warning--empty journal in kalantar2024experiments
+Warning--empty year in kalantar2024experiments
 Warning--empty journal in ledigital
+Warning--empty year in ledigital
 Warning--can't use both volume and number fields in bertini2011r3broot
 You've used 10 entries,
-            2937 wiz_defined-function locations,
-            731 strings with 7205 characters,
-and the built_in function-call counts, 2929 in all, are:
+            2952 wiz_defined-function locations,
+            732 strings with 7207 characters,
+and the built_in function-call counts, 2985 in all, are:
 = -- 246
 > -- 148
 < -- 2
 + -- 56
 - -- 46
-* -- 207
-:= -- 442
+* -- 213
+:= -- 445
 add.period$ -- 10
 call.type$ -- 10
 change.case$ -- 11
 chr.to.int$ -- 0
-cite$ -- 14
-duplicate$ -- 87
-empty$ -- 292
+cite$ -- 16
+duplicate$ -- 91
+empty$ -- 307
 format.name$ -- 51
-if$ -- 728
+if$ -- 743
 int.to.chr$ -- 0
 int.to.str$ -- 10
 missing$ -- 8
 newline$ -- 38
 num.names$ -- 9
-pop$ -- 59
+pop$ -- 61
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 192
+skip$ -- 199
 stack$ -- 0
 substring$ -- 117
 swap$ -- 22
@@ -49,7 +51,7 @@ text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 4
+warning$ -- 6
 while$ -- 19
 width$ -- 12
 write$ -- 86
