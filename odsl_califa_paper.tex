@@ -276,7 +276,25 @@ The edge detection NN was implemented and tested in three configurations:
 %\end{equation}
 
 \section{Results}\label{sec:results}
-
+\begin{center}
+\begin{tabular}{||c| c| c |c | c| c||} 
+ \hline
+ Clustering Model & TP & FP & FN & FM & WR \\ [0.5ex] 
+ \hline\hline
+ R3B Standard Clustering & 6 & 87 & 7 & 8 & 6 \\ 
+ \hline
+ Agglomerative Clustering & 6 & 87 & 7 & 8 & 6 \\ 
+ \hline
+ Edge Clustering (no time) & 6 & 87 & 7 & 8 & 6 \\ 
+ \hline
+ Edge Clustering (with time) & 6 & 87 & 7 & 8 & 6 \\ 
+ \hline
+ R3B + Edge (no time) & 6 & 87 & 7 & 8 & 6 \\ 
+ \hline
+ Agglo + Edge (with time) & 6 & 87 & 7 & 8 & 6 \\
+ \hline
+\end{tabular}
+\end{center}
 
 %\begin{table}
 %\begin{tabular}{l c c c} 
