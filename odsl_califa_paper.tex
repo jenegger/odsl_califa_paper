@@ -113,7 +113,9 @@
 
 \begin{abstract}
 %% Text of abstract
-ABSTRACT... work in progress ...
+The R\textsuperscript{3}B experiment at FAIR studies nuclear reactions induced by high-energy radioactive beams. A key detector, the CALIFA calorimeter, consists of 2544 CsI(Tl) scintillator crystals designed to detect gamma rays and light charged particles with high angular resolution and Doppler correction.\newline
+Precise cluster reconstruction from sparse hit patterns is essential for accurate energy determination. The current algorithm uses fixed cluster sizes and geometric thresholds. To enhance performance, it was compared with machine learning techniques such as Agglomerative Clustering, incorporating previously unused timing information from CALIFA. Additional improvements were explored using an Edge Detection Neural Network.\newline
+This study, based on Geant4 simulations, demonstrates notable gains in reconstruction accuracy, showcasing the potential of machine learning in high-energy nuclear physics experiments.
 \end{abstract}
 
 %%Graphical abstract
@@ -341,7 +343,7 @@ However, a consideration of computational complexity is essential. Both the \tex
 Future work should focus on optimizing the Edge Detection Neural Network for speed and scalability. Additionally, transformer-based models\cite{vaswani2017attention}—capable of analyzing full event topologies—may offer further improvements in clustering accuracy by capturing complex, global features.
 
 \section*{Acknowledgements}
-Thanks to ...
+The work was supported by BMBF 05P24WO2 and Excellence Cluster ORIGINS from the DFG (Excellence Strategy EXC-2094-390783311).
 
 %% The Appendices part is started with the command \appendix;
 %% appendix sections are then done as normal sections
