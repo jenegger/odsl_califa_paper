@@ -14,45 +14,46 @@ Warning--empty year in kalantar2024experiments
 Warning--empty journal in ledigital
 Warning--empty year in ledigital
 Warning--can't use both volume and number fields in bertini2011r3broot
-You've used 10 entries,
+Warning--empty pages in kolanoski2016teilchendetektoren
+You've used 18 entries,
             2952 wiz_defined-function locations,
-            732 strings with 7207 characters,
-and the built_in function-call counts, 2985 in all, are:
-= -- 246
-> -- 148
-< -- 2
-+ -- 56
-- -- 46
-* -- 213
-:= -- 445
-add.period$ -- 10
-call.type$ -- 10
-change.case$ -- 11
+            780 strings with 8978 characters,
+and the built_in function-call counts, 5902 in all, are:
+= -- 503
+> -- 270
+< -- 6
++ -- 102
+- -- 84
+* -- 414
+:= -- 825
+add.period$ -- 18
+call.type$ -- 18
+change.case$ -- 18
 chr.to.int$ -- 0
-cite$ -- 16
-duplicate$ -- 91
-empty$ -- 307
-format.name$ -- 51
-if$ -- 743
+cite$ -- 25
+duplicate$ -- 193
+empty$ -- 634
+format.name$ -- 98
+if$ -- 1500
 int.to.chr$ -- 0
-int.to.str$ -- 10
-missing$ -- 8
-newline$ -- 38
-num.names$ -- 9
-pop$ -- 61
+int.to.str$ -- 18
+missing$ -- 18
+newline$ -- 62
+num.names$ -- 17
+pop$ -- 127
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 199
+skip$ -- 391
 stack$ -- 0
-substring$ -- 117
-swap$ -- 22
-text.length$ -- 2
+substring$ -- 280
+swap$ -- 52
+text.length$ -- 6
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 6
-while$ -- 19
-width$ -- 12
-write$ -- 86
+warning$ -- 7
+while$ -- 43
+width$ -- 20
+write$ -- 152
 (There was 1 error message)

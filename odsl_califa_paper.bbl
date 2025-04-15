@@ -42,18 +42,57 @@ P.~Virtanen, R.~Gommers, T.~E. Oliphant, M.~Haberland, T.~Reddy, D.~Cournapeau,
   fundamental algorithms for scientific computing in Python}, Nature methods
   17~(3) (2020) 261--272.
 
+\bibitem{kolanoski2016teilchendetektoren}
+H.~Kolanoski, N.~Wermes, Teilchendetektoren, Springer, 2016, Ch. 13.5.2.
+
 \bibitem{seltzer2010xcom}
 S.~Seltzer, {XCOM-Photon Cross Sections Database, NIST Standard Reference
   Database 8}, \url{http://www.nist.gov/pml/data/xcom/index.cfm}, accessed:
   2025-04-10 (2010).
 
-\bibitem{klenze2024gamma}
-P.~Klenze, Gamma detection with califa, Ph.D. thesis, Technische
-  Universit{\"a}t M{\"u}nchen (2024).
-
 \bibitem{klein1929streuung}
 O.~Klein, Y.~Nishina, {{\"U}ber die Streuung von Strahlung durch freie
   Elektronen nach der neuen relativistischen Quantendynamik von Dirac},
   Zeitschrift f{\"u}r Physik 52~(11) (1929) 853--868.
+
+\bibitem{lipinski2011white}
+M.~Lipi{\'n}ski, T.~W{\l}ostowski, J.~Serrano, P.~Alvarez, White rabbit: A ptp
+  application for robust sub-nanosecond synchronization, in: 2011 IEEE
+  International Symposium on Precision Clock Synchronization for Measurement,
+  Control and Communication, IEEE, 2011, pp. 25--30.
+
+\bibitem{agostinelli2003geant4}
+S.~Agostinelli, J.~Allison, K.~a. Amako, J.~Apostolakis, H.~Araujo, P.~Arce,
+  M.~Asai, D.~Axen, S.~Banerjee, G.~Barrand, et~al., Geant4—a simulation
+  toolkit, Nuclear instruments and methods in physics research section A:
+  Accelerators, Spectrometers, Detectors and Associated Equipment 506~(3)
+  (2003) 250--303.
+
+\bibitem{nielsen2016hierarchical}
+F.~Nielsen, F.~Nielsen, Hierarchical clustering, Introduction to HPC with MPI
+  for Data Science (2016) 195--211.
+
+\bibitem{mannor2005cross}
+S.~Mannor, D.~Peleg, R.~Rubinstein, The cross entropy method for
+  classification, in: Proceedings of the 22nd international conference on
+  Machine learning, 2005, pp. 561--568.
+
+\bibitem{de2005tutorial}
+P.-T. De~Boer, D.~P. Kroese, S.~Mannor, R.~Y. Rubinstein, A tutorial on the
+  cross-entropy method, Annals of operations research 134 (2005) 19--67.
+
+\bibitem{newton2018recent}
+D.~Newton, R.~Pasupathy, F.~Yousefian, Recent trends in stochastic gradient
+  descent for machine learning and big data, in: 2018 Winter Simulation
+  Conference (WSC), IEEE, 2018, pp. 366--380.
+
+\bibitem{sieranoja2025fast}
+S.~Sieranoja, P.~Fr{\"a}nti, Fast agglomerative clustering using approximate
+  traveling salesman solutions, Journal of Big Data 12~(1) (2025) 21.
+
+\bibitem{vaswani2017attention}
+A.~Vaswani, N.~Shazeer, N.~Parmar, J.~Uszkoreit, L.~Jones, A.~N. Gomez,
+  {\L}.~Kaiser, I.~Polosukhin, Attention is all you need, Advances in neural
+  information processing systems 30 (2017).
 
 \end{thebibliography}

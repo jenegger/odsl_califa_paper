@@ -51,7 +51,7 @@
 
 %% You might want to define your own abbreviated commands for common used terms, e.g.:
 \newcommand{\kms}{km\,s$^{-1}$}
-\newcommand{\msun}{$M_\odot}
+%\newcommand{\msun}{$M_\odot}
 
 \journal{Nuclear Physics A}
 
@@ -157,11 +157,11 @@ This study presents the results of applying machine learning-based graph network
 \section{Methodology}
 \label{sec:metho}
 \subsection{Challenges in Relativistic Gamma Spectroscopy}\label{s_sec:gamma_spec}
-While the detection of light charged particles such as protons typically yields well-localized energy deposits in segmented detector arrays, the detection of gamma rays emitted from reaction products moving at relativistic velocities ($\beta \approx 0.8$) presents significant challenges. These difficulties primarily arise from the inherently sparse and spatially distributed energy deposits resulting from the interaction mechanisms of photons with the scintillator material (see Fig. \ref{fig:csi}).\newline
+While the detection of light charged particles such as protons typically yields well-localized energy deposits in segmented detector arrays, the detection of gamma rays emitted from reaction products moving at relativistic velocities ($\beta \approx 0.8$) presents significant challenges. These difficulties primarily arise from the inherently sparse and spatially distributed energy deposits resulting from the interaction mechanisms of photons with the scintillator material (see Fig. \ref{fig:csi})\cite{kolanoski2016teilchendetektoren}.\newline
 \begin{figure}[!htb]
 	\centering 
-	\includegraphics[width=0.4\textwidth]{photon_absorbtion_csi.png}	
-	\caption{Mass attenuation coefficients for photons in CsI in the range from $100$ keV to $20$ MeV according to XCOM database\cite{seltzer2010xcom}. Figure taken from \cite{klenze2024gamma}.} 
+	\includegraphics[width=0.49\textwidth]{csi_attuenuation.png}	
+	\caption{Mass attenuation coefficients for photons in CsI in the range from $100$ keV to $20$ MeV according to XCOM database\cite{seltzer2010xcom}.} 
 	\label{fig:csi}%
 \end{figure}
 At photon energies below approximately $300$ keV, the photoelectric effect dominates the interaction cross-section. As the photon energy increases, Compton scattering becomes the predominant process. For photon energies exceeding the pair production threshold ($E_{\gamma} > 2m_{e}c^2 \approx 1.022 MeV$), electron-positron pair creation becomes possible and is the dominant interaction mechanism above $\backsim 6$ MeV.\newline
@@ -176,13 +176,13 @@ In the standard data acquisition (DAQ) configuration, all CALIFA detector hits o
     \item Energy deposit $E_i$
     \item Polar angle $\theta_i$
     \item Azimuthal angle $\phi_i$
-    \item Time stamp $t_i$ (White Rabbit time)
+    \item Time stamp $t_i$ (via White Rabbit  Precision Time Protocol\cite{lipinski2011white})
 \end{itemize}
 In the standard R3B clustering approach, the time information $t_i$ is not utilized during the spatial reconstruction of clusters.\newline
 The initial stage of the clustering algorithm begins by sorting all hits in descending order of energy. A user-defined geometric condition, typically a conical cluster shape with a default aperture of $0.5\,\mathrm{rad}$, is applied. This value has been found to provide an optimal compromise between compact high-energy clusters and more diffuse gamma-ray showers.\newline
 The hit with the highest energy defines the seed or center of the first cluster. The algorithm then iterates through the remaining hits and includes each hit in the current cluster if it lies within the specified cone aperture relative to the seed direction. Once the list is fully processed for the current cluster, the next highest-energy unassigned hit becomes the seed of a new cluster. This procedure repeats until no unassigned hits remain.\newline
 \subsection{Simulation Setup}\label{s_sec:data_sim}
-To evaluate and compare the clustering algorithms presented in this work, simulated data are required, as supervised machine learning approaches rely on access to ground truth labels. For this purpose, the R3BROOT framework with a Geant4-based Monte Carlo backend was employed.\newline
+To evaluate and compare the clustering algorithms presented in this work, simulated data are required, as supervised machine learning approaches rely on access to ground truth labels. For this purpose, the R3BROOT framework with a Geant4-based Monte Carlo \cite{agostinelli2003geant4} backend was employed.\newline
 The CALIFA detector geometry used in the simulation corresponds to the configuration implemented in early 2024. At that time, the iPhos region (polar angles $19^\circ$ -- $43^\circ$) was fully instrumented, while only the forward half of the Barrel region ($43^\circ$ -- $87^\circ$) was active. The forward-most CEPA region ($7^\circ$ -- $19^\circ$) was not yet equipped.\newline
 Gamma-ray energies were sampled from a uniform distribution between $0.3\,\mathrm{MeV}$ and $10\,\mathrm{MeV}$. The interaction of the primary gamma rays with the CsI(Tl) scintillation material was modeled using Geant4 transport physics.\newline
 To emulate realistic event topologies, three gamma rays were generated per event, resulting in multiple detector hits. Timing information was coarsely simulated by assigning each primary gamma a random emission time within the $\pm 4\,\mu\mathrm{s}$ event window. The corresponding hit times were then Gaussian-smeared with a standard deviation of $200\,\mathrm{ns}$ to reflect typical electronic channel timing variations.\newline
@@ -205,7 +205,7 @@ These metrics allow a comprehensive evaluation of clustering accuracy, robustnes
 
 \subsection{Agglomerative Clustering}\label{s_sec:agglo}
 To incorporate temporal information into the clustering process---unlike the standard R3B algorithm, which omits it---a generic, well-established method was adopted: agglomerative clustering as implemented in the \texttt{fclusterdata} function from the \texttt{SciPy} library. This approach enables flat clustering based on hierarchical linkage with a user-defined threshold.\newline
-Each hit was mapped into spherical coordinates \((\theta, \phi, r)\), where the radial component \(r\) encodes time information. To ensure non-negative radii, the acquisition time window of \(\pm 4\,\mu\mathrm{s}\) was shifted by \(+4.5\,\mu\mathrm{s}\). The Ward linkage criterion, which minimizes intra-cluster variance, was employed as the distance metric.\newline
+Each hit was mapped into spherical coordinates \((\theta, \phi, r)\), where the radial component \(r\) encodes time information. To ensure non-negative radii, the acquisition time window of \(\pm 4\,\mu\mathrm{s}\) was shifted by \(+4.5\,\mu\mathrm{s}\). The Ward linkage criterion \cite{nielsen2016hierarchical}, which minimizes intra-cluster variance, was employed as the distance metric.\newline
 The threshold parameter was optimized to yield the best performance according to the custom-defined metrics. A comparison between the standard R3B clustering and the agglomerative method is presented in Fig.\ref{fig:r3b_agglo_metrics}.
 \begin{figure}[!htb]
 	\centering 
@@ -231,7 +231,7 @@ The architecture of the neural network is illustrated in Fig. \ref{fig:architect
 	\label{fig:architecture}%
 \end{figure}
 
-Training is performed using the binary cross-entropy loss function and stochastic gradient descent (SGD) with a fixed learning rate of $5 \times 10^{-3}$. Given the moderate size of the training dataset, full-batch training is employed without mini-batching. The model is trained for $8 \times 10^5$ epochs. After training, a tunable threshold is applied to the prediction scores to classify hit pairs. Final clusters are then formed by grouping all connected hit pairs based on the predicted associations.
+Training is performed using the binary cross-entropy loss function\cite{mannor2005cross}\cite{de2005tutorial} and stochastic gradient descent (SGD)\cite{newton2018recent} with a fixed learning rate of $5 \times 10^{-3}$. Given the moderate size of the training dataset, full-batch training is employed without mini-batching. The model is trained for $8 \times 10^5$ epochs. After training, a tunable threshold is applied to the prediction scores to classify hit pairs. Final clusters are then formed by grouping all connected hit pairs based on the predicted associations.
 
 The edge detection NN was implemented and tested in three configurations:
 
@@ -337,8 +337,8 @@ The results presented in the previous section clearly demonstrate that high-leve
 It is noteworthy that even the models, which do not utilize time-of-hit information (similarly to the \textit{R3B Standard Clustering}), outperform the baseline method. This underscores the general effectiveness of neural network-based methods in extracting structural features from detector data.\newline
 The inclusion of time-of-hit information proves to be a critical factor for enhancing clustering performance. As this observable is typically available for CALIFA at R$^3$B, the results of this study support the recommendation to incorporate it into the reconstruction pipeline wherever possible.\newline
 Furthermore, these findings are intended to encourage broader adoption of advanced machine learning techniques by experimental groups, particularly in setups involving highly granular detectors. Such tools offer substantial performance benefits and can support more precise event reconstruction.\newline
-However, a consideration of computational complexity is essential. Both the \textit{R3B Standard Clustering} and \textit{Agglomerative Clustering} methods exhibit a time complexity of $\mathcal{O}(N^2)$, where $N$ is the number of hits. The proposed \textit{Edge Detection Neural Network}, whether used in standalone mode or as an auxiliary module (\textit{R3B + Edge}, \textit{Agglo + Edge}), requires additional computational resources. In particular, the neural network involves large matrix operations—for instance, the second fully connected layer with $10^3$ input and $10^2$ output features—whose computational cost dominates for events with $N \sim \mathcal{O}(10^1)$. Consequently, the current implementation is not suitable for online processing and is better suited for detailed offline analyses, where accuracy is prioritized over execution speed.\newline
-Future work should focus on optimizing the Edge Detection Neural Network for speed and scalability. Additionally, transformer-based models—capable of analyzing full event topologies—may offer further improvements in clustering accuracy by capturing complex, global features.
+However, a consideration of computational complexity is essential. Both the \textit{R3B Standard Clustering} and \textit{Agglomerative Clustering} methods exhibit a time complexity of $\mathcal{O}(N^2)$\cite{sieranoja2025fast}, where $N$ is the number of hits. The proposed \textit{Edge Detection Neural Network}, whether used in standalone mode or as an auxiliary module (\textit{R3B + Edge}, \textit{Agglo + Edge}), requires additional computational resources. In particular, the neural network involves large matrix operations—for instance, the second fully connected layer with $10^3$ input and $10^2$ output features—whose computational cost dominates for events with $N \sim \mathcal{O}(10^1)$. Consequently, the current implementation is not suitable for online processing and is better suited for detailed offline analyses, where accuracy is prioritized over execution speed.\newline
+Future work should focus on optimizing the Edge Detection Neural Network for speed and scalability. Additionally, transformer-based models\cite{vaswani2017attention}—capable of analyzing full event topologies—may offer further improvements in clustering accuracy by capturing complex, global features.
 
 \section*{Acknowledgements}
 Thanks to ...

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.3.24)  15 APR 2025 14:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.3.24)  15 APR 2025 15:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -592,11 +592,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 152--156
 
  []
 
-<photon_absorbtion_csi.png, id=1, 999.735pt x 718.685pt>
-File: photon_absorbtion_csi.png Graphic file (type png)
-<use photon_absorbtion_csi.png>
-Package pdftex.def Info: photon_absorbtion_csi.png  used on input line 163.
-(pdftex.def)             Requested size: 208.79681pt x 150.09486pt.
+<csi_attuenuation.png, id=1, 462.528pt x 346.896pt>
+File: csi_attuenuation.png Graphic file (type png)
+<use csi_attuenuation.png>
+Package pdftex.def Info: csi_attuenuation.png  used on input line 163.
+(pdftex.def)             Requested size: 255.78287pt x 191.84143pt.
+
+Overfull \hbox (3.78287pt too wide) in paragraph at lines 163--164
+ [][] 
+ []
+
 
 Overfull \hbox (1.90001pt too wide) has occurred while \output is active
 [] 
@@ -605,12 +610,18 @@ Overfull \hbox (1.90001pt too wide) has occurred while \output is active
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
- <./photon_absorbtion_csi.png>]
+ <./csi_attuenuation.png>]
 LaTeX Font Info:    Trying to load font information for TS1+txr on input line 1
 76.
- (/usr/share/texlive/texmf-dist/tex/latex/txfonts/ts1txr.fd
+(/usr/share/texlive/texmf-dist/tex/latex/txfonts/ts1txr.fd
 File: ts1txr.fd 2000/12/15 v3.1
 )
+Underfull \hbox (badness 5504) in paragraph at lines 179--180
+[]\OT1/txr/m/n/10 Time stamp $\OML/txmi/m/it/10 t[]$ \OT1/txr/m/n/10 (via White
+ Rab-bit Pre-ci-sion Time
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 181--184
 
  []
@@ -627,34 +638,34 @@ Underfull \hbox (badness 1297) in paragraph at lines 207--217
  []
 
 [2]
-<architecture.png, id=23, 583.17876pt x 432.61626pt>
+<architecture.png, id=22, 583.17876pt x 432.61626pt>
 File: architecture.png Graphic file (type png)
 <use architecture.png>
 Package pdftex.def Info: architecture.png  used on input line 229.
 (pdftex.def)             Requested size: 208.79681pt x 154.89018pt.
-
+ [3 <./r3b_vs_agglo_metrics.png> <./architecture.png>]
 Overfull \hbox (15.39009pt too wide) in paragraph at lines 281--298
  [] 
  []
 
-[3 <./r3b_vs_agglo_metrics.png> <./architecture.png>] (./odsl_califa_paper.bbl
+(./odsl_califa_paper.bbl [4]
 Underfull \hbox (badness 1454) in paragraph at lines 31--33
 []\OT1/txr/m/n/8 T. Le Bleis, M. Ben-del, R. Gernh[]auser, W. Hen-ning, P. Klen
 ze,
  []
 
-[4]
-Underfull \hbox (badness 10000) in paragraph at lines 46--49
+
+Underfull \hbox (badness 10000) in paragraph at lines 49--52
 []\OT1/txr/m/n/8 S. Seltzer, XCOM-Photon Cross Sec-tions
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 46--49
+Underfull \hbox (badness 10000) in paragraph at lines 49--52
 \OT1/txr/m/n/8 Database, NIST Stan-dard Ref-er-ence Database 8,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 46--49
+Underfull \hbox (badness 10000) in paragraph at lines 49--52
 \OT1/cmtt/m/n/8 http://www.nist.gov/pml/data/xcom/index.cfm\OT1/txr/m/n/8 , ac-
 cessed:
  []
@@ -663,13 +674,13 @@ cessed:
 
 ] (./odsl_califa_paper.aux) ) 
 Here is how much of TeX's memory you used:
- 4822 strings out of 480121
- 74103 string characters out of 5892160
- 463762 words of memory out of 5000000
- 22704 multiletter control sequences out of 15000+600000
+ 4846 strings out of 480121
+ 74741 string characters out of 5892160
+ 461884 words of memory out of 5000000
+ 22728 multiletter control sequences out of 15000+600000
  503119 words of font info for 113 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 70i,8n,76p,1188b,265s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 70i,8n,76p,1188b,253s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/bas
 e/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.p
 fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></us
@@ -682,7 +693,7 @@ xfonts/rtxr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsy.
 pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-
 dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on odsl_califa_paper.pdf (5 pages, 284850 bytes).
+Output written on odsl_califa_paper.pdf (5 pages, 356147 bytes).
 PDF statistics:
  88 PDF objects out of 1000 (max. 8388607)
  50 compressed objects within 1 object stream
