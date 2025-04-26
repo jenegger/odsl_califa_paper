@@ -211,8 +211,8 @@ Each hit was mapped into spherical coordinates \((\theta, \phi, r)\), where the 
 The threshold parameter was optimized to yield the best performance according to the custom-defined metrics. A comparison between the standard R3B clustering and the agglomerative method is presented in Fig. \ref{fig:r3b_agglo_metrics}.
 \begin{figure}[!htb]
 	\centering 
-	\includegraphics[width=0.4\textwidth]{r3b_vs_agglo_metrics.png}	
-	\caption{Comparison of clustering performance on the test dataset using standard R3B clustering (blue) and agglomerative clustering (orange) incorporating hit-time information. The dataset comprises simulated $\gamma$-rays with energies uniformly distributed between 0.3 and 10\,MeV. The metrics shown include event-based and cluster-based measures: \textit{well\_reco}, \textit{true\_positive}, \textit{false\_positive}, \textit{false\_negative}, and \textit{false\_mixed}.} 
+	\includegraphics[width=0.45\textwidth]{r3b_agglo_arrows.png}	
+	\caption{Comparison of clustering performance on the test dataset using standard R3B clustering (blue) and agglomerative clustering (orange) incorporating hit-time information. The dataset comprises simulated $\gamma$-rays with energies uniformly distributed between 0.3 and 10\,MeV. The metrics shown include event-based and cluster-based measures: \textit{TP}, \textit{FP}, \textit{FN}, \textit{FM}, and \textit{WR}; see also subsection \ref{s_sec:metrics}.} 
 	\label{fig:r3b_agglo_metrics}%
 \end{figure}
 As shown in Fig. \ref{fig:r3b_agglo_metrics}, the agglomerative clustering algorithm demonstrates improved performance both on an event level (true positive rate) and on a cluster level (correctly reconstructed clusters). However, this improvement is accompanied by an increased false negative rate, indicating that the algorithm tends to under-merge hits near the edges of clusters. This limitation motivated the development and application of an edge detection neural network, which is introduced in the following subsection.
