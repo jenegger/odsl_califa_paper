@@ -154,12 +154,12 @@ keyword 1 \sep keyword 2 \sep keyword 3 \sep keyword 4
 With the advancements in facilities dedicated to the production of radioactive beams at relativistic energies, such as the Facility for Antiproton and Ion Research (FAIR) at GSI, significant progress has been made in the study of exotic nuclei far from stability \cite{kalantar2024experiments}. FAIR will provide high-intensity relativistic radioactive beams of rare isotopes with energies reaching up to 1 AGeV, enabling investigations in inverse kinematics with full kinematic reconstruction \cite{leifels2025status}.
 A key experimental setup designed for this purpose is the Reactions with Relativistic Radioactive Beams (R$^3$B) Setup, which allows for high-resolution particle spectroscopy. This setup serves as a unique tool for unveiling the structure of nuclei and their reaction dynamics with unprecedented precision.\newline
 At the core of the R$^3$B Setup is the CALIFA calorimeter (Calorimeter for the In-Flight Detection of Gamma Rays and Light Charged Particles), a highly segmented detection system composed of more than 2500 CsI(Tl) scintillator crystals that hermetically enclose the target area in the polar angular range of $7^\circ$ to $140^\circ$. This design enables the simultaneous measurement of gamma rays down to 100 keV and light charged particles, such as protons and deuterons, up to several hundred A MeV \cite{cortina2014califa}. To ensure optimal performance, extensive research has been conducted to refine the geometric design, minimize scattering and energy losses due to the holding structure \cite{alvarez2014performance}, and develop a dead-time-free data acquisition system capable of handling high-rate experiments \cite{ledigital}. Furthermore, a seamless integration within the R3BRoot framework \cite{bertini2011r3broot} has been achieved, enabling offline data analysis from the raw data level to the calibrated level and ultimately to the cluster level, where individual hits are recombined for the final energy reconstruction.\newline
-This study presents the results of applying machine learning-based hierachy solutions to enhance the energy reconstruction of gamma rays in CALIFA. Using simulated Geant4 data, the performance of standard R3B clustering algorithms is compared to an agglomerative clustering model implemented with SciPy \cite{virtanen2020scipy} and a multi-layer perceptron architecture, demonstrating the potential of machine learning techniques in improving reconstruction accuracy.\newline
+This study presents the results of applying machine learning-based hierachy solutions to enhance the energy reconstruction of gamma rays in CALIFA. Using simulated Geant4 data, the performance of standard R3B clustering algorithms is compared to an agglomerative clustering model \cite{Nielsen2016} and a multi-layer perceptron architecture, demonstrating the potential of machine learning techniques in improving reconstruction accuracy.\newline
 
 \section{Methodology}
 \label{sec:metho}
 \subsection{Challenges in Relativistic Gamma Spectroscopy}\label{s_sec:gamma_spec}
-While the detection of light charged particles such as protons typically yields well-localized energy deposits in segmented detector arrays, the detection of gamma rays emitted from reaction products moving at relativistic velocities ($\beta \approx 0.8$) presents significant challenges. These difficulties primarily arise from the inherently sparse and spatially distributed energy deposits resulting from the interaction mechanisms of photons with the scintillator material (see Fig. \ref{fig:csi}) \cite{kolanoski2016teilchendetektoren}.\newline
+While the detection of light charged particles such as protons typically yields well-localized energy deposits in segmented detector arrays, the detection of gamma rays emitted from reaction products which emerge from the reaction vertex at relativistic velocities ($\beta \approx 0.8$) presents significant challenges. These difficulties primarily arise from the inherently sparse and spatially distributed energy deposits resulting from the interaction mechanisms of photons with the scintillator material (see Fig. \ref{fig:csi}) \cite{kolanoski2016teilchendetektoren}.\newline
 \begin{figure}[!htb]
 	\centering 
 	\includegraphics[width=0.49\textwidth]{csi_attuenuation.png}	
@@ -181,23 +181,23 @@ In the standard data acquisition (DAQ) configuration, all CALIFA detector hits o
     \item Time stamp $t_i$ (via White Rabbit  Precision Time Protocol \cite{lipinski2011white})
 \end{itemize}
 In the standard R3B clustering approach, the time information $t_i$ is not utilized during the spatial reconstruction of clusters.\newline
-The initial stage of the clustering algorithm begins by sorting all hits in descending order of energy. A user-defined geometric condition, typically a conical cluster shape with a default aperture of $0.5\,\mathrm{rad}$, is applied. This value has been found to provide an optimal compromise between compact high-energy clusters and more diffuse gamma-ray showers.\newline
+The initial stage of the clustering algorithm begins by sorting all hits in descending order of energy. A user-defined geometric condition, typically a conical cluster shape with a default aperture of $0.5\,\mathrm{rad}$, is applied. This value has been found to provide an optimal compromise between compact high-energy clusters from light charged particles and more diffuse gamma-ray showers.\newline
 The hit with the highest energy defines the seed or center of the first cluster. The algorithm then iterates through the remaining hits and includes each hit in the current cluster if it lies within the specified cone aperture relative to the seed direction. Once the list is fully processed for the current cluster, the next highest-energy unassigned hit becomes the seed of a new cluster. This procedure repeats until no unassigned hits remain.\newline
 \subsection{Simulation Setup}\label{s_sec:data_sim}
-To evaluate and compare the clustering algorithms presented in this work, simulated data are required, as supervised machine learning approaches rely on access to ground truth labels. For this purpose, the R3BROOT framework with a Geant4-based Monte Carlo \cite{agostinelli2003geant4} backend was employed.\newline
+To evaluate and compare the clustering algorithms presented in this work, simulated datasets are employed to assess their performance. For both unsupervised approaches, such as agglomerative clustering, and supervised machine learning methods, such as the Edge Detection Neural Network, which will both be introduced in detail in the following section, access to ground truth labels is required. For this purpose, the R3BROOT framework with a Geant4-based Monte Carlo \cite{agostinelli2003geant4} backend was employed.\newline
 The CALIFA detector geometry used in the simulation corresponds to the configuration implemented in early 2024. At that time, the iPhos region (polar angles $19^\circ$ -- $43^\circ$) was fully instrumented, while only the forward half of the Barrel region ($43^\circ$ -- $87^\circ$) was active. The forward-most CEPA region ($7^\circ$ -- $19^\circ$) was not yet equipped.\newline
 Gamma-ray energies were sampled from a uniform distribution between $0.3\,\mathrm{MeV}$ and $10\,\mathrm{MeV}$. The interaction of the primary gamma rays with the CsI(Tl) scintillation material was modeled using Geant4 transport physics.\newline
 To emulate realistic event topologies, three gamma rays were generated per event, resulting in multiple detector hits. Timing information was coarsely simulated by assigning each primary gamma a random emission time within the $\pm 4\,\mu\mathrm{s}$ event window. The corresponding hit times were then Gaussian-smeared with a standard deviation of $200\,\mathrm{ns}$ to reflect typical electronic channel timing variations.\newline
 The resulting dataset was split into training and test subsets, comprising 13{,}000 and 7{,}000 events, respectively.
 
 
-\subsection{Preformance Metrics}\label{s_sec:metrics}
+\subsection{Performance Metrics}\label{s_sec:metrics}
 To quantitatively assess the performance of the clustering algorithms presented in this work, a set of four custom metrics was defined. Three of these are event-based, while an optional fourth metric evaluates clustering quality on a per-cluster basis:
 \begin{itemize}
     \item \textbf{True Positive (TP)}: All hits in an event are correctly assigned to their respective clusters.
     \item \textbf{False Positive (FP)}: At least one hit in an event is incorrectly merged into a cluster it does not belong to.
     \item \textbf{False Negative (FN)}: At least one hit is not merged into its true cluster and instead forms a spurious cluster.
-    \item \textbf{False Mixed (FM)}: An event is classified as false mixed if it contains both FP and FN characteristics—i.e., at least one hit is wrongly assigned, and at least one true cluster is partially reconstructed.
+    \item \textbf{False Mixed (FM)}: An event is classified as false mixed if it contains both FP and FN characteristics—i.e., at least one hit is incorrectly merged, and at least one true cluster is partially reconstructed.
 \end{itemize}
 In addition, a cluster-based metric is defined:
 \begin{itemize}
@@ -206,9 +206,9 @@ In addition, a cluster-based metric is defined:
 These metrics allow a comprehensive evaluation of clustering accuracy, robustness, and failure modes.
 
 \subsection{Agglomerative Clustering}\label{s_sec:agglo}
-To incorporate temporal information into the clustering process---unlike the standard R3B algorithm, which omits it---a generic, well-established method was adopted: agglomerative clustering as implemented in the \texttt{fclusterdata} function from the \texttt{SciPy} library. This approach enables flat clustering based on hierarchical linkage with a user-defined threshold.\newline
+To incorporate temporal information into the clustering process---unlike the standard R3B algorithm, which omits it---a generic, well-established method was adopted: agglomerative clustering \cite{Nielsen2016} as implemented in the \texttt{fclusterdata} function from the \texttt{SciPy} library \cite{virtanen2020scipy}. This approach enables flat clustering based on hierarchical linkage with a user-defined threshold.\newline
 Each hit was mapped into spherical coordinates \((\theta, \phi, r)\), where the radial component \(r\) encodes time information. To ensure non-negative radii, the acquisition time window of \(\pm 4\,\mu\mathrm{s}\) was shifted by \(+4.5\,\mu\mathrm{s}\). The Ward linkage criterion \cite{nielsen2016hierarchical}, which minimizes intra-cluster variance, was employed as the distance metric.\newline
-The threshold parameter was optimized to yield the best performance according to the custom-defined metrics. A comparison between the standard R3B clustering and the agglomerative method is presented in Fig.\ref{fig:r3b_agglo_metrics}.
+The threshold parameter was optimized to yield the best performance according to the custom-defined metrics. A comparison between the standard R3B clustering and the agglomerative method is presented in Fig. \ref{fig:r3b_agglo_metrics}.
 \begin{figure}[!htb]
 	\centering 
 	\includegraphics[width=0.4\textwidth]{r3b_vs_agglo_metrics.png}	
@@ -219,9 +219,9 @@ As shown in Fig. \ref{fig:r3b_agglo_metrics}, the agglomerative clustering algor
 
 
 \subsection{Implementation of the Edge Detection Neural Network}\label{s_sec:edge}
-To enhance the clustering performance, particularly at the boundaries of hit distributions, a generic neural network (NN) was developed to perform pairwise classification of detector hits. This model is applied either to individual raw hits or to hits pre-clustered via agglomerative clustering, on an event-by-event basis.
+To enhance the clustering performance, particularly at the boundaries of hit distributions, a multi-layer perceptron architecture was developed using the Pytorch library \cite{imambi2021pytorch} to perform pairwise classification of detector hits. This model is applied either to individual raw hits or to hits pre-clustered via agglomerative clustering, on an event-by-event basis.
 
-The model takes 12 input features for each hit pair $(i, j)$: absolute values of energy $(E_i, E_j)$, polar angle $(\theta_i, \theta_j)$, azimuthal angle $(\phi_i, \phi_j)$, and time $(t_i, t_j)$. Additionally, four differential features are computed: $\Delta E = |E_i - E_j|$, $\Delta \theta = |\theta_i - \theta_j|$, $\Delta \phi = |\phi_i - \phi_j|$, and $\Delta t = |t_i - t_j|$. These differential inputs are essential for training stability and convergence. In particular, $\Delta \phi$ resolves the discontinuities caused by the periodicity of the azimuthal angle (e.g., distinguishing between $\phi = 355^\circ$ and $\phi = 5^\circ$), which would otherwise introduce large erroneous differences in angular comparisons.
+The model takes 12 input features for each hit pair $(i, j)$: absolute values of energy $(E_i, E_j)$, polar angle $(\theta_i, \theta_j)$, azimuthal angle $(\phi_i, \phi_j)$, and time $(t_i, t_j)$. Additionally, four differential features are computed: $\Delta E = |E_i - E_j|$, $\Delta \theta = |\theta_i - \theta_j|$, $\Delta \phi = |\phi_i - \phi_j|$, and $\Delta t = |t_i - t_j|$. These differential inputs are helpful for training stability and convergence with our limited model sizes tested. In particular, $\Delta \phi$ resolves the discontinuities caused by the periodicity of the azimuthal angle (e.g., distinguishing between $\phi = 355^\circ$ and $\phi = 5^\circ$), which would otherwise introduce large erroneous differences in angular comparisons.
 
 Of the 12 features, only the hit time is normalized to the $[0, 1]$ interval; all other values are used in their native physical units.
 
@@ -233,49 +233,15 @@ The architecture of the neural network is illustrated in Fig. \ref{fig:architect
 	\label{fig:architecture}%
 \end{figure}
 
-Training is performed using the binary cross-entropy loss function \cite{mannor2005cross} \cite{de2005tutorial} and stochastic gradient descent (SGD) \cite{newton2018recent} with a fixed learning rate of $5 \times 10^{-3}$. Given the moderate size of the training dataset, full-batch training is employed without mini-batching. The model is trained for $8 \times 10^5$ epochs. After training, a tunable threshold is applied to the prediction scores to classify hit pairs. Final clusters are then formed by grouping all connected hit pairs based on the predicted associations.
+Training is performed using the binary cross-entropy loss function \cite{mannor2005cross,de2005tutorial} and stochastic gradient descent (SGD) \cite{newton2018recent} with a fixed learning rate of $5 \times 10^{-3}$. Given the moderate size of the training dataset, full-batch training is employed without mini-batching. The model is trained for $8 \times 10^4$ epochs. After training, a tunable threshold is applied to the prediction scores to classify hit pairs. Final clusters are then formed by grouping all connected hit pairs based on the predicted associations.
 
 The edge detection NN was implemented and tested in three configurations:
 
 \begin{itemize}
     \item \textbf{Plain Edge NN:} The model is applied directly to individual hits without any pre-clustering. All clustering is performed based solely on the NN predictions.
-
-    \item \textbf{Agglomerative + Edge NN:} The data is first clustered using the agglomerative algorithm described in the previous subsection. For each resulting cluster, an energy-weighted center of mass is calculated, replacing individual hits. The NN is then trained on false negative cases (i.e., under-merged hits) from this initial clustering. In application, agglomerative clustering is first applied to the test data, followed by the NN to refine the boundaries and reduce the false negative rate (see Fig.\,2).
-
     \item \textbf{R3B Clustering + Edge NN:} This configuration mirrors the Agglomerative + Edge NN approach, but omits the use of time information. In line with the standard R3B clustering methodology, the time inputs are fixed to a constant value of 1 to reflect their exclusion from the clustering process.
+    \item \textbf{Agglomerative + Edge NN:} The data is first clustered using the agglomerative algorithm described in the previous subsection. For each resulting cluster, an energy-weighted center of mass is calculated, replacing individual hits. The NN is then trained on false negative cases (i.e., under-merged hits) from this initial clustering. In application, agglomerative clustering is first applied to the test data, followed by the NN to refine the boundaries and reduce the false negative rate (see Fig. \,2).
 \end{itemize}
-
-%To support agglomerative clustering in identifying edge hits, a generic neural network architecture was developed to perform pairwise comparisons of individual hits. This was applied either directly to the raw hit data or to pre-clustered hits obtained via the agglomerative clustering algorithm on an event-by-event basis.
-%
-%The model processes 12 input features, describing a pair of hits \(i\) and \(j\): the absolute values of energy \(E_i, E_j\), polar angles \(\theta_i, \theta_j\), azimuthal angles \(\phi_i, \phi_j\), and times \(t_i, t_j\). In addition, four differential features are computed: \(\Delta E = E_i - E_j\), \(\Delta \theta = \theta_i - \theta_j\), \(\Delta \phi = \phi_i - \phi_j\), and \(\Delta t = t_i - t_j\). These differential features are essential for model convergence, especially \(\Delta \phi\), which accounts for the periodic nature of azimuthal angles and mitigates discontinuities (e.g., between \(355^\circ\) and \(5^\circ\)). Without these, the model encounters convergence issues due to misleading distance estimates in angular space.
-%
-%Among the input features, only the hit time is normalized to the [0, 1] range; energy and angular values are used in their raw form.
-%
-%The architecture of the edge detection neural network is shown in Fig.\,X. The 12 input features are processed by a fully connected feedforward network. The first hidden layer consists of \(10^3\) nodes with ReLU activation, followed by two additional hidden layers of \(10^2\) nodes each. A final sigmoid activation is applied to a single-node output layer, yielding a probability score between 0 and 1. A value close to 1 indicates that the two hits (or clusters) belong to the same cluster; a value near 0 indicates otherwise.
-%
-%Model training uses the binary cross-entropy loss function and stochastic gradient descent optimization with a fixed learning rate of \(5 \times 10^{-3}\). Due to the manageable dataset size, full-batch training is performed without the need for mini-batching. The model is trained for \(8 \times 10^5\) epochs. Final classification is performed by applying a tunable prediction threshold to optimize the clustering performance on the validation dataset.
-%
-%The edge detection neural network is applied in three configurations:
-%
-%\begin{itemize}
-%    \item \textbf{Plain Edge NN:} The model is used as a standalone clustering tool based solely on pairwise hit comparisons, without any prior agglomerative clustering.
-%    
-%    \item \textbf{Agglomerative + Edge NN:} The dataset is first pre-clustered using the agglomerative algorithm described in the previous subsection. For each cluster, an energy-weighted center-of-mass is calculated, replacing the individual hits. The edge detection model is trained on false negative cases from the agglomerative clustering step. During inference, the model is applied to the pre-clustered data to improve merging at the cluster boundaries, particularly reducing the false negative rate (see Fig.\,2).
-%    
-%    \item \textbf{R3B Clustering + Edge NN:} Similar to the previous configuration, but consistent with the standard R3B clustering approach, the hit time information is omitted by assigning a constant value of 1 to the corresponding input features.
-%\end{itemize}
-%\begin{figure}
-%	\centering 
-%	\includegraphics[width=0.4\textwidth, angle=-90]{JHEAP_cover_image.pdf}	
-%	\caption{High Energy Astrophysics journal cover} 
-%	\label{fig_mom0}%
-%\end{figure}
-
-%A random equation, the Toomre stability criterion:
-%
-%\begin{equation}
-%    Q = \frac{\sigma_v \times \kappa}{\pi \times G \times \Sigma}
-%\end{equation}
 
 \section{Results}\label{sec:results}
 \begin{table}[h!]
@@ -306,32 +272,6 @@ The results of this study are summarized in Table~\ref{tab:results}, where the o
 The agglomerative model shows improved performance over the R3B baseline in terms of both event-level true positives (TP) and cluster-level (WR) values. However, it exhibits inferior performance with respect to the false negative (FN) rate, indicating a tendency to miss relevant hits during reconstruction. This limitation motivated the development of an Edge Detection Neural Network, initially evaluated as a standalone clustering algorithm and subsequently integrated into the agglomerative framework, yielding the combined model denoted as \textit{Agglo + Edge}.\newline
 The \textit{Agglo + Edge} model demonstrates superior performance across all evaluated metrics, achieving an overall correct reconstruction rate of 81.3\%, significantly outperforming the \textit{R3B Standard Clustering} algorithm, which reaches 60.6\%.\newline
 To further explore the capabilities of neural network-based clustering approaches, two additional models were evaluated: a standalone \textit{Edge Detection Neural Network} and a hybrid approach combining \textit{R3B Standard Clustering} with edge-based postprocessing (\textit{R3B + Edge}). Notably, both of these models operate without incorporating time-of-hit information, similar to the R3B baseline. Nonetheless, both outperform the \textit{R3B Standard Clustering} in all reported metrics, underscoring the potential of edge-based neural network models for improving cluster reconstruction in high-granularity detector systems.
-
-
-%r3b,0,0.804,0.606,0.053,0.252,0.089
-%agglo,0,0.841,0.628,0.033,0.320,0.019
-%edge_no_time,0,0.824,0.634,0.072,0.248,0.046
-%edge_with_time,0,0.892,0.747,0.034,0.205,0.014
-%agglo_edge,0,0.910,0.813,0.051,0.122,0.015
-%r3b_edge,0,0.822,0.674,0.085,0.160,0.080
-
-
-%\begin{table}
-%\begin{tabular}{l c c c} 
-% \hline
-% Source & RA (J2000) & DEC (J2000) & $V_{\rm sys}$ \\ 
-%        & [h,m,s]    & [o,','']    & \kms          \\
-% \hline
-% NGC\,253 & 	00:47:33.120 & -25:17:17.59 & $235 \pm 1$ \\ 
-% M\,82 & 09:55:52.725, & +69:40:45.78 & $269 \pm 2$ 	 \\ 
-% \hline
-%\end{tabular}
-%\caption{Random table with galaxies coordinates and velocities, Number the tables consecutively in
-%accordance with their appearance in the text and place any table notes below the table body. Please avoid using vertical rules and shading in table cells.
-%}
-%\label{Table1}
-%\end{table}
-
 
 \section{Discussion and Outlook}\label{sec:disc_outlook}
 

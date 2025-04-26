@@ -36,11 +36,9 @@ D.~Bertini, {R3BRoot, simulation and analysis framework for the R3B experiment
   at FAIR}, in: Journal of Physics: Conference Series, Vol. 331, IOP
   Publishing, 2011, p. 032036.
 
-\bibitem{virtanen2020scipy}
-P.~Virtanen, R.~Gommers, T.~E. Oliphant, M.~Haberland, T.~Reddy, D.~Cournapeau,
-  E.~Burovski, P.~Peterson, W.~Weckesser, J.~Bright, et~al., {SciPy 1.0:
-  fundamental algorithms for scientific computing in Python}, Nature methods
-  17~(3) (2020) 261--272.
+\bibitem{Nielsen2016}
+F.~Nielsen, Hierarchical Clustering, Springer International Publishing, Cham,
+  2016, pp. 195--211.
 
 \bibitem{kolanoski2016teilchendetektoren}
 H.~Kolanoski, N.~Wermes, Teilchendetektoren, Springer, 2016, Ch. 13.5.2.
@@ -68,9 +66,19 @@ S.~Agostinelli, J.~Allison, K.~a. Amako, J.~Apostolakis, H.~Araujo, P.~Arce,
   Accelerators, Spectrometers, Detectors and Associated Equipment 506~(3)
   (2003) 250--303.
 
+\bibitem{virtanen2020scipy}
+P.~Virtanen, R.~Gommers, T.~E. Oliphant, M.~Haberland, T.~Reddy, D.~Cournapeau,
+  E.~Burovski, P.~Peterson, W.~Weckesser, J.~Bright, et~al., {SciPy 1.0:
+  fundamental algorithms for scientific computing in Python}, Nature methods
+  17~(3) (2020) 261--272.
+
 \bibitem{nielsen2016hierarchical}
 F.~Nielsen, F.~Nielsen, Hierarchical clustering, Introduction to HPC with MPI
   for Data Science (2016) 195--211.
+
+\bibitem{imambi2021pytorch}
+S.~Imambi, K.~B. Prakash, G.~Kanagachidambaresan, Pytorch, Programming with
+  TensorFlow: solution for edge computing applications (2021) 87--104.
 
 \bibitem{mannor2005cross}
 S.~Mannor, D.~Peleg, R.~Rubinstein, The cross entropy method for
