@@ -19,7 +19,8 @@
 \newlabel{s_sec:gamma_spec}{{2.1}{1}}
 \citation{lipinski2011white}
 \citation{agostinelli2003geant4}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Mass attenuation coefficients for photons in CsI in the range from $100$ keV to $20$ MeV according to XCOM database \cite  {seltzer2010xcom}.}}{2}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Mass attenuation coefficients for photons in CsI in the range from $100$ keV to $20$ MeV according to XCOM database \cite  {seltzer2010xcom}.\relax }}{2}{}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
 \newlabel{fig:csi}{{1}{2}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Data Structure and Standard R3B Clustering Algorithm}{2}{}\protected@file@percent }
 \newlabel{s_sec:r3b_clustering}{{2.2}{2}}
@@ -37,21 +38,27 @@
 \newlabel{s_sec:agglo}{{2.5}{3}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.6}Implementation of the Edge Detection Neural Network}{3}{}\protected@file@percent }
 \newlabel{s_sec:edge}{{2.6}{3}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Comparison of clustering performance on the test dataset using standard R3B clustering (blue) and agglomerative clustering (orange) incorporating hit-time information. The dataset comprises simulated $\gamma $-rays with energies uniformly distributed between 0.3 and 10\,MeV. The metrics shown include event-based and cluster-based measures: \textit  {TP}, \textit  {FP}, \textit  {FN}, \textit  {FM}, and \textit  {WR}; see also subsection 2.4\hbox {}.}}{3}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Comparison of clustering performance on the test dataset using standard R3B clustering (blue) and agglomerative clustering (orange) incorporating hit-time information. The dataset comprises simulated $\gamma $-rays with energies uniformly distributed between 0.3 and 10\,MeV. The metrics shown include event-based and cluster-based measures: \textit  {TP}, \textit  {FP}, \textit  {FN}, \textit  {FM}, and \textit  {WR}; see also subsection 2.4\hbox {}.\relax }}{3}{}\protected@file@percent }
 \newlabel{fig:r3b_agglo_metrics}{{2}{3}}
 \citation{battaglia2018relational}
 \citation{vaswani2017attention,amatriain2023transformer}
 \citation{dezoort2021charged,ju2021performance,van2024transformers}
-\citation{sieranoja2025fast}
-\citation{vaswani2017attention}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Schematic architecture of the edge detection neural network. The model consists of three fully connected hidden layers. The final output layer comprises a single node with a sigmoid activation function, yielding a prediction score in the range $[0, 1]$. Values closer to 1 indicate that the input hit pair originates from the same physical cluster and should be merged, while values near 0 suggest they should remain separate.}}{4}{}\protected@file@percent }
-\newlabel{fig:architecture}{{3}{4}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Reconstructed gamma energy spectrum from simulated events, each consisting of three 2.1\nobreakspace  {}MeV gamma photons. The upper panel shows the comparison between the standard R3B clustering and the Agglo+Edge method. The lower panel displays the bin-by-bin count difference between the two approaches. The Agglo+Edge model demonstrates a significant improvement by successfully reattaching escaped hits, notably in cases where sparse energy deposits around 1.6\nobreakspace  {}MeV and 0.5\nobreakspace  {}MeV result from pair production and subsequent annihilation processes of the original gamma photons. This clean-up step leads to a marked reduction in false negatives compared to the standard R3B clustering.\relax }}{4}{}\protected@file@percent }
+\newlabel{fig:2_1_mev_r3b_aggloNN}{{3}{4}}
 \@writefile{toc}{\contentsline {section}{\numberline {3}Results}{4}{}\protected@file@percent }
 \newlabel{sec:results}{{3}{4}}
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Summary of performance metrics as defined in Subsection\nobreakspace  {}2.4\hbox {}, evaluated for the different clustering algorithms. The models \textit  {R3B Standard Clustering}, \textit  {Edge Clustering (no time)}, and \textit  {R3B + Edge (no time)} utilize only angular and energy information on a per-hit basis for cluster reconstruction. In contrast, \textit  {Agglomerative Clustering}, \textit  {Edge Clustering (with time)}, and \textit  {Agglo + Edge (with time)} additionally incorporate time-of-hit information into the clustering process.}}{4}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Summary of performance metrics as defined in Subsection\nobreakspace  {}2.4\hbox {}, evaluated for the different clustering algorithms. The models \textit  {R3B Standard Clustering}, \textit  {Edge Clustering (no time)}, and \textit  {R3B + Edge (no time)} utilize only angular and energy information on a per-hit basis for cluster reconstruction. In contrast, \textit  {Agglomerative Clustering}, \textit  {Edge Clustering (with time)}, and \textit  {Agglo + Edge (with time)} additionally incorporate time-of-hit information into the clustering process.\relax }}{4}{}\protected@file@percent }
 \newlabel{tab:results}{{1}{4}}
-\@writefile{toc}{\contentsline {section}{\numberline {4}Discussion and Outlook}{4}{}\protected@file@percent }
-\newlabel{sec:disc_outlook}{{4}{4}}
+\citation{sieranoja2025fast}
+\citation{vaswani2017attention}
+\newlabel{fig:subfig1}{{4a}{5}}
+\newlabel{sub@fig:subfig1}{{a}{5}}
+\newlabel{fig:subfig2}{{4b}{5}}
+\newlabel{sub@fig:subfig2}{{b}{5}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Exemplary event with three simulated gamma photons in the energy range of 0.3–10\nobreakspace  {}MeV, comparing the reconstruction performance of the R3B standard clustering and the Agglo+Edge method.\relax }}{5}{}\protected@file@percent }
+\newlabel{fig:comparison_r3b_agglo_edge}{{4}{5}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Discussion and Outlook}{5}{}\protected@file@percent }
+\newlabel{sec:disc_outlook}{{4}{5}}
 \bibstyle{elsarticle-num}
 \bibdata{literature.bib}
 \bibcite{kalantar2024experiments}{{1}{}{{}}{{}}}
@@ -81,6 +88,6 @@
 \bibcite{sieranoja2025fast}{{25}{}{{}}{{}}}
 \providecommand\NAT@force@numbers{}\NAT@force@numbers
 \@writefile{toc}{\let\numberline\tmptocnumberline}
-\@writefile{toc}{\contentsline {section}{\numberline {Appendix \nobreakspace  {}A}Appendix title 1}{5}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {Appendix \nobreakspace  {}B}Appendix title 2}{5}{}\protected@file@percent }
-\gdef \@abspage@last{5}
+\@writefile{toc}{\contentsline {section}{\numberline {Appendix \nobreakspace  {}A}Appendix title 1}{6}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {Appendix \nobreakspace  {}B}Appendix title 2}{6}{}\protected@file@percent }
+\gdef \@abspage@last{6}

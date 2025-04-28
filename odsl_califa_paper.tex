@@ -43,6 +43,9 @@
 \usepackage{lipsum}
 %% The amsthm package provides extended theorem environments
 %% \usepackage{amsthm}
+%TJ user definded packages TODO
+\usepackage{graphicx}
+\usepackage{subcaption}
 
 %% The lineno packages adds line numbers. Start line numbering with
 %% \begin{linenumbers}, end it with \end{linenumbers}. Or switch it on
@@ -225,25 +228,23 @@ To enhance the clustering performance, particularly at the boundaries of hit dis
 The model takes 12 input features for each hit pair $(i, j)$: absolute values of energy $(E_i, E_j)$, polar angle $(\theta_i, \theta_j)$, azimuthal angle $(\phi_i, \phi_j)$, and time $(t_i, t_j)$. Additionally, four differential features are computed: $\Delta E = |E_i - E_j|$, $\Delta \theta = |\theta_i - \theta_j|$, $\Delta \phi = |\phi_i - \phi_j|$, and $\Delta t = |t_i - t_j|$. These differential inputs are helpful for training stability and convergence with our limited model sizes tested. In particular, $\Delta \phi$ resolves the discontinuities caused by the periodicity of the azimuthal angle (e.g., distinguishing between $\phi = 355^\circ$ and $\phi = 5^\circ$), which would otherwise introduce large erroneous differences in angular comparisons.
 
 Of the 12 features, only the hit time is normalized to the $[0, 1]$ interval; all other values are used in their native physical units.
+The neural network architecture takes the 12-dimensional input vector and passes it through a fully connected feed-forward network with one hidden layer of $10^3$ nodes, followed by a ReLU activation. Two additional hidden layers, each with $10^2$ nodes, are applied sequentially. The output layer consists of a single node with a sigmoid activation, yielding a score in the interval $[0, 1]$, where values close to 1 indicate that the hits (or clusters) are likely to originate from the same event cluster.\newline
 
-The architecture of the neural network is illustrated in Fig. \ref{fig:architecture}. The 12-dimensional input vector is passed through a fully connected feed-forward network with one hidden layer of $10^3$ nodes, followed by a ReLU activation. Two additional hidden layers, each with $10^2$ nodes, are applied sequentially. The output layer consists of a single node with a sigmoid activation, yielding a score in the interval $[0, 1]$, where values close to 1 indicate that the hits (or clusters) are likely to originate from the same event cluster.
-\begin{figure}[!htb]
-	\centering 
-	\includegraphics[width=0.4\textwidth]{architecture.png}	
-	\caption{Schematic architecture of the edge detection neural network. The model consists of three fully connected hidden layers. The final output layer comprises a single node with a sigmoid activation function, yielding a prediction score in the range $[0, 1]$. Values closer to 1 indicate that the input hit pair originates from the same physical cluster and should be merged, while values near 0 suggest they should remain separate.}
-	\label{fig:architecture}%
-\end{figure}
-
-Training is performed using the binary cross-entropy loss function \cite{mannor2005cross,de2005tutorial} and stochastic gradient descent (SGD) \cite{newton2018recent} with a fixed learning rate of $5 \times 10^{-3}$. Given the moderate size of the training dataset, full-batch training is employed without mini-batching. The model is trained for $8 \times 10^4$ epochs. After training, a tunable threshold is applied to the prediction scores to classify hit pairs. Final clusters are then formed by grouping all connected hit pairs based on the predicted associations.
+Training is performed using the binary cross-entropy loss function \cite{mannor2005cross,de2005tutorial} and stochastic gradient descent (SGD) \cite{newton2018recent} with a fixed learning rate of $5 \times 10^{-3}$. Given the moderate size of the training dataset, full-batch training is employed without mini-batching. The model is trained for $8 \times 10^4$ epochs. After training, a threshold is applied to the prediction scores to classify hit pairs. This threshold is tuned to optimize the performance across all defined metrics, as described in Subsection~\ref{s_sec:metrics}. Final clusters are then formed by grouping all connected hit pairs based on the predicted associations.
 
 The edge detection NN was implemented and tested in three configurations:
 
 \begin{itemize}
     \item \textbf{Plain Edge NN:} The model is applied directly to individual hits without any pre-clustering. All clustering is performed based solely on the NN predictions.
-    \item \textbf{R3B Clustering + Edge NN:} This configuration mirrors the Agglomerative + Edge NN approach, but omits the use of time information. In line with the standard R3B clustering methodology, the time inputs are fixed to a constant value of 1 to reflect their exclusion from the clustering process.
-    \item \textbf{Agglomerative + Edge NN:} The data is first clustered using the agglomerative algorithm described in the previous subsection. For each resulting cluster, an energy-weighted center of mass is calculated, replacing individual hits. The NN is then trained on false negative cases (i.e., under-merged hits) from this initial clustering. In application, agglomerative clustering is first applied to the test data, followed by the NN to refine the boundaries and reduce the false negative rate (see Fig. \,2).
+    \item \textbf{R3B + Edge NN:} The data are first clustered using the standard R3B clustering algorithm as an initial clean-up step. For each resulting cluster, an energy-weighted center of mass is calculated, replacing individual hits. The  NN is then trained exclusively on false negative cases, i.e., events where reconstructed clusters exhibit detached hits. In application, the R3B standard clustering is first applied to the test data, followed by the NN to refine cluster boundaries and reduce the false negative rate (see Fig.~\ref{fig:r3b_agglo_metrics}) as clean-up step.
+    \item \textbf{Agglo + Edge NN:} This strategy mirrors the R3B+Edge approach, with the key difference that time information is incorporated. As in the R3B+Edge model, the NN is trained on false negative cases to perform a final clean-up step after pre-clustering the hits using the agglomerative clustering algorithm described in the previous subsection. The significant reduction of the false negative rate achieved by the clean-up step in the Agglo+Edge implementation is demonstrated in Figure~\ref{fig:2_1_mev_r3b_aggloNN}, which compares the reconstructed energy spectra from simulations of monoenergetic 2.1~MeV gamma events using the R3B standard clustering and the Agglo+Edge method.
 \end{itemize}
-
+\begin{figure}[!htb]
+        \centering
+        \includegraphics[width=0.45\textwidth]{spec_2_1agglo_edge_vsr3b.png}
+        \caption{Reconstructed gamma energy spectrum from simulated events, each consisting of three 2.1~MeV gamma photons. The upper panel shows the comparison between the standard R3B clustering and the Agglo+Edge method. The lower panel displays the bin-by-bin count difference between the two approaches. The Agglo+Edge model demonstrates a significant improvement by successfully reattaching escaped hits, notably in cases where sparse energy deposits around 1.6~MeV and 0.5~MeV result from pair production and subsequent annihilation processes of the original gamma photons. This clean-up step leads to a marked reduction in false negatives compared to the standard R3B clustering.}
+        \label{fig:2_1_mev_r3b_aggloNN}%
+\end{figure}
 \section{Results}\label{sec:results}
 \begin{table}[h!]
 \begin{center}
@@ -273,6 +274,26 @@ The results of this study are summarized in Table~\ref{tab:results}, organized a
 %The results of this study are summarized in Table~\ref{tab:results}, where the ordering of the clustering models reflects the methodological workflow followed during the investigation. The initial comparison was conducted between the baseline \textit{R3B Standard Clustering} algorithm and a generic \textit{Agglomerative Clustering} model that incorporates time-of-hit information.\newline
 The agglomerative model shows improved performance over the R3B baseline in terms of both event-level true positives (TP) and cluster-level (WR) values. However, it exhibits inferior performance with respect to the false negative (FN) rate, indicating a tendency to miss relevant hits during reconstruction. This limitation motivated the development of an Edge Detection Neural Network, initially evaluated as a standalone clustering algorithm and subsequently integrated into the agglomerative framework, yielding the combined model denoted as \textit{Agglo + Edge}.\newline
 The \textit{Agglo + Edge} model demonstrates superior performance across all evaluated metrics, achieving an overall correct reconstruction rate of 81.3\%, significantly outperforming the \textit{R3B Standard Clustering} algorithm, which reaches 60.6\%.\newline
+A visual representation of an event, contrasting the incorrectly merged hits from the R3B standard clustering with the correctly reconstructed clustering using the Agglo+Edge model, is shown in Figure~\ref{fig:comparison_r3b_agglo_edge}.\newline
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{best_example_bad_r3b.png}
+	\centering
+        \caption{R3B standard clustering: the blue-edged cluster with sparse hits is incorrectly split up into two clusters.}
+        \label{fig:subfig1}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{best_example_good_agglo_edge.png}
+	\centering
+        \caption{Agglo+Edge clustering: successful reattaching of sparse hits.}
+        \label{fig:subfig2}
+    \end{subfigure}
+    \caption{Exemplary event with three simulated gamma photons in the energy range of 0.3–10~MeV, comparing the reconstruction performance of the R3B standard clustering and the Agglo+Edge method.}
+    \label{fig:comparison_r3b_agglo_edge}
+\end{figure}
+
 To further explore the capabilities of neural network-based clustering approaches, two additional models were evaluated: a standalone \textit{Edge Detection Neural Network} and a hybrid approach combining \textit{R3B Standard Clustering} with edge-based postprocessing (\textit{R3B + Edge}). Notably, both of these models operate without incorporating time-of-hit information, similar to the R3B baseline. Nonetheless, both outperform the \textit{R3B Standard Clustering} in all reported metrics, underscoring the potential of edge-based neural network models for improving cluster reconstruction in high-granularity detector systems.\newline
 The edge detection NNs presented here represent a special case of Graph Neural Networks (GNNs)~\cite{battaglia2018relational}, which, along with the more sophisticated transformer models~\cite{vaswani2017attention,amatriain2023transformer}, have seen widespread adoption in particle physics over the past five years~\cite{dezoort2021charged,ju2021performance,van2024transformers}. Interestingly, for this application, using an unsupervised learning algorithm (agglomorative clustering) to first define a graph structure presented a powerful inductive bias for our application which much improved our results over the standalone edge-NN. One limitation of this approach is is cannot improve an overly aggressive pre-clustering (e.g, a false positive rate can never be decreased  in the clean-up step by the edge-NN). However, the necessity of reattaching edge hits to address the high false negative rate—exceeding the false positive rate by a factor of five in the baseline reconstruction (see Table~\ref{tab:results})—motivated this strategy.\newline
 Subsequent work could consider also adding a subsequent cluster splitting step in an end-to-end optimizable algorithm.\newline
