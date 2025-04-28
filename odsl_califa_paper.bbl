@@ -94,13 +94,40 @@ D.~Newton, R.~Pasupathy, F.~Yousefian, Recent trends in stochastic gradient
   descent for machine learning and big data, in: 2018 Winter Simulation
   Conference (WSC), IEEE, 2018, pp. 366--380.
 
-\bibitem{sieranoja2025fast}
-S.~Sieranoja, P.~Fr{\"a}nti, Fast agglomerative clustering using approximate
-  traveling salesman solutions, Journal of Big Data 12~(1) (2025) 21.
+\bibitem{battaglia2018relational}
+P.~W. Battaglia, J.~B. Hamrick, V.~Bapst, A.~Sanchez-Gonzalez, V.~Zambaldi,
+  M.~Malinowski, A.~Tacchetti, D.~Raposo, A.~Santoro, R.~Faulkner, et~al.,
+  Relational inductive biases, deep learning, and graph networks, arXiv
+  preprint arXiv:1806.01261 (2018).
 
 \bibitem{vaswani2017attention}
 A.~Vaswani, N.~Shazeer, N.~Parmar, J.~Uszkoreit, L.~Jones, A.~N. Gomez,
   {\L}.~Kaiser, I.~Polosukhin, Attention is all you need, Advances in neural
   information processing systems 30 (2017).
+
+\bibitem{amatriain2023transformer}
+X.~Amatriain, A.~Sankar, J.~Bing, P.~K. Bodigutla, T.~J. Hazen, M.~Kazi,
+  Transformer models: an introduction and catalog, arXiv preprint
+  arXiv:2302.07730 (2023).
+
+\bibitem{dezoort2021charged}
+G.~DeZoort, S.~Thais, J.~Duarte, V.~Razavimaleki, M.~Atkinson, I.~Ojalvo,
+  M.~Neubauer, P.~Elmer, Charged particle tracking via edge-classifying
+  interaction networks, Computing and Software for Big Science 5 (2021) 1--13.
+
+\bibitem{ju2021performance}
+X.~Ju, D.~Murnane, P.~Calafiura, N.~Choma, S.~Conlon, S.~Farrell, Y.~Xu,
+  M.~Spiropulu, J.-R. Vlimant, A.~Aurisano, et~al., Performance of a geometric
+  deep learning pipeline for hl-lhc particle tracking, The European Physical
+  Journal C 81 (2021) 1--14.
+
+\bibitem{van2024transformers}
+S.~Van~Stroud, P.~Duckett, M.~Hart, N.~Pond, S.~Rettie, G.~Facini, T.~Scanlon,
+  Transformers for charged particle track reconstruction in high energy
+  physics, arXiv preprint arXiv:2411.07149 (2024).
+
+\bibitem{sieranoja2025fast}
+S.~Sieranoja, P.~Fr{\"a}nti, Fast agglomerative clustering using approximate
+  traveling salesman solutions, Journal of Big Data 12~(1) (2025) 21.
 
 \end{thebibliography}

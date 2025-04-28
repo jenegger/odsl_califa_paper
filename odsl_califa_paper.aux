@@ -35,17 +35,20 @@
 \citation{newton2018recent}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.5}Agglomerative Clustering}{3}{}\protected@file@percent }
 \newlabel{s_sec:agglo}{{2.5}{3}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Comparison of clustering performance on the test dataset using standard R3B clustering (blue) and agglomerative clustering (orange) incorporating hit-time information. The dataset comprises simulated $\gamma $-rays with energies uniformly distributed between 0.3 and 10\,MeV. The metrics shown include event-based and cluster-based measures: \textit  {TP}, \textit  {FP}, \textit  {FN}, \textit  {FM}, and \textit  {WR}, see also subsection 2.4\hbox {}.}}{3}{}\protected@file@percent }
-\newlabel{fig:r3b_agglo_metrics}{{2}{3}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.6}Implementation of the Edge Detection Neural Network}{3}{}\protected@file@percent }
 \newlabel{s_sec:edge}{{2.6}{3}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Schematic architecture of the edge detection neural network. The model consists of three fully connected hidden layers. The final output layer comprises a single node with a sigmoid activation function, yielding a prediction score in the range $[0, 1]$. Values closer to 1 indicate that the input hit pair originates from the same physical cluster and should be merged, while values near 0 suggest they should remain separate.}}{3}{}\protected@file@percent }
-\newlabel{fig:architecture}{{3}{3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Comparison of clustering performance on the test dataset using standard R3B clustering (blue) and agglomerative clustering (orange) incorporating hit-time information. The dataset comprises simulated $\gamma $-rays with energies uniformly distributed between 0.3 and 10\,MeV. The metrics shown include event-based and cluster-based measures: \textit  {TP}, \textit  {FP}, \textit  {FN}, \textit  {FM}, and \textit  {WR}; see also subsection 2.4\hbox {}.}}{3}{}\protected@file@percent }
+\newlabel{fig:r3b_agglo_metrics}{{2}{3}}
+\citation{battaglia2018relational}
+\citation{vaswani2017attention,amatriain2023transformer}
+\citation{dezoort2021charged,ju2021performance,van2024transformers}
 \citation{sieranoja2025fast}
 \citation{vaswani2017attention}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Schematic architecture of the edge detection neural network. The model consists of three fully connected hidden layers. The final output layer comprises a single node with a sigmoid activation function, yielding a prediction score in the range $[0, 1]$. Values closer to 1 indicate that the input hit pair originates from the same physical cluster and should be merged, while values near 0 suggest they should remain separate.}}{4}{}\protected@file@percent }
+\newlabel{fig:architecture}{{3}{4}}
 \@writefile{toc}{\contentsline {section}{\numberline {3}Results}{4}{}\protected@file@percent }
 \newlabel{sec:results}{{3}{4}}
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Summary of performance metrics as defined in Subsection\nobreakspace  {}2.4\hbox {}, evaluated for the different clustering algorithms. The models \textit  {R3B Standard Clustering}, \textit  {Edge Clustering (no time)}, and \textit  {R3B + Edge (no time)} utilize angular and energy information on a per-hit basis for cluster reconstruction. In contrast, \textit  {Agglomerative Clustering}, \textit  {Edge Clustering (with time)}, and \textit  {Agglo + Edge (with time)} additionally incorporate time-of-hit information into the clustering process.}}{4}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Summary of performance metrics as defined in Subsection\nobreakspace  {}2.4\hbox {}, evaluated for the different clustering algorithms. The models \textit  {R3B Standard Clustering}, \textit  {Edge Clustering (no time)}, and \textit  {R3B + Edge (no time)} utilize only angular and energy information on a per-hit basis for cluster reconstruction. In contrast, \textit  {Agglomerative Clustering}, \textit  {Edge Clustering (with time)}, and \textit  {Agglo + Edge (with time)} additionally incorporate time-of-hit information into the clustering process.}}{4}{}\protected@file@percent }
 \newlabel{tab:results}{{1}{4}}
 \@writefile{toc}{\contentsline {section}{\numberline {4}Discussion and Outlook}{4}{}\protected@file@percent }
 \newlabel{sec:disc_outlook}{{4}{4}}
@@ -69,8 +72,13 @@
 \bibcite{mannor2005cross}{{16}{}{{}}{{}}}
 \bibcite{de2005tutorial}{{17}{}{{}}{{}}}
 \bibcite{newton2018recent}{{18}{}{{}}{{}}}
-\bibcite{sieranoja2025fast}{{19}{}{{}}{{}}}
+\bibcite{battaglia2018relational}{{19}{}{{}}{{}}}
 \bibcite{vaswani2017attention}{{20}{}{{}}{{}}}
+\bibcite{amatriain2023transformer}{{21}{}{{}}{{}}}
+\bibcite{dezoort2021charged}{{22}{}{{}}{{}}}
+\bibcite{ju2021performance}{{23}{}{{}}{{}}}
+\bibcite{van2024transformers}{{24}{}{{}}{{}}}
+\bibcite{sieranoja2025fast}{{25}{}{{}}{{}}}
 \providecommand\NAT@force@numbers{}\NAT@force@numbers
 \@writefile{toc}{\let\numberline\tmptocnumberline}
 \@writefile{toc}{\contentsline {section}{\numberline {Appendix \nobreakspace  {}A}Appendix title 1}{5}{}\protected@file@percent }

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.3.24)  26 APR 2025 19:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.3.24)  28 APR 2025 11:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -632,13 +632,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 183--186
  []
 
 [2 <./csi_attuenuation.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 206--208
+
+ []
+
 <r3b_agglo_arrows.png, id=21, 1061.9675pt x 597.23125pt>
 File: r3b_agglo_arrows.png Graphic file (type png)
 <use r3b_agglo_arrows.png>
-Package pdftex.def Info: r3b_agglo_arrows.png  used on input line 214.
+Package pdftex.def Info: r3b_agglo_arrows.png  used on input line 215.
 (pdftex.def)             Requested size: 234.8984pt x 132.10208pt.
 
-Underfull \hbox (badness 1297) in paragraph at lines 209--219
+Underfull \hbox (badness 1297) in paragraph at lines 210--220
 []\OT1/txr/m/n/10 To in-cor-po-rate tem-po-ral in-for-ma-tion into the clus-ter
 -ing
  []
@@ -646,14 +650,41 @@ Underfull \hbox (badness 1297) in paragraph at lines 209--219
 <architecture.png, id=22, 583.17876pt x 432.61626pt>
 File: architecture.png Graphic file (type png)
 <use architecture.png>
-Package pdftex.def Info: architecture.png  used on input line 231.
+Package pdftex.def Info: architecture.png  used on input line 232.
 (pdftex.def)             Requested size: 208.79681pt x 154.89018pt.
-[3 <./r3b_agglo_arrows.png> <./architecture.png>]
-Overfull \hbox (15.39009pt too wide) in paragraph at lines 249--266
+[3 <./r3b_agglo_arrows.png>]
+Overfull \hbox (15.39009pt too wide) in paragraph at lines 250--267
  [] 
  []
 
-[4] (./odsl_califa_paper.bbl
+
+Underfull \hbox (badness 1748) in paragraph at lines 272--280
+[]\OT1/txr/m/n/10 The re-sults of this study are sum-ma-rized in Ta-ble 1[],
+ []
+
+
+Underfull \hbox (badness 1270) in paragraph at lines 272--280
+\OT1/txr/m/n/10 or-ga-nized ac-cord-ing to in-creas-ing lev-els of re-con-struc
+-tion
+ []
+
+
+Underfull \hbox (badness 1281) in paragraph at lines 272--280
+\OT1/txr/m/n/10 into the ag-glom-er-a-tive frame-work, yield-ing the com-bined
+ []
+
+
+Underfull \hbox (badness 1436) in paragraph at lines 272--280
+\OT1/txr/m/n/10 across all eval-u-ated met-rics, achiev-ing an over-all cor-rec
+t
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 272--280
+
+ []
+
+[4 <./architecture.png>] (./odsl_califa_paper.bbl
 Underfull \hbox (badness 1454) in paragraph at lines 31--33
 []\OT1/txr/m/n/8 T. Le Bleis, M. Ben-del, R. Gernh[]auser, W. Hen-ning, P. Klen
 ze,
@@ -675,15 +706,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 47--50
 cessed:
  []
 
+
+Underfull \hbox (badness 1360) in paragraph at lines 109--112
+[]\OT1/txr/m/n/8 X. Am-a-tri-ain, A. Sankar, J. Bing, P. K. Bod-igutla, T. J. H
+azen,
+ []
+
 ) [5] (./odsl_califa_paper.aux) ) 
 Here is how much of TeX's memory you used:
- 4851 strings out of 480121
- 74827 string characters out of 5892160
- 462916 words of memory out of 5000000
- 22733 multiletter control sequences out of 15000+600000
+ 4866 strings out of 480121
+ 75250 string characters out of 5892160
+ 465238 words of memory out of 5000000
+ 22748 multiletter control sequences out of 15000+600000
  503119 words of font info for 113 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 70i,8n,76p,1195b,232s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 70i,8n,76p,1195b,243s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips
 /base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt
 10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
@@ -696,7 +733,7 @@ ic/txfonts/rtxr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/t
 xsy.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/s
 hare/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/te
 xmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on odsl_califa_paper.pdf (5 pages, 491547 bytes).
+Output written on odsl_califa_paper.pdf (5 pages, 494207 bytes).
 PDF statistics:
  88 PDF objects out of 1000 (max. 8388607)
  50 compressed objects within 1 object stream
