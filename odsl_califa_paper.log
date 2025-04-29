@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.3.24)  28 APR 2025 14:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.3.24)  29 APR 2025 20:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -593,51 +593,51 @@ e
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    Font shape `OT1/txr/b/n' in size <10> not available
-(Font)              Font shape `OT1/txr/bx/n' tried instead on input line 117.
+(Font)              Font shape `OT1/txr/bx/n' tried instead on input line 119.
 LaTeX Font Info:    Trying to load font information for U+txmia on input line 1
-19.
+21.
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxmia.fd
 File: utxmia.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 119
+LaTeX Font Info:    Trying to load font information for U+msa on input line 121
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 119
+LaTeX Font Info:    Trying to load font information for U+msb on input line 121
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for U+txsyc on input line 1
-19.
+21.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxsyc.fd
 File: utxsyc.fd 2000/12/15 v3.1
 )
-Underfull \hbox (badness 2035) in paragraph at lines 157--161
+Underfull \hbox (badness 2035) in paragraph at lines 159--163
 \OT1/txr/m/n/10 with Rel-a-tivis-tic Ra-dioac-tive Beams (R$[]$B) Setup, which
  []
 
 
-Underfull \hbox (badness 1360) in paragraph at lines 157--161
+Underfull \hbox (badness 1360) in paragraph at lines 159--163
 \OT1/txr/m/n/10 com-posed of more than 2500 CsI(Tl) scin-til-la-tor crys-tals
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 157--161
+Underfull \hbox (badness 10000) in paragraph at lines 159--163
 
  []
 
 <csi_attuenuation.png, id=1, 722.7pt x 578.16pt>
 File: csi_attuenuation.png Graphic file (type png)
 <use csi_attuenuation.png>
-Package pdftex.def Info: csi_attuenuation.png  used on input line 168.
+Package pdftex.def Info: csi_attuenuation.png  used on input line 170.
 (pdftex.def)             Requested size: 255.78287pt x 204.62628pt.
 
-Overfull \hbox (3.78287pt too wide) in paragraph at lines 168--169
+Overfull \hbox (3.78287pt too wide) in paragraph at lines 170--171
  [][] 
  []
 
@@ -651,63 +651,63 @@ Overfull \hbox (1.90001pt too wide) has occurred while \output is active
 
 ]
 LaTeX Font Info:    Trying to load font information for TS1+txr on input line 1
-81.
+83.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/ts1txr.fd
 File: ts1txr.fd 2000/12/15 v3.1
 )
-Underfull \hbox (badness 10000) in paragraph at lines 186--189
+Underfull \hbox (badness 10000) in paragraph at lines 188--191
 
  []
 
 [2 <./csi_attuenuation.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 209--211
+Underfull \hbox (badness 10000) in paragraph at lines 211--213
 
  []
 
-<r3b_agglo_arrows.png, id=21, 1061.9675pt x 597.23125pt>
+<r3b_agglo_arrows.png, id=20, 1061.9675pt x 597.23125pt>
 File: r3b_agglo_arrows.png Graphic file (type png)
 <use r3b_agglo_arrows.png>
-Package pdftex.def Info: r3b_agglo_arrows.png  used on input line 218.
+Package pdftex.def Info: r3b_agglo_arrows.png  used on input line 220.
 (pdftex.def)             Requested size: 234.8984pt x 132.10208pt.
 
-Underfull \hbox (badness 1297) in paragraph at lines 213--223
+Underfull \hbox (badness 1297) in paragraph at lines 215--225
 []\OT1/txr/m/n/10 To in-cor-po-rate tem-po-ral in-for-ma-tion into the clus-ter
 -ing
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 230--232
+Underfull \hbox (badness 10000) in paragraph at lines 232--234
 
  []
 
 [3 <./r3b_agglo_arrows.png>]
-<spec_2_1agglo_edge_vsr3b.png, id=27, 578.16pt x 433.62pt>
+<spec_2_1agglo_edge_vsr3b.png, id=26, 578.16pt x 433.62pt>
 File: spec_2_1agglo_edge_vsr3b.png Graphic file (type png)
 <use spec_2_1agglo_edge_vsr3b.png>
-Package pdftex.def Info: spec_2_1agglo_edge_vsr3b.png  used on input line 244.
+Package pdftex.def Info: spec_2_1agglo_edge_vsr3b.png  used on input line 246.
 (pdftex.def)             Requested size: 234.8984pt x 176.17091pt.
 
-Overfull \hbox (15.39009pt too wide) in paragraph at lines 251--268
+Overfull \hbox (15.39009pt too wide) in paragraph at lines 253--270
  [] 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<best_example_bad_r3b.png, id=28, 578.16pt x 578.16pt>
+<best_example_bad_r3b.png, id=27, 578.16pt x 578.16pt>
 File: best_example_bad_r3b.png Graphic file (type png)
 <use best_example_bad_r3b.png>
-Package pdftex.def Info: best_example_bad_r3b.png  used on input line 281.
+Package pdftex.def Info: best_example_bad_r3b.png  used on input line 283.
 (pdftex.def)             Requested size: 234.8984pt x 234.89456pt.
-<best_example_good_agglo_edge.png, id=29, 578.16pt x 578.16pt>
+<best_example_good_agglo_edge.png, id=28, 578.16pt x 578.16pt>
 File: best_example_good_agglo_edge.png Graphic file (type png)
 <use best_example_good_agglo_edge.png>
 Package pdftex.def Info: best_example_good_agglo_edge.png  used on input line 2
-88.
+90.
 (pdftex.def)             Requested size: 234.8984pt x 234.89456pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 297--301
+Underfull \hbox (badness 10000) in paragraph at lines 299--303
 
  []
 
@@ -743,7 +743,7 @@ azen,
 ) [6] (./odsl_califa_paper.aux) ) 
 Here is how much of TeX's memory you used:
  6241 strings out of 480121
- 102608 string characters out of 5892160
+ 102604 string characters out of 5892160
  489267 words of memory out of 5000000
  24108 multiletter control sequences out of 15000+600000
  503119 words of font info for 113 fonts, out of 8000000 for 9000
@@ -761,7 +761,7 @@ ic/txfonts/rtxr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/t
 xsy.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/s
 hare/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/te
 xmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on odsl_califa_paper.pdf (6 pages, 868990 bytes).
+Output written on odsl_califa_paper.pdf (6 pages, 869283 bytes).
 PDF statistics:
  95 PDF objects out of 1000 (max. 8388607)
  52 compressed objects within 1 object stream
