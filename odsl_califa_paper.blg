@@ -1,60 +1,58 @@
-This is BibTeX, Version 0.99d (TeX Live 2022/dev/Debian)
-Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+This is BibTeX, Version 0.99d (TeX Live 2017/Debian)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: odsl_califa_paper.aux
 The style file: elsarticle-num.bst
-Database file #1: literature.bib
-I was expecting a `,' or a `}'---line 3 of file literature.bib
+Database file #1: literature.bib.bib
+I was expecting a `,' or a `}'---line 3 of file literature.bib.bib
  :   
  :   author={Kalantar-Nayestanaki, Nasser and Scheidenberger, Christoph},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
 Warning--empty author in kalantar2024experiments
 Warning--empty journal in kalantar2024experiments
-Warning--empty year in kalantar2024experiments
 Warning--empty journal in ledigital
-Warning--empty year in ledigital
 Warning--can't use both volume and number fields in bertini2011r3broot
 Warning--empty chapter and pages in Nielsen2016
 Warning--empty pages in kolanoski2016teilchendetektoren
 You've used 26 entries,
-            2952 wiz_defined-function locations,
-            822 strings with 10814 characters,
-and the built_in function-call counts, 8387 in all, are:
-= -- 706
+            2937 wiz_defined-function locations,
+            821 strings with 10812 characters,
+and the built_in function-call counts, 8169 in all, are:
+= -- 686
 > -- 422
 < -- 7
 + -- 158
 - -- 132
-* -- 582
-:= -- 1199
+* -- 568
+:= -- 1172
 add.period$ -- 26
 call.type$ -- 26
 change.case$ -- 26
 chr.to.int$ -- 0
-cite$ -- 34
-duplicate$ -- 266
-empty$ -- 880
+cite$ -- 32
+duplicate$ -- 254
+empty$ -- 834
 format.name$ -- 152
-if$ -- 2121
+if$ -- 2055
 int.to.chr$ -- 0
 int.to.str$ -- 26
 missing$ -- 26
 newline$ -- 86
 num.names$ -- 25
-pop$ -- 184
+pop$ -- 182
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 547
+skip$ -- 528
 stack$ -- 0
 substring$ -- 368
-swap$ -- 68
+swap$ -- 64
 text.length$ -- 7
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 8
+warning$ -- 6
 while$ -- 60
 width$ -- 28
-write$ -- 216
+write$ -- 212
 (There was 1 error message)
