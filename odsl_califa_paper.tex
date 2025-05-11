@@ -109,12 +109,12 @@
 \author[1]{T. Jenegger}
 \author[1]{N. Hartman}
 \author[1]{R. Gernh\"auser}
-\author[1]{L. Fabbietti?}
+\author[1]{L. Fabbietti}
 \author[1]{L. Heinrich}
-\address[1]{{Technische Universit\"at M\"unchen},%Department and Organization
-            {James-Franck-Str 1}, 
-            {Garching b. München},
-            {85748},
+\address[1]{{TUM School of Natural Sciences, Technical University of Munich},%Department and Organization
+            %{James-Franck-Str 1}, 
+            %{Garching b. München},
+            %{85748},
             {Germany}}
 
 \begin{abstract}
@@ -215,14 +215,14 @@ Special attention must be given to the false negative rate, which is closely ass
 \subsection{Agglomerative Clustering}\label{s_sec:agglo}
 To incorporate temporal information into the clustering process---unlike the standard R3B algorithm, which omits it---a generic, well-established method was adopted: agglomerative clustering \cite{Nielsen2016} as implemented in the \texttt{SciPy} library \cite{virtanen2020scipy}. This unsupervised learning algorithm enables flat clustering based on hierarchical linkage with a user-defined threshold.\newline
 Each hit was mapped into spherical coordinates \((\theta, \phi, r)\), where the radial component \(r\) encodes time information. To ensure non-negative radii, the acquisition time window of \(\pm 4\,\mu\mathrm{s}\) was shifted by \(+4.5\,\mu\mathrm{s}\). The Ward linkage criterion \cite{nielsen2016hierarchical}, which minimizes intra-cluster variance, was employed as the distance metric.\newline
-The threshold parameter was optimized to yield the best performance according to the custom-defined \textit{true positive} (TP) and \textit{well reoncstructed} (WR) metrics. A comparison between the standard R3B clustering and the agglomerative method is presented in Fig. \ref{fig:r3b_agglo_metrics}.
-\begin{figure}[!htb]
-	\centering 
-	\includegraphics[width=0.45\textwidth]{r3b_agglo_arrows.png}	
-	\caption{Comparison of clustering performance on the test dataset using standard R3B clustering (blue) and agglomerative clustering (orange) incorporating hit-time information. The dataset comprises simulated $\gamma$-rays with energies uniformly distributed between 0.3 and 10\,MeV. The metrics shown include event-based and cluster-based measures: \textit{TP}, \textit{FP}, \textit{FN}, \textit{FM}, and \textit{WR}; see also subsection \ref{s_sec:metrics}.} 
-	\label{fig:r3b_agglo_metrics}%
-\end{figure}
-As shown in Fig. \ref{fig:r3b_agglo_metrics}, the agglomerative clustering algorithm demonstrates improved performance both on an event level (true positive rate) and on a cluster level (correctly reconstructed clusters). However, this improvement is accompanied by an increased false negative rate, indicating that the algorithm tends to under-merge hits near the edges of clusters. This limitation motivated the development and application of an edge detection neural network, which is introduced in the following subsection.
+The threshold parameter was optimized to yield the best performance according to the custom-defined \textit{true positive} (TP) and \textit{well reoncstructed} (WR) metrics. A comparison between the standard R3B clustering and the agglomerative method is presented in the first two rows of Table~\ref{tab:results}.
+%\begin{figure}[!htb]
+%	\centering 
+%	\includegraphics[width=0.45\textwidth]{r3b_agglo_arrows.png}	
+%	\caption{Comparison of clustering performance on the test dataset using standard R3B clustering (blue) and agglomerative clustering (orange) incorporating hit-time information. The dataset comprises simulated $\gamma$-rays with energies uniformly distributed between 0.3 and 10\,MeV. The metrics shown include event-based and cluster-based measures: \textit{TP}, \textit{FP}, \textit{FN}, \textit{FM}, and \textit{WR}; see also subsection \ref{s_sec:metrics}.} 
+%	\label{fig:r3b_agglo_metrics}%
+%\end{figure}
+As shown in Table~\ref{tab:results}, the agglomerative clustering algorithm demonstrates improved performance both on an event level (true positive rate) and on a cluster level (correctly reconstructed clusters). However, this improvement is accompanied by an increased false negative rate, indicating that the algorithm tends to under-merge hits near the edges of clusters. This limitation motivated the development and application of an edge detection neural network, which is introduced in the following subsection.
 
 
 \subsection{Edge Detection Neural Network}\label{s_sec:edge}
@@ -251,26 +251,28 @@ The edge detection NN was implemented and tested in three configurations:
 \section{Results}\label{sec:results}
 \begin{table}[h!]
 \begin{center}
+\resizebox{0.5\textwidth}{!}{%
 \begin{tabular}{||c| c| c |c | c|| c|}
  \hline
- Clustering Model & TP & FP & FN & FM & WR \\ [0.5ex] 
+ Clustering Model & TP($\uparrow$) & FP($\downarrow$) & FN($\downarrow$) & FM($\downarrow$) & WR($\uparrow$) \\ [0.5ex] 
  \hline\hline
  R3B Standard Clustering & 60.6 & 5.3 & 25.2 & 8.9 & 80.4 \\ 
  \hline
- Agglomerative Clustering & 62.8 & 3.3 & 32.0 & 1.9 & 84.1 \\ 
+ Agglomerative Clustering & 62.8 & \textbf{3.3} & 32.0 & 1.9 & 84.1 \\ 
  \hline
- Edge Clustering (no time) & 63.4 & 7.2 & 24.8 & 4.6 & 82.4 \\ 
+ Edge Clustering (no time) & 63.4$\pm$0.3 & 7.2$\pm$0.3 & 24.8$\pm$0.7 & 4.6$\pm$0.1 & 82.4$\pm$0.1 \\ 
  \hline
- Edge Clustering (with time) & 74.7 & 3.4 & 20.5 & 1.4 & 89.2 \\ 
+ Edge Clustering (with time) & 74.7$\pm$0.5 & 3.4$\pm$0.6 & 20.5$\pm$1.3 & 1.4$\pm$0.1 & 89.2$\pm$0.1 \\ 
  \hline
- R3B + Edge (no time) & 67.4 & 8.5 & 16.0 & 8.0 & 82.2 \\ 
+ R3B + Edge (no time) & 67.4$\pm$0.3 & 8.5$\pm$0.3 & 16.0$\pm$0.4 & 8.0$\pm$0.3 & 82.2$\pm$0.1 \\ 
  \hline
- Agglo + Edge (with time) & 81.3 & 5.1 & 12.2 & 1.5 & 91.0 \\
+ Agglo + Edge (with time) & \textbf{81.3$\pm$0.3} & 5.1$\pm$0.0 & \textbf{12.2$\pm$0.3} & \textbf{1.5$\pm$0.1} & \textbf{91.0$\pm$0.1} \\
  \hline
 \end{tabular}
+}
 \end{center}
 %\caption{Overview of the resulting performance metrics, as introduced in subsection \ref{s_sec:metrics}, for the various clustering models.The models \textit{R3B Standard Clustering},\textit{Edge Clustering (no time)},\textit{R3B + Edge (no time)} use the angular and energy hitwise information, the models \textit{Agglomerative Clustering},\textit{Edge Clustering (with time)} and \textit{Agglo + Edge (with time)} use in addition also the hit-time for cluster reconstruction.}
-\caption{Summary of performance metrics as defined in Subsection~\ref{s_sec:metrics}, evaluated for the different clustering algorithms. The models \textit{R3B Standard Clustering}, \textit{Edge Clustering (no time)}, and \textit{R3B + Edge (no time)} utilize only angular and energy information on a per-hit basis for cluster reconstruction. In contrast, \textit{Agglomerative Clustering}, \textit{Edge Clustering (with time)}, and \textit{Agglo + Edge (with time)} additionally incorporate time-of-hit information into the clustering process.}
+\caption{Summary of performance metrics as defined in Subsection~\ref{s_sec:metrics}, evaluated for the different clustering algorithms. The models \textit{R3B Standard Clustering}, \textit{Edge Clustering (no time)}, and \textit{R3B + Edge (no time)} utilize only angular and energy information on a per-hit basis for cluster reconstruction. In contrast, \textit{Agglomerative Clustering}, \textit{Edge Clustering (with time)}, and \textit{Agglo + Edge (with time)} additionally incorporate time-of-hit information into the clustering process. Uncertainties reported for the four edge detection neural network variants correspond to the standard deviation of the results obtained from ten independent training runs.}
 \label{tab:results}
 \end{table}
 The results of this study are summarized in Table~\ref{tab:results}, organized according to increasing levels of reconstruction complexity. For completeness, the previously obtained results from the comparison between the "baseline" R3B standard clustering algorithm and the agglomerative model, as presented in Figure~\ref{fig:r3b_agglo_metrics}, are also included.\newline
@@ -281,14 +283,16 @@ A visual representation of an event, contrasting the incorrectly merged hits fro
 \begin{figure}[htbp]
     \centering
     \begin{subfigure}[b]{0.45\textwidth}
-        \includegraphics[width=\textwidth]{best_example_bad_r3b.png}
+        %\includegraphics[width=\textwidth]{best_example_bad_r3b.png}
+        \includegraphics[width=\textwidth]{bad_reco_paper.png}
 	\centering
-        \caption{R3B standard clustering: the blue-edged cluster with sparse hits is incorrectly split up into two clusters.}
+        \caption{R3B standard clustering: the red-edged cluster with sparse hits is incorrectly split up into two clusters.}
         \label{fig:subfig1}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.45\textwidth}
-        \includegraphics[width=\textwidth]{best_example_good_agglo_edge.png}
+        %\includegraphics[width=\textwidth]{best_example_good_agglo_edge.png}
+        \includegraphics[width=\textwidth]{good_reco_paper.png}
 	\centering
         \caption{Agglo+Edge clustering: successful reattaching of sparse hits.}
         \label{fig:subfig2}
@@ -317,12 +321,12 @@ The work was supported by BMBF 05P24WO2 and Excellence Cluster ORIGINS from the 
 
 %% The Appendices part is started with the command \appendix;
 %% appendix sections are then done as normal sections
-\appendix
+%\appendix
 
-\section{Appendix title 1}
+%\section{Appendix title 1}
 %% \label{}
 
-\section{Appendix title 2}
+%\section{Appendix title 2}
 %% \label{}
 
 %% If you have bibdatabase file and want bibtex to generate the

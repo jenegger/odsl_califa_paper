@@ -98,17 +98,17 @@ D.~Newton, R.~Pasupathy, F.~Yousefian, Recent trends in stochastic gradient
 P.~W. Battaglia, J.~B. Hamrick, V.~Bapst, A.~Sanchez-Gonzalez, V.~Zambaldi,
   M.~Malinowski, A.~Tacchetti, D.~Raposo, A.~Santoro, R.~Faulkner, et~al.,
   Relational inductive biases, deep learning, and graph networks, arXiv
-  preprint arXiv:1806.01261.
+  preprint arXiv:1806.01261 (2018).
 
 \bibitem{vaswani2017attention}
 A.~Vaswani, N.~Shazeer, N.~Parmar, J.~Uszkoreit, L.~Jones, A.~N. Gomez,
   {\L}.~Kaiser, I.~Polosukhin, Attention is all you need, Advances in neural
-  information processing systems 30.
+  information processing systems 30 (2017).
 
 \bibitem{amatriain2023transformer}
 X.~Amatriain, A.~Sankar, J.~Bing, P.~K. Bodigutla, T.~J. Hazen, M.~Kazi,
   Transformer models: an introduction and catalog, arXiv preprint
-  arXiv:2302.07730.
+  arXiv:2302.07730 (2023).
 
 \bibitem{dezoort2021charged}
 G.~DeZoort, S.~Thais, J.~Duarte, V.~Razavimaleki, M.~Atkinson, I.~Ojalvo,
@@ -124,7 +124,7 @@ X.~Ju, D.~Murnane, P.~Calafiura, N.~Choma, S.~Conlon, S.~Farrell, Y.~Xu,
 \bibitem{van2024transformers}
 S.~Van~Stroud, P.~Duckett, M.~Hart, N.~Pond, S.~Rettie, G.~Facini, T.~Scanlon,
   Transformers for charged particle track reconstruction in high energy
-  physics, arXiv preprint arXiv:2411.07149.
+  physics, arXiv preprint arXiv:2411.07149 (2024).
 
 \bibitem{sieranoja2025fast}
 S.~Sieranoja, P.~Fr{\"a}nti, Fast agglomerative clustering using approximate
