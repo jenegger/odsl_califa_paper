@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.3.24)  11 MAY 2025 16:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.3.24)  23 MAY 2025 10:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -678,10 +678,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 233--235
 
  []
 
-
-LaTeX Warning: Reference `fig:r3b_agglo_metrics' on page 3 undefined on input l
-ine 242.
-
 [3]
 <spec_2_1agglo_edge_vsr3b.png, id=25, 578.16pt x 433.62pt>
 File: spec_2_1agglo_edge_vsr3b.png Graphic file (type png)
@@ -692,10 +688,6 @@ Package pdftex.def Info: spec_2_1agglo_edge_vsr3b.png  used on input line 247.
 Overfull \hbox (9.01224pt too wide) in paragraph at lines 254--273
  [] 
  []
-
-
-LaTeX Warning: Reference `fig:r3b_agglo_metrics' on page 4 undefined on input l
-ine 278.
 
 <bad_reco_paper.png, id=26, 578.16pt x 578.16pt>
 File: bad_reco_paper.png Graphic file (type png)
@@ -712,14 +704,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 304--308
 
  []
 
-[4 <./spec_2_1agglo_edge_vsr3b.png>] (./odsl_califa_paper.bbl [5 <./bad_reco_pa
-per.png> <./good_reco_paper.png>]
+[4 <./spec_2_1agglo_edge_vsr3b.png>] (./odsl_califa_paper.bbl
 Underfull \hbox (badness 1454) in paragraph at lines 31--33
 []\OT1/txr/m/n/8 T. Le Bleis, M. Ben-del, R. Gernh[]auser, W. Hen-ning, P. Klen
 ze,
  []
 
-
+[5 <./bad_reco_paper.png> <./good_reco_paper.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 47--50
 []\OT1/txr/m/n/8 S. Seltzer, XCOM-Photon Cross Sec-tions
  []
@@ -749,32 +740,28 @@ Underfull \hbox (badness 5893) in paragraph at lines 134--136
 
 ) [6
 
-] (./odsl_califa_paper.aux)
-
-LaTeX Warning: There were undefined references.
-
- ) 
+] (./odsl_califa_paper.aux) ) 
 Here is how much of TeX's memory you used:
- 6227 strings out of 480121
- 102206 string characters out of 5892160
- 492267 words of memory out of 5000000
- 24096 multiletter control sequences out of 15000+600000
+ 6226 strings out of 480121
+ 102183 string characters out of 5892160
+ 491267 words of memory out of 5000000
+ 24095 multiletter control sequences out of 15000+600000
  500182 words of font info for 103 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
  70i,10n,77p,1192b,457s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/public/txfonts/rtcxr.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/txfonts/rtxb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfon
-ts/rtxi.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/txfonts/txsy.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/
-utmri8a.pfb>
-Output written on odsl_califa_paper.pdf (6 pages, 793404 bytes).
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/bas
+e/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/txfonts/rtcxr.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/txfonts/rtxb.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/txfonts/rtxi.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/txfonts/rtxmi.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/t
+xfonts/rtxr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsy.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on odsl_califa_paper.pdf (6 pages, 792752 bytes).
 PDF statistics:
  93 PDF objects out of 1000 (max. 8388607)
  52 compressed objects within 1 object stream
