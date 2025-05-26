@@ -119,9 +119,8 @@
 
 \begin{abstract}
 %% Text of abstract
-The R3B experiment at FAIR studies nuclear reactions induced by high-energy radioactive beams. A key detector, the CALIFA calorimeter, consists of 2544 CsI(Tl) scintillator crystals designed to detect gamma rays and light charged particles with high angular resolution and Doppler correction.
-Precise cluster reconstruction from sparse hit patterns is essential for accurate energy determination. The current algorithm uses fixed cluster sizes and geometric thresholds. To enhance performance, it was compared with machine learning techniques such as agglomerative clustering, incorporating previously unused timing information from CALIFA. Additional improvements were explored using an Edge Detection Neural Network.
-This study, based on Geant4 simulations, demonstrates improvements in cluster reconstruction over 30\%, showcasing the potential of machine learning in high-energy nuclear physics experiments.
+
+The R3B experiment at FAIR studies nuclear reactions using high-energy radioactive beams. One key detector in R3B is the CALIFA calorimeter consisting of 2544 CsI(Tl) scintillator crystals designed to detect light charged particles and  gamma rays with an energy resolution in the per cent range after Doppler correction. Precise cluster reconstruction from sparse hit patterns is a crucial requirement. Standard algorithms typically use fixed cluster sizes or geometric thresholds. To enhance performance, advanced machine learning techniques such as agglomerative clustering were implemented to use the full multi-dimensional parameter space including geometry, energy and time of individual interactions. An Edge Detection Neural Network exhibited significant differences. This study, based on Geant4 simulations, demonstrates improvements in cluster reconstruction efficiency of more than 30\%, showcasing the potential of machine learning in nuclear physics experiments.
 \end{abstract}
 
 %%Graphical abstract
