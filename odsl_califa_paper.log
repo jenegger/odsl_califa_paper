@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.3.24)  26 MAY 2025 20:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.3.24)  26 MAY 2025 20:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -617,15 +617,14 @@ LaTeX Font Info:    Trying to load font information for U+txsyc on input line 1
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxsyc.fd
 File: utxsyc.fd 2000/12/15 v3.1
 )
-Underfull \hbox (badness 1931) in paragraph at lines 159--163
-\OT1/txr/m/n/10 with \OT1/txr/bx/n/10 R\OT1/txr/m/n/10 elativistic \OT1/txr/bx/
-n/10 R\OT1/txr/m/n/10 adioactive \OT1/txr/bx/n/10 B\OT1/txr/m/n/10 eams (R3B) s
-etup, which
+Underfull \hbox (badness 2662) in paragraph at lines 159--163
+\OT1/txr/bx/n/10 B\OT1/txr/m/n/10 eams (R3B) setup, pro-vid-ing ac-cess to high
+-resolution
  []
 
 
 Underfull \hbox (badness 1360) in paragraph at lines 159--163
-\OT1/txr/m/n/10 com-posed of more than 2500 CsI(Tl) scin-til-la-tor crys-tals
+\OT1/txr/m/n/10 (Calorime-ter for the In-Flight De-tec-tion of Gamma Rays
  []
 
 
@@ -744,11 +743,11 @@ Underfull \hbox (badness 5893) in paragraph at lines 134--136
 Here is how much of TeX's memory you used:
  6226 strings out of 480121
  102183 string characters out of 5892160
- 491267 words of memory out of 5000000
+ 492267 words of memory out of 5000000
  24095 multiletter control sequences out of 15000+600000
  500182 words of font info for 103 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 70i,10n,77p,1192b,457s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 70i,10n,77p,1204b,457s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/bas
 e/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.p
 fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></us
@@ -761,7 +760,7 @@ xfonts/rtxr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsy.
 pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-
 dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on odsl_califa_paper.pdf (6 pages, 792807 bytes).
+Output written on odsl_califa_paper.pdf (6 pages, 792856 bytes).
 PDF statistics:
  93 PDF objects out of 1000 (max. 8388607)
  52 compressed objects within 1 object stream
