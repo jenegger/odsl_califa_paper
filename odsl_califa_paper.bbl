@@ -37,8 +37,13 @@ D.~Bertini, {R3BRoot, simulation and analysis framework for the R3B experiment
   Publishing, 2011, p. 032036.
 
 \bibitem{Nielsen2016}
-F.~Nielsen, Hierarchical Clustering, Springer International Publishing, Cham,
+F.~Nielsen, {Hierarchical Clustering}, Springer International Publishing, Cham,
   2016, pp. 195--211.
+
+\bibitem{popescu2009multilayer}
+M.-C. Popescu, V.~E. Balas, L.~Perescu-Popescu, N.~Mastorakis, {Multilayer
+  perceptron and neural networks}, WSEAS Transactions on Circuits and Systems
+  8~(7) (2009) 579--588.
 
 \bibitem{kolanoski2016teilchendetektoren}
 H.~Kolanoski, N.~Wermes, Teilchendetektoren, Springer, 2016, Ch. 13.5.2.
@@ -54,15 +59,15 @@ O.~Klein, Y.~Nishina, {{\"U}ber die Streuung von Strahlung durch freie
   Zeitschrift f{\"u}r Physik 52~(11) (1929) 853--868.
 
 \bibitem{lipinski2011white}
-M.~Lipi{\'n}ski, T.~W{\l}ostowski, J.~Serrano, P.~Alvarez, White rabbit: A ptp
-  application for robust sub-nanosecond synchronization, in: 2011 IEEE
+M.~Lipi{\'n}ski, T.~W{\l}ostowski, J.~Serrano, P.~Alvarez, {White rabbit: A PTP
+  application for robust sub-nanosecond synchronization}, in: 2011 IEEE
   International Symposium on Precision Clock Synchronization for Measurement,
   Control and Communication, IEEE, 2011, pp. 25--30.
 
 \bibitem{agostinelli2003geant4}
 S.~Agostinelli, J.~Allison, K.~a. Amako, J.~Apostolakis, H.~Araujo, P.~Arce,
-  M.~Asai, D.~Axen, S.~Banerjee, G.~Barrand, et~al., Geant4—a simulation
-  toolkit, Nuclear instruments and methods in physics research section A:
+  M.~Asai, D.~Axen, S.~Banerjee, G.~Barrand, et~al., {GEANT4—a simulation
+  toolkit}, Nuclear instruments and methods in physics research section A:
   Accelerators, Spectrometers, Detectors and Associated Equipment 506~(3)
   (2003) 250--303.
 
@@ -80,6 +85,10 @@ F.~Nielsen, F.~Nielsen, Hierarchical clustering, Introduction to HPC with MPI
 S.~Imambi, K.~B. Prakash, G.~Kanagachidambaresan, Pytorch, Programming with
   TensorFlow: solution for edge computing applications (2021) 87--104.
 
+\bibitem{agarap2018deep}
+A.~F. Agarap, Deep learning using rectified linear units (relu), arXiv preprint
+  arXiv:1803.08375 (2018).
+
 \bibitem{mannor2005cross}
 S.~Mannor, D.~Peleg, R.~Rubinstein, The cross entropy method for
   classification, in: Proceedings of the 22nd international conference on
@@ -90,14 +99,14 @@ P.-T. De~Boer, D.~P. Kroese, S.~Mannor, R.~Y. Rubinstein, A tutorial on the
   cross-entropy method, Annals of operations research 134 (2005) 19--67.
 
 \bibitem{newton2018recent}
-D.~Newton, R.~Pasupathy, F.~Yousefian, Recent trends in stochastic gradient
-  descent for machine learning and big data, in: 2018 Winter Simulation
+D.~Newton, R.~Pasupathy, F.~Yousefian, {Recent trends in stochastic gradient
+  descent for machine learning and Big Data}, in: 2018 Winter Simulation
   Conference (WSC), IEEE, 2018, pp. 366--380.
 
 \bibitem{battaglia2018relational}
 P.~W. Battaglia, J.~B. Hamrick, V.~Bapst, A.~Sanchez-Gonzalez, V.~Zambaldi,
   M.~Malinowski, A.~Tacchetti, D.~Raposo, A.~Santoro, R.~Faulkner, et~al.,
-  Relational inductive biases, deep learning, and graph networks, arXiv
+  {Relational inductive biases, deep learning, and graph networks}, arXiv
   preprint arXiv:1806.01261 (2018).
 
 \bibitem{vaswani2017attention}
@@ -107,24 +116,24 @@ A.~Vaswani, N.~Shazeer, N.~Parmar, J.~Uszkoreit, L.~Jones, A.~N. Gomez,
 
 \bibitem{amatriain2023transformer}
 X.~Amatriain, A.~Sankar, J.~Bing, P.~K. Bodigutla, T.~J. Hazen, M.~Kazi,
-  Transformer models: an introduction and catalog, arXiv preprint
+  {Transformer models: an introduction and catalog}, arXiv preprint
   arXiv:2302.07730 (2023).
 
 \bibitem{dezoort2021charged}
 G.~DeZoort, S.~Thais, J.~Duarte, V.~Razavimaleki, M.~Atkinson, I.~Ojalvo,
-  M.~Neubauer, P.~Elmer, Charged particle tracking via edge-classifying
-  interaction networks, Computing and Software for Big Science 5 (2021) 1--13.
+  M.~Neubauer, P.~Elmer, {Charged particle tracking via edge-classifying
+  interaction networks}, Computing and Software for Big Science 5 (2021) 1--13.
 
 \bibitem{ju2021performance}
 X.~Ju, D.~Murnane, P.~Calafiura, N.~Choma, S.~Conlon, S.~Farrell, Y.~Xu,
-  M.~Spiropulu, J.-R. Vlimant, A.~Aurisano, et~al., Performance of a geometric
-  deep learning pipeline for hl-lhc particle tracking, The European Physical
+  M.~Spiropulu, J.-R. Vlimant, A.~Aurisano, et~al., {Performance of a geometric
+  deep learning pipeline for HL-LHC particle tracking}, The European Physical
   Journal C 81 (2021) 1--14.
 
 \bibitem{van2024transformers}
 S.~Van~Stroud, P.~Duckett, M.~Hart, N.~Pond, S.~Rettie, G.~Facini, T.~Scanlon,
-  Transformers for charged particle track reconstruction in high energy
-  physics, arXiv preprint arXiv:2411.07149 (2024).
+  {Transformers for Charged Particle Track Reconstruction in High Energy
+  Physics}, arXiv preprint arXiv:2411.07149 (2024).
 
 \bibitem{sieranoja2025fast}
 S.~Sieranoja, P.~Fr{\"a}nti, Fast agglomerative clustering using approximate
