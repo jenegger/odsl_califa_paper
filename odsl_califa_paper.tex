@@ -272,31 +272,36 @@ The results of this study are summarized in Table~\ref{tab:results}, organized a
 The agglomerative model shows improved performance over the R3B baseline in terms of both event-level true positives (TP) and cluster-level (WR) values. However, it exhibits inferior performance with respect to the false negative (FN) rate, indicating a tendency to miss relevant hits during reconstruction. This limitation motivated the development of an Edge Detection Neural Network, initially evaluated as a standalone clustering algorithm and subsequently integrated into the agglomerative framework, yielding the combined model denoted as \textit{Agglo + Edge}.\newline
 The \textit{Agglo + Edge} model demonstrates superior performance across all evaluated metrics, achieving an overall correct reconstruction rate of 81.3\%, significantly outperforming the \textit{Geometrical R3B Clustering} algorithm, which reaches 60.6\%.\newline
 A visual representation of an example event, contrasting the incorrectly merged hits from the geometrical R3B clustering with the correctly reconstructed clustering using the Agglo+Edge model, is shown in Figure~\ref{fig:comparison_r3b_agglo_edge}.\newline
-\begin{figure}[htbp]
-    \centering
-    \begin{subfigure}[b]{0.45\textwidth}
-        %\includegraphics[width=\textwidth]{best_example_bad_r3b.png}
-        \includegraphics[width=\textwidth]{bad_reco_paper.png}
-	\centering
-        \caption{Geometrical R3B clustering: the red-edged cluster with sparse hits is incorrectly split up into two clusters.}
-        \label{fig:subfig1}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.45\textwidth}
-        %\includegraphics[width=\textwidth]{best_example_good_agglo_edge.png}
-        \includegraphics[width=\textwidth]{good_reco_paper.png}
-	\centering
-        \caption{Agglo+Edge clustering: successful reattaching of sparse hits.}
-        \label{fig:subfig2}
-    \end{subfigure}
-    \caption{Exemplary event with three simulated gamma photons in the energy range of 0.3–10~MeV, comparing the reconstruction performance of the geometrical R3B clustering and the Agglo+Edge method.}
-    \label{fig:comparison_r3b_agglo_edge}
+%\begin{figure}[htbp]
+%    \centering
+%    \begin{subfigure}[b]{0.45\textwidth}
+%        %\includegraphics[width=\textwidth]{best_example_bad_r3b.png}
+%        \includegraphics[width=\textwidth]{bad_reco_paper.png}
+%	\centering
+%        \caption{Geometrical R3B clustering: the red-edged cluster with sparse hits is incorrectly split up into two clusters.}
+%        \label{fig:subfig1}
+%    \end{subfigure}
+%    \hfill
+%    \begin{subfigure}[b]{0.45\textwidth}
+%        %\includegraphics[width=\textwidth]{best_example_good_agglo_edge.png}
+%        \includegraphics[width=\textwidth]{good_reco_paper.png}
+%	\centering
+%        \caption{Agglo+Edge clustering: successful reattaching of sparse hits.}
+%        \label{fig:subfig2}
+%    \end{subfigure}
+%    \caption{Exemplary event with three simulated gamma photons in the energy range of 0.3–10~MeV, comparing the reconstruction performance of the geometrical R3B clustering and the Agglo+Edge method.}
+%    \label{fig:comparison_r3b_agglo_edge}
+%\end{figure}
+
+\begin{figure}[!htb]
+        \centering
+        \includegraphics[width=0.45\textwidth]{example_event_9114.png}
+	    \caption{Example of a simulated event involving three primary gamma photons, illustrating the performance difference between the Agglo+Edge clustering method and the geometrical R3B clustering approach. Each marker represents a detected hit, plotted as a function of the polar angle \(\theta\) and the azimuthal angle \(\varphi\). The edge color of each circle indicates the true cluster assignment (ground truth), while the fill color denotes the cluster assignment according to the geometrical R3B clustering. The size of each circle reflects the energy deposited in the detector segment. Numbers adjacent to the hits represent the normalized hit times. In this event, the R3B clustering incorrectly assigns the hit at \((\theta \approx 0.6\,\mathrm{rad},\, \varphi \approx 2.7\,\mathrm{rad})\), with a normalized time of 0.69 (blue edge, yellow fill), to a separate cluster, resulting in a \textit{False Negative} (FN). In contrast, the Agglo+Edge method correctly assigns all hits to their respective clusters.}
+        \label{fig:comparison_r3b_agglo_edge}%
 \end{figure}
 
 To further explore the capabilities of neural network-based clustering approaches, two additional models were evaluated: a standalone \textit{Edge Detection Neural Network} and a hybrid approach combining \textit{Geometrical R3B Clustering} with edge-based postprocessing (\textit{R3B + Edge}). Notably, both of these models operate without incorporating time-of-hit information, similar to the R3B baseline. Nonetheless, both outperform the \textit{Geometrical R3B Clustering}, underscoring the potential of edge-based neural network models for improving cluster reconstruction in high-granularity detector systems.\newline
-The edge detection NNs presented here represent a special case of Graph Neural Networks (GNNs)~\cite{battaglia2018relational}, which, along with the more sophisticated transformer models~\cite{vaswani2017attention,amatriain2023transformer}, have seen widespread adoption in particle physics over the past five years~\cite{dezoort2021charged,ju2021performance,van2024transformers}. Interestingly, for this application, using an unsupervised learning algorithm (agglomerative clustering) to first define a graph structure presented a powerful inductive bias for our application which much improved our results over the standalone edge-NN. One limitation of this approach is it cannot improve an overly aggressive pre-clustering (e.g, a false positive rate can never be decreased  in the clean-up step by the edge-NN). However, the necessity of reattaching edge hits to address the high false negative rate—exceeding the false positive rate by a factor of five in the baseline reconstruction (see Table~\ref{tab:results})—motivated this strategy.\newline
-Subsequent work could consider also adding a subsequent cluster splitting step in an end-to-end optimizable algorithm.\newline
-Although, in principle, transformers could learn the graph structure directly from hit distributions, initial tests showed limited performance, highlighting an opportunity for the community to further develop combined machine learning-based reconstruction methods.\newline
+The edge detection NNs presented here represent a special case of Graph Neural Networks (GNNs)~\cite{battaglia2018relational}, which, along with the more sophisticated transformer models~\cite{vaswani2017attention,amatriain2023transformer}, have seen widespread adoption in particle physics over the past five years~\cite{dezoort2021charged,ju2021performance,van2024transformers}. Interestingly, for this application, using an unsupervised learning algorithm (agglomerative clustering) to first define a graph structure presented a powerful inductive bias for our application which much improved our results over the standalone edge-NN.
 
 
 \section{Outlook}\label{sec:disc_outlook}
@@ -305,8 +310,13 @@ The results presented in the previous section clearly demonstrate that high-leve
 It is noteworthy that even the models, which do not utilize time-of-hit information (similarly to the \textit{Geometrical R3B Clustering}), outperform the baseline method. This underscores the general effectiveness of neural network-based methods in extracting structural features from detector data.\newline
 The inclusion of time-of-hit information proves to be a critical factor for enhancing clustering performance. As this observable is typically available for CALIFA at R3B, the results of this study support the recommendation to incorporate it into the reconstruction pipeline wherever possible.\newline
 Furthermore, these findings are intended to encourage broader adoption of advanced machine learning techniques by experimental groups, particularly in setups involving highly granular detectors. Such tools offer substantial performance benefits and can support more precise event reconstruction.\newline
-However, a consideration of computational complexity is essential. Both the \textit{Geometrical R3B Clustering} and \textit{Agglomerative Clustering} methods exhibit a time complexity of $\mathcal{O}(N^2)$ \cite{sieranoja2025fast}, where $N$ is the number of hits. The proposed \textit{Edge Detection Neural Network}, whether used in standalone mode or as an auxiliary module (\textit{R3B + Edge}, \textit{Agglo + Edge}), requires additional computational resources. In particular, the neural network involves large matrix operations—for instance, the second fully connected layer with $10^3$ input and $10^2$ output features—whose computational cost dominates for events with $N \sim \mathcal{O}(10^1)$. Consequently, the current implementation is not suitable for online processing and is better suited for detailed offline analyses, where accuracy is prioritized over execution speed.\newline
-Future work should focus on optimizing the Edge Detection Neural Network for speed and scalability. Additionally, transformer-based models \cite{vaswani2017attention}—capable of analyzing full event topologies—may offer further improvements in clustering accuracy by capturing complex, global features.
+One inherent limitation of the applied approach is its inability to correct for overly aggressive pre-clustering. In particular, false positive assignments introduced during the initial stage cannot be mitigated during the subsequent clean-up step by the edge-NN. This limitation is visible in Fig.~\ref{fig:2_1_mev_r3b_aggloNN}, where a slight excess of reconstructed counts at \(E_{reco} \approx 6.3\ \mathrm{MeV}\) is observed, likely indicating erroneous merging of unrelated hits due to excessive clustering. Despite this artifact, the high false negative rate -- exceeding the false positive rate by more than a factor of five in the baseline R3B clustering (see Table~\ref{tab:results}) -- motivated the development of a clustering strategy that prioritizes the recombination of hits to form complete clusters.\newline
+Subsequent work could consider also adding a subsequent cluster splitting step in an end-to-end optimizable algorithm. Although, in principle, transformers could learn the graph structure directly from hit distributions, initial tests showed limited performance, highlighting an opportunity for the community to further develop combined machine learning-based reconstruction methods.\newline
+%However, a consideration of computational complexity is essential. Both the \textit{Geometrical R3B Clustering} and \textit{Agglomerative Clustering} methods exhibit a time complexity of $\mathcal{O}(N^2)$ \cite{sieranoja2025fast}, where $N$ is the number of hits. The proposed \textit{Edge Detection Neural Network}, whether used in standalone mode or as an auxiliary module (\textit{R3B + Edge}, \textit{Agglo + Edge}), requires additional computational resources. In particular, the neural network involves large matrix operations—for instance, the second fully connected layer with $10^3$ input and $10^2$ output features—whose computational cost dominates for events with $N \sim \mathcal{O}(10^1)$. Consequently, the current implementation is not suitable for online processing and is better suited for detailed offline analyses, where accuracy is prioritized over execution speed.\newline
+%Future work should focus on optimizing the Edge Detection Neural Network for speed and scalability. Additionally, transformer-based models \cite{vaswani2017attention}—capable of analyzing full event topologies—may offer further improvements in clustering accuracy by capturing complex, global features.
+%
+From a computational standpoint, both the geometrical R3B clustering and the agglomerative clustering algorithms scale quadratically with the number of input hits, exhibiting a time complexity of \(\mathcal{O}(N^2)\), where \(N\) denotes the number of detector hits per event. The combined methods --R3B + Edge and Agglo + Edge -- induce additional computational overhead due to the Edge Detection Neural Network (NN) employed in the second stage. The current network architecture comprises three fully connected hidden layers with up to \(10^3\) neurons each, resulting in large matrix operations that dominate the runtime for typical events with \(N \sim \mathcal{O}(10^2)\). Consequently, future work will focus on optimizing the Edge Detection NN by significantly reducing the model size to enable faster execution while improving performance compared to the conventional geometrical R3B clustering.\newline
+Additionally, transformer-based models \cite{vaswani2017attention} -- capable of analyzing full event topologies -- may offer further improvements in clustering accuracy by capturing complex, global features.
 
 \section*{Acknowledgements}
 The work was supported by BMBF 05P24WO2 and Excellence Cluster ORIGINS from the DFG (Excellence Strategy EXC-2094-390783311). It was made possible through the close collaboration of experts from different disciplines within the Cluster of Excellence ORIGINS~\cite{origins2025}.
