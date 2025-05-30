@@ -16,45 +16,45 @@ Warning--empty year in ledigital
 Warning--can't use both volume and number fields in bertini2011r3broot
 Warning--empty chapter and pages in Nielsen2016
 Warning--empty pages in kolanoski2016teilchendetektoren
-You've used 28 entries,
+You've used 27 entries,
             2952 wiz_defined-function locations,
-            835 strings with 11211 characters,
-and the built_in function-call counts, 8900 in all, are:
-= -- 755
-> -- 439
+            829 strings with 11059 characters,
+and the built_in function-call counts, 8663 in all, are:
+= -- 733
+> -- 432
 < -- 7
-+ -- 165
-- -- 137
-* -- 613
-:= -- 1273
-add.period$ -- 28
-call.type$ -- 28
-change.case$ -- 28
++ -- 162
+- -- 135
+* -- 596
+:= -- 1240
+add.period$ -- 27
+call.type$ -- 27
+change.case$ -- 27
 chr.to.int$ -- 0
-cite$ -- 36
-duplicate$ -- 281
-empty$ -- 939
-format.name$ -- 158
-if$ -- 2255
+cite$ -- 35
+duplicate$ -- 273
+empty$ -- 911
+format.name$ -- 155
+if$ -- 2192
 int.to.chr$ -- 0
-int.to.str$ -- 28
-missing$ -- 28
-newline$ -- 92
-num.names$ -- 27
-pop$ -- 195
+int.to.str$ -- 27
+missing$ -- 27
+newline$ -- 89
+num.names$ -- 26
+pop$ -- 190
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 583
+skip$ -- 565
 stack$ -- 0
-substring$ -- 393
-swap$ -- 70
+substring$ -- 387
+swap$ -- 69
 text.length$ -- 7
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 8
-while$ -- 64
-width$ -- 30
-write$ -- 232
+while$ -- 62
+width$ -- 29
+write$ -- 224
 (There was 1 error message)
