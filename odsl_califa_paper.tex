@@ -136,7 +136,7 @@ The R3B experiment at FAIR studies nuclear reactions using high-energy radioacti
 
 \begin{keyword}
 %% keywords here, in the form: keyword \sep keyword, up to a maximum of 6 keywords
-keyword 1 \sep keyword 2 \sep keyword 3 \sep keyword 4
+R3B Experiment \sep CALIFA Calorimeter \sep Cluster Reconstruction \sep Machine Learning \sep Simulation
 
 %% PACS codes here, in the form: \PACS code \sep code
 
@@ -184,13 +184,13 @@ In the geometrical R3B clustering approach, the time information $t_i$ is not ut
 The initial stage of the clustering algorithm begins by sorting all hits in descending order of energy. A user-defined geometric condition, typically a cone emerging from the central target point with an aperture of $0.25\,\mathrm{rad}$, is applied. This value has been found to provide an optimal compromise between compact high-energy clusters from light charged particles and more diffuse gamma-ray showers.\newline
 The hit with the highest energy defines the seed or center of the first cluster. The algorithm then iterates through the remaining hits and includes each hit to the current cluster if it sits within the specified cone relative to the seed direction. Once the list is fully processed for the current cluster, the next highest-energy unassigned hit becomes the seed of a new cluster. This procedure repeats until no unassigned hits remain.\newline
 \subsection{Simulation Setup}\label{s_sec:data_sim}
-To evaluate and compare different clustering algorithms presented in this work, simulated datasets are employed to assess their performance. 
+Simulated datasets are used to evaluate and compare the performance of the clustering algorithms presented in this work.
 A geometrical model of the detector, closely matching the experimental setup, was implemented within the R3BROOT framework. The simulation employs a GEANT4-based Monte Carlo~\cite{agostinelli2003geant4} back-end, which accounts for all relevant secondary interaction processes. This approach enables realistic modeling of energy deposition and provides access to ground-truth labels for each individual interaction.\newline
 
 %For both unsupervised approaches, such as agglomerative clustering, and supervised machine learning methods, such as the Edge Detection Neural Network, which will both be introduced in detail in the following section, access to ground truth labels is required. For this purpose, the R3BROOT framework with a Geant4-based Monte Carlo \cite{agostinelli2003geant4} backend was employed.\newline
 The CALIFA detector geometry used in the simulation corresponds to the configuration implemented in early 2024. At that time, the iPhos region (polar angles $19^\circ$ -- $43^\circ$) was fully instrumented, while only the forward half of the Barrel region ($43^\circ$ -- $87^\circ$) was active. The forward-most CEPA region ($7^\circ$ -- $19^\circ$) was not yet equipped.\newline
 Gamma-ray energies were sampled from a uniform distribution between $0.3\,\mathrm{MeV}$ and $10\,\mathrm{MeV}$. The interaction of the primary gamma rays with the CsI(Tl) scintillation material was modeled using Geant4.\newline
-To emulate realistic event topologies of signal and background, three gamma rays were generated per event, resulting in multiple detector hits. Timing information was coarsely simulated by assigning each primary gamma a random emission time within the $\pm 4\,\mu\mathrm{s}$ event window. The corresponding hit times were then Gaussian-smeared with a standard deviation of $200\,\mathrm{ns}$ to reflect typical electronic channel timing variations using slow CsI(Tl) scintillator crystals.\newline
+To emulate realistic event topologies of signal and background, three gamma rays were generated per event, resulting in multiple detector hits. Timing information was coarsely simulated by assigning to each primary gamma a random emission time within the $\pm 4\,\mu\mathrm{s}$ event window. The corresponding hit times were then Gaussian-smeared with a standard deviation of $200\,\mathrm{ns}$ to reflect the timing spread of the electronic signal of slow CsI(Tl) scintillator crystals.\newline
 Event selection is limited to cases in which all three gamma rays are---at least partially---detected within the geometrical acceptance of the CALIFA detector, which only partially encloses the target region. For gamma rays that deposit only a fraction of their energy in the detector volume, the corresponding true energy is adjusted to reflect only the energy actually deposited in CALIFA.\newline
 The resulting dataset was split into training and test subsets, comprising 13{,}000 and 7{,}000 events, respectively.
 
@@ -201,7 +201,7 @@ To quantitatively assess the performance of the clustering algorithms presented 
     \item \textbf{True Positive (TP)}: All hits in an event are correctly assigned to their respective clusters.
     \item \textbf{False Positive (FP)}: At least one hit in an event is incorrectly merged into a cluster it does not belong to.
     \item \textbf{False Negative (FN)}: At least one hit is not merged into its true cluster and instead forms a spurious cluster.
-    \item \textbf{False Mixed (FM)}: An event is classified as false mixed if it contains both FP and FN characteristics—i.e., at least one hit is incorrectly merged, and at least one true cluster is partially reconstructed.
+    \item \textbf{False Mixed (FM)}: An event is classified as false mixed if it contains both FP and FN characteristics -- i.e., at least one hit is incorrectly merged, and at least one true cluster is partially reconstructed.
 \end{itemize}
 In addition, a cluster-based metric is defined:
 \begin{itemize}
