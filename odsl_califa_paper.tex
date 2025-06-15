@@ -32,7 +32,8 @@
 
 
 % \documentclass[final,5p,times,twocolumn,authoryear]{elsarticle}
- \documentclass[final,5p,times,twocolumn]{elsarticle}
+% \documentclass[final,5p,times,twocolumn]{elsarticle}
+ \documentclass[review]{elsarticle}
 
 %% For including figures, graphicx.sty has been loaded in
 %% elsarticle.cls. If you prefer to use the old commands
@@ -46,6 +47,7 @@
 %TJ user definded packages TODO
 \usepackage{graphicx}
 \usepackage{subcaption}
+\usepackage{lineno}
 
 %% The lineno packages adds line numbers. Start line numbering with
 %% \begin{linenumbers}, end it with \end{linenumbers}. Or switch it on
@@ -60,7 +62,7 @@
 
 
 \begin{document}
-
+\linenumbers
 \begin{frontmatter}
 
 %% Title, authors and addresses
@@ -167,7 +169,7 @@ This study presents the results of a hierarchical machine learning model to enha
 While the detection of light charged particles such as protons typically yields well-localized energy deposits in segmented detector arrays, the detection of gamma rays which emerge from the reaction vertex presents significant challenges. These primarily arise from the inherently sparse and spatially distributed energy deposits resulting from the interaction mechanisms of photons with the scintillator material (see Fig. \ref{fig:csi}) \cite{kolanoski2016teilchendetektoren}.\newline
 \begin{figure}[!htb]
 	\centering 
-	\includegraphics[width=0.49\textwidth]{csi_attuenuation.png}	
+	\includegraphics[width=0.49\textwidth]{fig1.png}	
 	\caption{Photon absorption coefficients in CsI in the range from $100$ keV to $10$ MeV with data from XCOM database \cite{seltzer2010xcom}.} 
 	\label{fig:csi}%
 \end{figure}
@@ -236,7 +238,7 @@ The edge detection NN was implemented and tested in three configurations:
 \end{itemize}
 \begin{figure}[!htb]
         \centering
-        \includegraphics[width=0.45\textwidth]{spec_2_1agglo_edge_vsr3b.png}
+        \includegraphics[width=0.45\textwidth]{fig2.png}
         \caption{Reconstructed gamma energy spectrum from simulated events, each consisting of three 2.1~MeV gamma photons emitted from the target point. The upper panel shows the comparison between the geometrical R3B clustering and the Agglo+Edge method. The lower panel displays the bin-by-bin count difference between the two approaches. The Agglo+Edge model demonstrates a significant improvement by successfully reattaching escaped hits, notably in cases where sparse energy deposits around 1.6~MeV and 0.5~MeV result from pair production and subsequent annihilation processes of the original gamma photons. This clean-up step leads to a marked reduction in false negatives compared to the geometrical R3B clustering.}
         \label{fig:2_1_mev_r3b_aggloNN}%
 \end{figure}
@@ -295,7 +297,7 @@ A visual representation of an example event, contrasting the incorrectly merged 
 
 \begin{figure}[!htb]
         \centering
-        \includegraphics[width=0.45\textwidth]{example_event_9114.png}
+        \includegraphics[width=0.45\textwidth]{fig3.png}
 	    \caption{Example of a simulated event involving three primary gamma photons, illustrating the performance difference between the Agglo+Edge clustering method and the geometrical R3B clustering approach. Each marker represents a detected hit, plotted as a function of the polar angle \(\theta\) and the azimuthal angle \(\varphi\). The edge color of each circle indicates the true cluster assignment (ground truth), while the fill color denotes the cluster assignment according to the geometrical R3B clustering. The size of each circle reflects the energy deposited in the detector segment. Numbers adjacent to the hits represent the normalized hit times. In this event, the geometrical R3B clustering incorrectly assigns the hit at \((\theta \approx 0.6\,\mathrm{rad},\, \varphi \approx 2.7\,\mathrm{rad})\), with a normalized time of 0.69 (blue edge, yellow fill), to a separate cluster, resulting in a \textit{False Negative} (FN). In contrast, the Agglo+Edge method correctly assigns all hits to their respective clusters.}
         \label{fig:comparison_r3b_agglo_edge}%
 \end{figure}
@@ -318,6 +320,8 @@ Additionally, transformer-based models \cite{vaswani2017attention} -- capable of
 \section*{Acknowledgements}
 The work was supported by BMBF 05P24WO2 and Excellence Cluster ORIGINS from the DFG (Excellence Strategy EXC-2094-390783311). It was made possible through the close collaboration of experts from different disciplines within the Cluster of Excellence ORIGINS~\cite{origins2025}.
 
+\section*{Declaration of generative AI and AI-assisted technologies in the writing process.}
+During the preparation of this work the authors used AI-assisted tools, including ChatGPT (OpenAI) and Gemini (Google), in order to improve the readability and language of the article. After using this tools, the authors reviewed and edited the content as needed and take full responsibility for the content of the published article.
 %% The Appendices part is started with the command \appendix;
 %% appendix sections are then done as normal sections
 %\appendix

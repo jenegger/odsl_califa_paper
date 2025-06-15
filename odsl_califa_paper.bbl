@@ -87,7 +87,7 @@ S.~Imambi, K.~B. Prakash, G.~Kanagachidambaresan, Pytorch, Programming with
 
 \bibitem{agarap2018deep}
 A.~F. Agarap, Deep learning using rectified linear units (relu), arXiv preprint
-  arXiv:1803.08375 (2018).
+  arXiv:1803.08375.
 
 \bibitem{mannor2005cross}
 S.~Mannor, D.~Peleg, R.~Rubinstein, The cross entropy method for
@@ -107,17 +107,17 @@ D.~Newton, R.~Pasupathy, F.~Yousefian, {Recent trends in stochastic gradient
 P.~W. Battaglia, J.~B. Hamrick, V.~Bapst, A.~Sanchez-Gonzalez, V.~Zambaldi,
   M.~Malinowski, A.~Tacchetti, D.~Raposo, A.~Santoro, R.~Faulkner, et~al.,
   {Relational inductive biases, deep learning, and graph networks}, arXiv
-  preprint arXiv:1806.01261 (2018).
+  preprint arXiv:1806.01261.
 
 \bibitem{vaswani2017attention}
 A.~Vaswani, N.~Shazeer, N.~Parmar, J.~Uszkoreit, L.~Jones, A.~N. Gomez,
   {\L}.~Kaiser, I.~Polosukhin, Attention is all you need, Advances in neural
-  information processing systems 30 (2017).
+  information processing systems 30.
 
 \bibitem{amatriain2023transformer}
 X.~Amatriain, A.~Sankar, J.~Bing, P.~K. Bodigutla, T.~J. Hazen, M.~Kazi,
   {Transformer models: an introduction and catalog}, arXiv preprint
-  arXiv:2302.07730 (2023).
+  arXiv:2302.07730.
 
 \bibitem{dezoort2021charged}
 G.~DeZoort, S.~Thais, J.~Duarte, V.~Razavimaleki, M.~Atkinson, I.~Ojalvo,
@@ -133,7 +133,7 @@ X.~Ju, D.~Murnane, P.~Calafiura, N.~Choma, S.~Conlon, S.~Farrell, Y.~Xu,
 \bibitem{van2024transformers}
 S.~Van~Stroud, P.~Duckett, M.~Hart, N.~Pond, S.~Rettie, G.~Facini, T.~Scanlon,
   {Transformers for Charged Particle Track Reconstruction in High Energy
-  Physics}, arXiv preprint arXiv:2411.07149 (2024).
+  Physics}, arXiv preprint arXiv:2411.07149.
 
 \bibitem{origins2025}
 {Cluster of Excellence ORIGINS}, Cluster of excellence origins,
