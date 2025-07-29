@@ -33,7 +33,7 @@
 
 % \documentclass[final,5p,times,twocolumn,authoryear]{elsarticle}
 % \documentclass[final,5p,times,twocolumn]{elsarticle}
- \documentclass[review]{elsarticle}
+ \documentclass[review,sort&compress]{elsarticle}
 
 %% For including figures, graphicx.sty has been loaded in
 %% elsarticle.cls. If you prefer to use the old commands
@@ -48,7 +48,7 @@
 \usepackage{graphicx}
 \usepackage{subcaption}
 \usepackage{lineno}
-
+\usepackage{url}
 %% The lineno packages adds line numbers. Start line numbering with
 %% \begin{linenumbers}, end it with \end{linenumbers}. Or switch it on
 %% for the whole article with \linenumbers.
@@ -335,7 +335,9 @@ During the preparation of this work the authors used AI-assisted tools, includin
 %% If you have bibdatabase file and want bibtex to generate the
 %% bibitems, please use
 %%
-\bibliographystyle{elsarticle-num} 
+%\bibliographystyle{elsarticle-num} 
+%\biboptions{sort&compress}
+\bibliographystyle{model1-num-names} 
 \bibliography{literature.bib}
 
 %% else use the following coding to input the bibitems directly in the

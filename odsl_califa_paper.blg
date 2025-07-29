@@ -1,60 +1,51 @@
-This is BibTeX, Version 0.99d (TeX Live 2022/dev/Debian)
-Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+This is BibTeX, Version 0.99d (TeX Live 2017/Debian)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: odsl_califa_paper.aux
-The style file: elsarticle-num.bst
-Database file #1: literature.bib
-I was expecting a `,' or a `}'---line 3 of file literature.bib
- :   
- :   author={Kalantar-Nayestanaki, Nasser and Scheidenberger, Christoph},
-(Error may have been on previous line)
-I'm skipping whatever remains of this entry
-Warning--empty author in kalantar2024experiments
-Warning--empty journal in kalantar2024experiments
-Warning--empty year in kalantar2024experiments
-Warning--empty journal in ledigital
-Warning--empty year in ledigital
+The style file: model1-num-names.bst
+check.speaker is an unknown function---line 357 of file model1-num-names.bst
+Database file #1: literature.bib.bib
+Reallocated singl_function (elt_size=4) to 100 items from 50.
 Warning--can't use both volume and number fields in bertini2011r3broot
-Warning--empty chapter and pages in Nielsen2016
 Warning--empty pages in kolanoski2016teilchendetektoren
 You've used 27 entries,
-            2952 wiz_defined-function locations,
-            829 strings with 11059 characters,
-and the built_in function-call counts, 8663 in all, are:
-= -- 733
-> -- 432
-< -- 7
-+ -- 162
-- -- 135
-* -- 596
-:= -- 1240
-add.period$ -- 27
+            2941 wiz_defined-function locations,
+            794 strings with 11257 characters,
+and the built_in function-call counts, 19287 in all, are:
+= -- 1510
+> -- 1043
+< -- 16
++ -- 436
+- -- 353
+* -- 2194
+:= -- 2847
+add.period$ -- 30
 call.type$ -- 27
-change.case$ -- 27
-chr.to.int$ -- 0
-cite$ -- 35
-duplicate$ -- 273
-empty$ -- 911
-format.name$ -- 155
-if$ -- 2192
-int.to.chr$ -- 0
-int.to.str$ -- 27
-missing$ -- 27
-newline$ -- 89
-num.names$ -- 26
-pop$ -- 190
+change.case$ -- 267
+chr.to.int$ -- 27
+cite$ -- 29
+duplicate$ -- 1194
+empty$ -- 1140
+format.name$ -- 430
+if$ -- 3553
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 253
+newline$ -- 140
+num.names$ -- 108
+pop$ -- 406
 preamble$ -- 1
-purify$ -- 0
+purify$ -- 266
 quote$ -- 0
-skip$ -- 565
+skip$ -- 520
 stack$ -- 0
-substring$ -- 387
-swap$ -- 69
-text.length$ -- 7
+substring$ -- 736
+swap$ -- 949
+text.length$ -- 6
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 0
-warning$ -- 8
-while$ -- 62
-width$ -- 29
-write$ -- 224
+type$ -- 316
+warning$ -- 2
+while$ -- 119
+width$ -- 0
+write$ -- 367
 (There was 1 error message)

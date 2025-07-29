@@ -8,81 +8,79 @@
 \citation{Nielsen2016}
 \citation{popescu2009multilayer}
 \Newlabel{1}{a}
-\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}}
 \newlabel{sec:intro}{{1}{1}}
 \citation{kolanoski2016teilchendetektoren}
 \citation{seltzer2010xcom}
 \citation{seltzer2010xcom}
 \citation{klein1929streuung}
-\@writefile{toc}{\contentsline {section}{\numberline {2}Methodology}{3}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2}Methodology}{3}}
 \newlabel{sec:metho}{{2}{3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Challenges in Relativistic Gamma Spectroscopy}{3}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Challenges in Relativistic Gamma Spectroscopy}{3}}
 \newlabel{s_sec:gamma_spec}{{2.1}{3}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Photon absorption coefficients in CsI in the range from $100$ keV to $10$ MeV with data from XCOM database \cite  {seltzer2010xcom}.\relax }}{3}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Photon absorption coefficients in CsI in the range from $100$ keV to $10$ MeV with data from XCOM database \cite  {seltzer2010xcom}.\relax }}{3}}
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
 \newlabel{fig:csi}{{1}{3}}
 \citation{lipinski2011white}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Data Structure and geometrical R3B Clustering Algorithm}{4}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Data Structure and geometrical R3B Clustering Algorithm}{4}}
 \newlabel{s_sec:r3b_clustering}{{2.2}{4}}
 \citation{agostinelli2003geant4}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Simulation Setup}{5}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Simulation Setup}{5}}
 \newlabel{s_sec:data_sim}{{2.3}{5}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Performance Metrics}{6}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Performance Metrics}{6}}
 \newlabel{s_sec:metrics}{{2.4}{6}}
 \citation{Nielsen2016}
 \citation{virtanen2020scipy}
 \citation{nielsen2016hierarchical}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.5}Agglomerative Clustering}{7}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.5}Agglomerative Clustering}{7}}
 \newlabel{s_sec:agglo}{{2.5}{7}}
 \citation{imambi2021pytorch}
 \citation{agarap2018deep}
 \citation{mannor2005cross,de2005tutorial}
 \citation{newton2018recent}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.6}Edge Detection Neural Network}{8}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.6}Edge Detection Neural Network}{8}}
 \newlabel{s_sec:edge}{{2.6}{8}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Reconstructed gamma energy spectrum from simulated events, each consisting of three 2.1\nobreakspace  {}MeV gamma photons emitted from the target point. The upper panel shows the comparison between the geometrical R3B clustering and the Agglo+Edge method. The lower panel displays the bin-by-bin count difference between the two approaches. The Agglo+Edge model demonstrates a significant improvement by successfully reattaching escaped hits, notably in cases where sparse energy deposits around 1.6\nobreakspace  {}MeV and 0.5\nobreakspace  {}MeV result from pair production and subsequent annihilation processes of the original gamma photons. This clean-up step leads to a marked reduction in false negatives compared to the geometrical R3B clustering.\relax }}{10}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Reconstructed gamma energy spectrum from simulated events, each consisting of three 2.1\nobreakspace  {}MeV gamma photons emitted from the target point. The upper panel shows the comparison between the geometrical R3B clustering and the Agglo+Edge method. The lower panel displays the bin-by-bin count difference between the two approaches. The Agglo+Edge model demonstrates a significant improvement by successfully reattaching escaped hits, notably in cases where sparse energy deposits around 1.6\nobreakspace  {}MeV and 0.5\nobreakspace  {}MeV result from pair production and subsequent annihilation processes of the original gamma photons. This clean-up step leads to a marked reduction in false negatives compared to the geometrical R3B clustering.\relax }}{10}}
 \newlabel{fig:2_1_mev_r3b_aggloNN}{{2}{10}}
-\@writefile{toc}{\contentsline {section}{\numberline {3}Discussion}{10}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3}Discussion}{10}}
 \newlabel{sec:results}{{3}{10}}
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Summary of performance metrics as defined in Subsection\nobreakspace  {}2.4\hbox {}, evaluated for the different clustering algorithms. The models \textit  {Geometrical R3B Clustering}, \textit  {Edge Clustering (no time)}, and \textit  {R3B + Edge (no time)} utilize only angular and energy information on a per-hit basis for cluster reconstruction. In contrast, \textit  {Agglomerative Clustering}, \textit  {Edge Clustering (with time)}, and \textit  {Agglo + Edge (with time)} additionally incorporate time-of-hit information into the clustering process. Uncertainties reported for the four edge detection neural network variants correspond to the standard deviation of the results obtained from ten independent training runs.\relax }}{10}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Summary of performance metrics as defined in Subsection\nobreakspace  {}2.4\hbox {}, evaluated for the different clustering algorithms. The models \textit  {Geometrical R3B Clustering}, \textit  {Edge Clustering (no time)}, and \textit  {R3B + Edge (no time)} utilize only angular and energy information on a per-hit basis for cluster reconstruction. In contrast, \textit  {Agglomerative Clustering}, \textit  {Edge Clustering (with time)}, and \textit  {Agglo + Edge (with time)} additionally incorporate time-of-hit information into the clustering process. Uncertainties reported for the four edge detection neural network variants correspond to the standard deviation of the results obtained from ten independent training runs.\relax }}{10}}
 \newlabel{tab:results}{{1}{10}}
 \citation{battaglia2018relational}
 \citation{vaswani2017attention,amatriain2023transformer}
 \citation{dezoort2021charged,ju2021performance,van2024transformers}
 \citation{vaswani2017attention}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Example of a simulated event involving three primary gamma photons, illustrating the performance difference between the Agglo+Edge clustering method and the geometrical R3B clustering approach. Each marker represents a detected hit, plotted as a function of the polar angle \(\theta \) and the azimuthal angle \(\varphi \). The edge color of each circle indicates the true cluster assignment (ground truth), while the fill color denotes the cluster assignment according to the geometrical R3B clustering. The size of each circle reflects the energy deposited in the detector segment. Numbers adjacent to the hits represent the normalized hit times. In this event, the geometrical R3B clustering incorrectly assigns the hit at \((\theta \approx 0.6\,\mathrm  {rad},\, \varphi \approx 2.7\,\mathrm  {rad})\), with a normalized time of 0.69 (blue edge, yellow fill), to a separate cluster, resulting in a \textit  {False Negative} (FN). In contrast, the Agglo+Edge method correctly assigns all hits to their respective clusters.\relax }}{12}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Example of a simulated event involving three primary gamma photons, illustrating the performance difference between the Agglo+Edge clustering method and the geometrical R3B clustering approach. Each marker represents a detected hit, plotted as a function of the polar angle \(\theta \) and the azimuthal angle \(\varphi \). The edge color of each circle indicates the true cluster assignment (ground truth), while the fill color denotes the cluster assignment according to the geometrical R3B clustering. The size of each circle reflects the energy deposited in the detector segment. Numbers adjacent to the hits represent the normalized hit times. In this event, the geometrical R3B clustering incorrectly assigns the hit at \((\theta \approx 0.6\,\mathrm  {rad},\, \varphi \approx 2.7\,\mathrm  {rad})\), with a normalized time of 0.69 (blue edge, yellow fill), to a separate cluster, resulting in a \textit  {False Negative} (FN). In contrast, the Agglo+Edge method correctly assigns all hits to their respective clusters.\relax }}{12}}
 \newlabel{fig:comparison_r3b_agglo_edge}{{3}{12}}
-\@writefile{toc}{\contentsline {section}{\numberline {4}Outlook}{12}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4}Outlook}{12}}
 \newlabel{sec:disc_outlook}{{4}{12}}
 \citation{origins2025}
-\bibstyle{elsarticle-num}
+\bibstyle{model1-num-names}
 \bibdata{literature.bib}
-\bibcite{kalantar2024experiments}{{1}{}{{}}{{}}}
-\bibcite{leifels2025status}{{2}{}{{}}{{}}}
-\bibcite{cortina2014califa}{{3}{}{{}}{{}}}
-\bibcite{alvarez2014performance}{{4}{}{{}}{{}}}
-\bibcite{ledigital}{{5}{}{{}}{{}}}
-\bibcite{bertini2011r3broot}{{6}{}{{}}{{}}}
-\bibcite{Nielsen2016}{{7}{}{{}}{{}}}
-\bibcite{popescu2009multilayer}{{8}{}{{}}{{}}}
-\bibcite{kolanoski2016teilchendetektoren}{{9}{}{{}}{{}}}
-\bibcite{seltzer2010xcom}{{10}{}{{}}{{}}}
-\bibcite{klein1929streuung}{{11}{}{{}}{{}}}
-\bibcite{lipinski2011white}{{12}{}{{}}{{}}}
-\bibcite{agostinelli2003geant4}{{13}{}{{}}{{}}}
-\bibcite{virtanen2020scipy}{{14}{}{{}}{{}}}
-\bibcite{nielsen2016hierarchical}{{15}{}{{}}{{}}}
-\bibcite{imambi2021pytorch}{{16}{}{{}}{{}}}
-\bibcite{agarap2018deep}{{17}{}{{}}{{}}}
-\bibcite{mannor2005cross}{{18}{}{{}}{{}}}
-\bibcite{de2005tutorial}{{19}{}{{}}{{}}}
-\bibcite{newton2018recent}{{20}{}{{}}{{}}}
-\bibcite{battaglia2018relational}{{21}{}{{}}{{}}}
-\bibcite{vaswani2017attention}{{22}{}{{}}{{}}}
-\bibcite{amatriain2023transformer}{{23}{}{{}}{{}}}
-\bibcite{dezoort2021charged}{{24}{}{{}}{{}}}
-\bibcite{ju2021performance}{{25}{}{{}}{{}}}
-\bibcite{van2024transformers}{{26}{}{{}}{{}}}
-\bibcite{origins2025}{{27}{}{{}}{{}}}
-\providecommand\NAT@force@numbers{}\NAT@force@numbers
-\gdef \@abspage@last{17}
+\bibcite{kalantar2024experiments}{{1}{2024}{{Kalantar-Nayestanaki and Scheidenberger}}{{}}}
+\bibcite{leifels2025status}{{2}{2025}{{Leifels}}{{}}}
+\bibcite{cortina2014califa}{{3}{2014}{{Cortina-Gil et~al.}}{{Cortina-Gil, Alvarez-Pol, Aumann, Avdeichikov, Bendel, Benlliure, Bertini, Bezbakh, Bloch, B{\"o}hmer et~al.}}}
+\bibcite{alvarez2014performance}{{4}{2014}{{Alvarez-Pol et~al.}}{{Alvarez-Pol, Ashwood, Aumann, Bertini, Cabanelas, Casarejos, Cederkall, Cortina-Gil, Fern{\'a}ndez, Dur{\'a}n et~al.}}}
+\bibcite{ledigital}{{5}{2014}{{Le~Bleis et~al.}}{{Le~Bleis, Bendel, Gernh{\"a}user, Henning, Klenze, Kr{\"u}cken, and Winkel}}}
+\bibcite{bertini2011r3broot}{{6}{2011}{{Bertini}}{{}}}
+\bibcite{Nielsen2016}{{7}{2016}{{Nielsen}}{{}}}
+\bibcite{popescu2009multilayer}{{8}{2009}{{Popescu et~al.}}{{Popescu, Balas, Perescu-Popescu, and Mastorakis}}}
+\bibcite{kolanoski2016teilchendetektoren}{{9}{2016}{{Kolanoski and Wermes}}{{}}}
+\bibcite{seltzer2010xcom}{{10}{2010}{{Seltzer}}{{}}}
+\bibcite{klein1929streuung}{{11}{1929}{{Klein and Nishina}}{{}}}
+\bibcite{lipinski2011white}{{12}{2011}{{Lipi{\'n}ski et~al.}}{{Lipi{\'n}ski, W{\l }ostowski, Serrano, and Alvarez}}}
+\bibcite{agostinelli2003geant4}{{13}{2003}{{Agostinelli et~al.}}{{Agostinelli, Allison, Amako, Apostolakis, Araujo, Arce, Asai, Axen, Banerjee, Barrand et~al.}}}
+\bibcite{virtanen2020scipy}{{14}{2020}{{Virtanen et~al.}}{{Virtanen, Gommers, Oliphant, Haberland, Reddy, Cournapeau, Burovski, Peterson, Weckesser, Bright et~al.}}}
+\bibcite{nielsen2016hierarchical}{{15}{2016}{{Nielsen and Nielsen}}{{}}}
+\bibcite{imambi2021pytorch}{{16}{2021}{{Imambi et~al.}}{{Imambi, Prakash, and Kanagachidambaresan}}}
+\bibcite{agarap2018deep}{{17}{2018}{{Agarap}}{{}}}
+\bibcite{mannor2005cross}{{18}{2005}{{Mannor et~al.}}{{Mannor, Peleg, and Rubinstein}}}
+\bibcite{de2005tutorial}{{19}{2005}{{De~Boer et~al.}}{{De~Boer, Kroese, Mannor, and Rubinstein}}}
+\bibcite{newton2018recent}{{20}{2018}{{Newton et~al.}}{{Newton, Pasupathy, and Yousefian}}}
+\bibcite{battaglia2018relational}{{21}{2018}{{Battaglia et~al.}}{{Battaglia, Hamrick, Bapst, Sanchez-Gonzalez, Zambaldi, Malinowski, Tacchetti, Raposo, Santoro, Faulkner et~al.}}}
+\bibcite{vaswani2017attention}{{22}{2017}{{Vaswani et~al.}}{{Vaswani, Shazeer, Parmar, Uszkoreit, Jones, Gomez, Kaiser, and Polosukhin}}}
+\bibcite{amatriain2023transformer}{{23}{2023}{{Amatriain et~al.}}{{Amatriain, Sankar, Bing, Bodigutla, Hazen, and Kazi}}}
+\bibcite{dezoort2021charged}{{24}{2021}{{DeZoort et~al.}}{{DeZoort, Thais, Duarte, Razavimaleki, Atkinson, Ojalvo, Neubauer, and Elmer}}}
+\bibcite{ju2021performance}{{25}{2021}{{Ju et~al.}}{{Ju, Murnane, Calafiura, Choma, Conlon, Farrell, Xu, Spiropulu, Vlimant, Aurisano et~al.}}}
+\bibcite{van2024transformers}{{26}{2024}{{Van~Stroud et~al.}}{{Van~Stroud, Duckett, Hart, Pond, Rettie, Facini, and Scanlon}}}
+\bibcite{origins2025}{{27}{2025}{{Cluster of Excellence ORIGINS}}{{}}}
