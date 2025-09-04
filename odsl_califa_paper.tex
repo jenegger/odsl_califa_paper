@@ -49,6 +49,7 @@
 \usepackage{subcaption}
 \usepackage{lineno}
 \usepackage{url}
+\usepackage{amsmath}
 %% The lineno packages adds line numbers. Start line numbering with
 %% \begin{linenumbers}, end it with \end{linenumbers}. Or switch it on
 %% for the whole article with \linenumbers.
@@ -351,13 +352,62 @@ The work was supported by BMBF 05P24WO2 and Excellence Cluster ORIGINS from the 
 During the preparation of this work the authors used AI-assisted tools, including ChatGPT (OpenAI) and Gemini (Google), in order to improve the readability and language of the article. After using this tools, the authors reviewed and edited the content as needed and take full responsibility for the content of the published article.
 %% The Appendices part is started with the command \appendix;
 %% appendix sections are then done as normal sections
-%\appendix
+\clearpage
 
-%\section{Appendix title 1}
+\appendix
+
+\section{Edge Model - Input features and loss curve}
 %% \label{}
 
-%\section{Appendix title 2}
+\begin{figure}[!h]
+        \centering
+        \includegraphics[width=0.45\textwidth]{input_features_distribution.png}
+
+		\caption{
+		Distributions of the single hit features in CALIFA, obtained from Geant4 simulations with incident photons. While the primary photons were generated with uniform distributions in energy, polar and azimuthal angle, as well as normalized time, the reconstructed hit features exhibit detector- and physics-driven effects. The hit energy spectrum is dominated by low-energy deposits, reflecting the enhanced probability of pair production and Compton scattering at higher photon energies, while the contribution of the photoelectric effect decreases (cf. Fig.~\ref{fig:csi}). The reduced statistics at small polar angles arise from the lower solid-angle coverage of the crystals in this region ($d\Omega = \sin\theta\, d\theta\, d\varphi$).
+		}
+
+        \label{fig:input_features}%
+\end{figure}
+
+\begin{figure}[!h]
+        \centering
+        \includegraphics[width=0.45\textwidth]{loss_curve.png}
+
+		\caption{
+		Loss curves of the R3B+Edge (blue) and Agglo+Edge (orange) clustering models as a function of training epochs. Both models were trained using the binary cross-entropy loss with a learning rate of $5\times10^{-3}$, demonstrating stable convergence behavior.	
+		}
+
+        \label{fig:loss_curve}%
+\end{figure}
+
+
+\section{Edge Model reconstruction performance vs cluster energy and angular separation}
 %% \label{}
+
+\begin{figure}[!h]
+        \centering
+        \includegraphics[width=0.45\textwidth]{well_reco_vs_energy.png}
+
+		\caption{
+		Ratio of well-reconstructed clusters as a function of the true energy deposit in the cluster. For the geometrical R3B clustering algorithm, the well-reconstruction ratio decreases with increasing cluster energy. The R3B+Edge approach partially compensates this degradation, while the Agglo+Edge method maintains a consistently high well-reconstruction ratio over the full energy range.	
+		}
+
+        \label{fig:wr_vs_ene}%
+\end{figure}
+
+\begin{figure}[!h]
+        \centering
+        \includegraphics[width=0.45\textwidth]{well_reco_vs_opang.png}
+
+		\caption{
+		True positive reconstruction probability as a function of the opening angle for the Geometrical R3B Clustering, R3B+Edge, and Agglo+Edge approaches. The true cluster angle is determined from the positions of the highest-energy hits in each true cluster. The analysis is restricted to events with exactly two $\gamma$-ray true clusters, with energies uniformly distributed in the range $0.3~\text{MeV} < E < 10~\text{MeV}$.
+		}
+
+        \label{fig:wr_vs_opang}%
+\end{figure}
+
+\clearpage
 
 %% If you have bibdatabase file and want bibtex to generate the
 %% bibitems, please use
