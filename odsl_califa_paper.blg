@@ -6,46 +6,47 @@ check.speaker is an unknown function---line 357 of file model1-num-names.bst
 Database file #1: literature.bib.bib
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Warning--can't use both volume and number fields in bertini2011r3broot
+Warning--can't use both volume and number fields in cabanelas2020commissioning
 Warning--empty pages in kolanoski2016teilchendetektoren
-You've used 27 entries,
+You've used 28 entries,
             2941 wiz_defined-function locations,
-            794 strings with 11257 characters,
-and the built_in function-call counts, 19287 in all, are:
-= -- 1510
-> -- 1043
-< -- 16
-+ -- 436
-- -- 353
-* -- 2194
-:= -- 2847
-add.period$ -- 30
-call.type$ -- 27
-change.case$ -- 267
-chr.to.int$ -- 27
-cite$ -- 29
-duplicate$ -- 1194
-empty$ -- 1140
-format.name$ -- 430
-if$ -- 3553
+            799 strings with 11542 characters,
+and the built_in function-call counts, 20402 in all, are:
+= -- 1592
+> -- 1115
+< -- 18
++ -- 466
+- -- 379
+* -- 2315
+:= -- 2999
+add.period$ -- 31
+call.type$ -- 28
+change.case$ -- 282
+chr.to.int$ -- 28
+cite$ -- 31
+duplicate$ -- 1268
+empty$ -- 1203
+format.name$ -- 459
+if$ -- 3771
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 253
-newline$ -- 140
-num.names$ -- 108
-pop$ -- 406
+missing$ -- 266
+newline$ -- 145
+num.names$ -- 112
+pop$ -- 436
 preamble$ -- 1
-purify$ -- 266
+purify$ -- 281
 quote$ -- 0
-skip$ -- 520
+skip$ -- 560
 stack$ -- 0
-substring$ -- 736
-swap$ -- 949
-text.length$ -- 6
+substring$ -- 760
+swap$ -- 1008
+text.length$ -- 8
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 316
-warning$ -- 2
-while$ -- 119
+type$ -- 329
+warning$ -- 3
+while$ -- 123
 width$ -- 0
-write$ -- 367
+write$ -- 383
 (There was 1 error message)
