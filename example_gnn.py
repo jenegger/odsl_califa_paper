@@ -148,11 +148,11 @@ print("Predicted clusters for event 0:")
 for i, c in enumerate(clusters):
     print(f"Cluster {i}: hits {sorted(list(c))}")
 
-#7) and running ove all test events...
-for idx, data in enumerate(test_loader):
-    data = data.to(device)
-    clusters = get_clusters(model, predictor, data, threshold=0.5)
-    print(f"\nEvent {idx}:")
-    for i, c in enumerate(clusters):
-        print(f"  Cluster {i}: hits {sorted(list(c))}")
-
+##7) and running ove all test events...
+#for idx, data in enumerate(test_loader):
+#    data = data.to(device)
+#    clusters = get_clusters(model, predictor, data, threshold=0.5)
+#    print(f"\nEvent {idx}:")
+#    for i, c in enumerate(clusters):
+#        print(f"  Cluster {i}: hits {sorted(list(c))}")
+#
